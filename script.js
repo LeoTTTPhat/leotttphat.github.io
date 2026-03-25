@@ -91,6 +91,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+  
+  /* ---------- Abstract toggle ---------- */
+  const abstractBtns = document.querySelectorAll('.pub-abstract-btn');
+  abstractBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pubItem = btn.closest('.pub-item');
+      const abstractDiv = pubItem.querySelector('.pub-abstract');
+      
+      if (abstractDiv) {
+        const isVisible = abstractDiv.classList.contains('active');
+        
+        if (isVisible) {
+          abstractDiv.classList.remove('active');
+          btn.classList.remove('active');
+          btn.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
+        } else {
+          // Optional: close other abstracts
+          // document.querySelectorAll('.pub-abstract.active').forEach(div => div.classList.remove('active'));
+          // document.querySelectorAll('.pub-abstract-btn.active').forEach(b => {
+          //   b.classList.remove('active');
+          //   b.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
+          // });
+
+          abstractDiv.classList.add('active');
+          btn.classList.add('active');
+          btn.innerHTML = '<i class="fas fa-times"></i> Close';
+        }
+      }
+    });
+  });
 
   /* ---------- Theme toggle (Light/Dark mode) ---------- */
   const themeToggle = document.getElementById('theme-toggle');
