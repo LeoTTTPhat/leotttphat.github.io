@@ -107,10 +107,11 @@
         <div class="about-card reveal">
           <h3><span class="icon">🤖</span> AI Research</h3>
           <ul>
-            <li>Privacy-Preserving AI</li>
             <li>Trustworthy AI</li>
+            <li>Privacy-Preserving AI</li>
             <li>Federated / Distributed Learning</li>
             <li>Machine Unlearning</li>
+            <li>Efficient AI</li>
             <li>Agentic AI</li>
             <li>Multi-Agent Systems</li>
             <li>Self-Supervised Learning</li>
@@ -124,13 +125,15 @@
           <h3><span class="icon">🔐</span> Security &amp; Privacy</h3>
           <ul>
             <li>Decentralized Systems (Blockchain)</li>
-            <li>Privacy-Preserving Techniques</li>
-            <li>Privacy Policy</li>
-            <li>Anomaly Detection</li>
+            <li>Contextual integrity</li>
+            <li>Differential Privacy</li>
+            <li>Privacy & Security Policy</li>
+            <li>Cryptography</li>
+            <!-- <li>Anomaly Detection</li> -->
+            <li>Malware Analysis</li>
             <li>Adversarial Attacks</li>
             <li>Poisoning Attacks</li>
             <li>Software Supply Chain Attacks</li>
-            <li>Cryptography</li>
           </ul>
         </div>
         <!-- Software Engineering -->
@@ -379,13 +382,29 @@
               TEE and Intelligent Caching</p>
             <p class="pub-authors"><strong>P. T. Tran-Truong*</strong>, Trung Mai*, Ha X Son, Phien Nguyen-Ngoc, Bang K
               Le, Khanh H Vo, Ngan NT Kim, Triet M Nguyen, Anh T Nguyen</p>
-            <p class="pub-venue"><strong>Journal of Network
-                and
-                Computer Applications</strong></p>
+            <p class="pub-venue"><strong>Journal of Network and Computer Applications</strong></p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 8.0</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S1084804526000536" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Fog computing enables low-latency services by positioning computational resources at the network edge
+                but processing sensitive data on distributed and potentially untrusted nodes raises significant privacy
+                concerns. While Trusted Execution Environments (TEEs) provide hardware-enforced security, they introduce
+                substantial performance overhead (18-68ms cold start latency). Conversely, intelligent caching
+                strategies optimize performance but assume trusted infrastructure, creating a fundamental gap between
+                security and performance requirements. This paper presents a systematic investigation of
+                privacy-preserving fog computing that integrates TEE-based security with intelligent caching. We
+                synthesize recent advances across TEE privacy solutions, intelligent caching approaches, and integrated
+                frameworks, analyzing trade-offs between security guarantees and performance metrics. Our analysis
+                reveals that existing solutions address either security or performance in isolation, with limited work
+                on joint optimization. We introduce POP2TIC, a four-tier framework combining hash-based caching (98% hit
+                rate, 2128 keyspace) with optimized TEE pooling (8.5 ms warm start). Experimental evaluation
+                demonstrates 3.16 ms average latency (75.3% reduction vs. existing fog solutions) and 91.7% attack
+                detection rate while consuming 135% CPU and 299MB memory.</p>
             </div>
           </div>
         </div>
@@ -396,14 +415,35 @@
             <p class="pub-title">[CAEAI'26] Enhancing Large Language Model Performance for Automatic Zero-Shot MCQ
               Answering via Single-Token Logit Prompting</p>
             <p class="pub-authors">P. Q. Dang*, <strong>P. T. Tran-Truong*</strong>, Duc-Ly Vu, Long S. T. Nguyen, Quynh
-              T. N.
-              Vo, Tho Quan^</p>
+              T. N. Vo, Tho Quan^</p>
             <p class="pub-venue"><strong>Computers &amp;
                 Education: Artificial Intelligence</strong></p>
             <div class="pub-meta">
               <span class="badge badge--red">ESCI Q1 · Top 1 Education</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S2666920X26000408" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+              <a href="https://github.com/LeoTTTPhat/STL-Prompting-For-ZeroShot-MCQA" target="_blank"
+                class="pub-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>While Large Language Models (LLMs) offer significant potential for educational applications, they
+                exhibit distinct limitations when answering multiple-choice questions (MCQs). Because LLMs are optimized
+                for autoregressive token prediction, their performance degrades substantially when answer choices are
+                simply shuffled—a phenomenon known as the Multiple-Choice Symbol Binding (MCSB) limitation. To mitigate
+                this, we introduce a novel prompting technique called Single-Token Logit (STL). Instead of evaluating
+                the output logits of all answer labels, STL extracts and normalizes the logit value of a single token
+                type (specifically “yes”) to independently verify each option. We comprehensively evaluate STL against
+                established baselines, including Labels Token Logits (LTL) and Chain-of-Thought (CoT), across the ARC,
+                OpenBookQA, and SciQ datasets. In almost all configurations, STL matches or outperforms the standard
+                baseline (LTL)—yielding gains of up to 11 percentage points—at a moderate computational overhead (1.58×
+                latency and 3.72× GPU memory relative to LTL). Furthermore, sample-by-sample McNemar’s testing (α =
+                0.05) confirms STL is statistically superior to LTL and highly competitive against the computationally
+                expensive CoT method. Finally, we demonstrate STL’s robustness in knowledge-intensive environments by
+                integrating it with Retrieval-Augmented Generation (RAG), where it achieves up to 81.06% accuracy on the
+                combined ARC dataset with Mistral 7B—a 9.36 percentage point gain over the original no-context baseline
+                (LTL) of 71.7%.</p>
             </div>
           </div>
         </div>
@@ -419,8 +459,23 @@
                 Networks</strong>, vol. 278</p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 4.6</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S1389128626000885" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Fog computing enables low-latency IoT applications but introduces critical privacy risks when fog nodes
+                are untrusted. Existing privacy frameworks address cloud security or basic fog encryption, yet none
+                provide comprehensive user-centric privacy enforcement with fine-grained preference composition for
+                distributed IoT-fog-cloud architectures. This paper presents PrivacyGuard, a novel four-tier
+                privacy-preserving framework for personal IoT data protection with untrusted fog infrastructure. Key
+                innovations include: an edge layer for hierarchical privacy preferences with exceptions; GDPR-compliant
+                data and purpose taxonomies supporting fine-grained control; automated privacy preference composition
+                for multi-source data fusion; TEE-based privacy validation enabling secure computation on encrypted data
+                at fog nodes; and hash-based result caching optimized for high-latency rural networks. Empirical results
+                demonstrate sub-100ms P99 latency (97.03ms) for single requests, graceful degradation to 2,059ms under
+                100 concurrent users, 91.7% MITM resistance, and 6.37× cache speedup.</p>
             </div>
           </div>
         </div>
@@ -436,8 +491,31 @@
                 Applications of Artificial Intelligence</strong>, vol. 167</p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 8.0</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625037133" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Financial time-series forecasting is challenged by non-linear, non-stationary dynamics driven by
+                macroeconomic factors, market sentiment, and stochastic events. Traditional statistical models assume
+                stationarity and linear dependencies, failing to capture complex temporal patterns, while deep learning
+                approaches struggle with vanishing gradients and long-term dependencies. Standard Transformers incur
+                high computational costs (quadratic complexity, O(n^2*d), per layer) due to attention mechanisms and
+                large parameter counts, where n is the sequence length and d is the model dimension. This study proposes
+                LiteFormer, a lightweight, encoder-only Transformer for univariate stock price forecasting, leveraging
+                N=4 encoder layers with h=8
+                multi-head self-attention and feed-forward networks (d_ff=512). Operating on sequences of closing prices
+                (T=14, d_model=128), LiteFormer employs sinusoidal positional encodings, a causal mask, dropout (p=0.1
+                ), and layer normalization to model temporal dependencies and enhance generalization. With only 750,000+
+                parameters, LiteFormer reduces per layer complexity via compact design, thereby enabling low-latency
+                inference (38 millisecond) and energy efficiency (96.894 Watt), which promises to offers scalable
+                real-time inference for industrial fintech systems. Experiments across 30 stocks from the S&P 500, FTSE
+                100, and Nikkei 225 indices demonstrate Mean Absolute Error and Root Mean Square Error reductions of
+                3.45%–9.09% over vanilla Transformers and up to 48% over recurrence neural models for high-volatility
+                stocks. LiteFormer’s efficient, interpretable architecture, driven by attention weights, offers a
+                scalable solution with potential for multivariate extensions and real-world multi-modal applications in
+                predictive domain.</p>
             </div>
           </div>
         </div>
@@ -450,12 +528,28 @@
             <p class="pub-authors"><strong>Phat T. Tran-Truong*</strong>, Trung Mai*, Ha Son, Phien Nguyen, Tuan
               Le, Triet Nguyen, Khanh Vo, Bang Le, Ngan Nguyen, Minh Nguyen, Anh Nguyen, Tung Nguyen
             </p>
-            <p class="pub-venue"><strong>Pervasive and
-                Mobile Computing</strong>, vol. 115</p>
+            <p class="pub-venue"><strong>Pervasive and Mobile Computing</strong>, vol. 115</p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 3.5</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S1574119225001191" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>This article introduces SecureWearTrade, a comprehensive blockchain-enabled IoT framework designed to
+                advance secure personal data trading from wearable devices in healthcare. Addressing critical challenges
+                related to security, privacy, and efficiency in resource-constrained environments, our work makes three
+                key contributions: (1) an enhanced hierarchical identity-based encryption (HIBE) scheme with wildcard
+                support, enabling fine-grained and flexible access control tailored to the dynamic needs of healthcare
+                data management; (2) a novel integration of blockchain with IPFS, providing immutable transaction
+                records and efficient key management; and (3) an optimized batch processing mechanism for effectively
+                handling multiple data streams. By comprehensive evaluation with real-world settings with devices and
+                dataset, SecureWearTrade demonstrates superior performance in encryption and decryption efficiency,
+                resource utilization, and scalability compared to existing solutions. Additionally, the framework
+                maintains robust security under the Bilinear Diffie–Hellman Exponent (BDHE) assumption. By ensuring
+                privacy-preserving data trading, SecureWearTrade offers a scalable and trustworthy solution for the
+                IoT-Cloud continuum.</p>
             </div>
           </div>
         </div>
@@ -467,12 +561,27 @@
               Ecosystems</p>
             <p class="pub-authors"><strong>Phat T. Tran-Truong*^</strong>, Ha X Son, Vo H Khanh, Nguyen M Triet, Nguyen
               T Anh, Le K Bang, Nguyen TK Ngan</p>
-            <p class="pub-venue"><strong>High-Confidence
-                Computing</strong></p>
+            <p class="pub-venue"><strong>High-Confidence Computing</strong></p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 3.0</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://doi.org/10.1016/j.hcc.2025.100369" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Letters of Credit (L/Cs) are essential for international trade, but traditional systems struggle with
+                security, efficiency, and access control. To address these challenges, we propose TACKLE, a new
+                framework that combines identity-based encryption (IBE) with blockchain technology. TACKLE offers
+                advanced features like time-based access control and hierarchical key delegation, making it ideal for
+                complex international trade workflows. Our framework significantly improves document verification and
+                access management while maintaining strong security. We tested TACKLE’s performance and found it to be
+                efficient, with quick key generation times (68–74 ms) and fast encryption (3.933 to 8.333 s). Network
+                latency was stable at 2–8 ms across different data sizes. Compared to RSA, TACKLE generated keys 34.2%
+                faster while using similar system resources. Our results show that TACKLE effectively balances security
+                with efficiency, making it suitable for typical L/C documents up to 10MB. With its strong security
+                features and performance, TACKLE is a promising solution for modernizing international trade finance.
+              </p>
             </div>
           </div>
         </div>
@@ -488,8 +597,26 @@
                 Journal of Information Security</strong>, vol. 26</p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q2 · IF 3.2</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/article/10.1007/s10207-025-01098-w" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The widespread adoption of medical, health, and fitness applications (MedHF apps) has revolutionized
+                health monitoring but also raised critical privacy concerns. Studies revealed that 79% of popular health
+                apps share sensitive user data (e.g., medical records, location) with third parties without transparent
+                consent (bmj 364, 2019), while overly complex privacy policies further obscure data practices. To
+                address these challenges, this article introduces CI2P-MedHFDroid, a context-aware privacy protection
+                model for Android MedHF apps that captures individual privacy preferences across various contexts,
+                including app categories, data types (e.g., location, health metrics), sharing recipients (e.g., third
+                parties), and usage purposes (e.g., advertising). Our research involves analyzing 1,756 medical and
+                1,646 health & fitness apps through static source code and NLP-based privacy policy analysis, resulting
+                in a comprehensive app database. Leveraging semi-supervised learning with AdaBoost, EM, and TSVM, our
+                model achieves up to 92.7% accuracy, with 77% of 100 diverse participants expressing high satisfaction
+                with TSVM predictions. Additionally, we provide insights into app privacy behaviors, empowering
+                developers to design transparent, user-centric privacy mechanisms. By balancing functionality and
+                privacy, CI2P-MedHFDroid offers a scalable, adaptive solution to enhance trust in healthcare apps.</p>
             </div>
           </div>
         </div>
@@ -505,8 +632,26 @@
                 Architecture</strong>, vol. 162</p>
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 4.1</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://doi.org/10.1016/j.sysarc.2025.103402" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>This survey presents a systematic evaluation of Multi-Factor Authentication (MFA) practices in digital
+                payment systems, analyzing their alignment with NIST Special Publications 800-63 guidelines. Through a
+                comprehensive review of 70 academic papers published between 2017–2024 and 13 industry-based
+                authentication tools, we examine how current implementations measure against Identity Assurance Level
+                (IAL) and Authentication Assurance Level (AAL) standards. Our analysis reveals a significant gap between
+                theoretical capabilities proposed in academic research and actual industry implementations, with 33% of
+                tools relying primarily on OTP-based authentication despite more advanced methods being available. The
+                survey identifies emerging trends like biometric authentication adoption (60% of analyzed papers) and
+                varying regulatory compliance across sectors, with payment systems demonstrating 77% alignment with
+                standards while IoT and E-Service domains show fragmented approaches. We propose a framework for
+                developing adaptive authentication systems that balance security requirements with user experience
+                through context-aware risk assessment. This work provides valuable insights for researchers,
+                practitioners, and policymakers working to enhance the security and usability of digital payment
+                authentication systems.</p>
             </div>
           </div>
         </div>
@@ -521,8 +666,29 @@
                 Science</strong>, vol. 5</p>
             <div class="pub-meta">
               <span class="badge badge--red">Scopus Q2 · IF 3.1</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/article/10.1007/s42979-023-02437-1" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>With the increasing use of technology in our daily lives, data privacy has become a critical issue. It
+                is essential to carefully design technologies to ensure the protection of people’s personal information.
+                In fact, what we need are privacy-enhancing technologies (PETs) rather than solely focusing on
+                technologies themselves. Artificial intelligence (AI) and deep learning technologies, which are
+                considered societal locomotives, are no exception. However, AI practitioners usually design and develop
+                without considering privacy concerns. To address this gap, we propose a pragmatic privacy-preserving
+                deep learning framework that is suitable for AI practitioners. Our proposed framework is designed to
+                satisfy differential privacy, a rigorous standard for preserving privacy. It is based on a setting
+                called Private Aggregation of Teacher Ensembles (PATE), in which we have made several improvements to
+                achieve a better level of accuracy and privacy protection. Specifically, we use a differential private
+                aggregation mechanism called sparse vector technique and combine it with several other improvements such
+                as human-in-the-loop and pre-trained models. Our proposed solution demonstrates the possibility of
+                producing privacy-preserving models that approximate ground-truth models with a fixed privacy budget.
+                These models are capable of handling a large number of training requests, making them suitable for deep
+                learning training processes. Furthermore, our framework can be deployed in both centralized and
+                distributed training settings. We hope that our work will encourage AI practitioners to adopt PETs and
+                build technologies with privacy in mind.</p>
             </div>
           </div>
         </div>
@@ -539,8 +705,28 @@
             </p>
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://arxiv.org/pdf/2603.07091" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 Link</a>
+              <a href="https://github.com/LeoTTTPhat/SLM-ArchBench" target="_blank" class="pub-code"><i
+                  class="fab fa-github"></i> Code</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>In the era of ”Software Engineering 2.0” (SE 2.0), where intelligent agents collaborate with human
+                engineers, Generative AI is advancing beyond code generation into Software Architecture (SA). While
+                Large Language Models (LLMs) demonstrate superior capabilities, computational costs and data privacy
+                concerns drive interest in Small Language Models (SLMs) with fewer than 7 billion parameters. However,
+                the reasoning limits of these resource-constrained models remain unexplored. This study benchmarks 10
+                state-of-the-art SLMs on Architectural Decision Records generation, introducing a multi-dimensional
+                framework evaluating Technical Compliance and Semantic Diversity. Our empirical results reveal a
+                significant reasoning gap: models above the 3B-parameter threshold demonstrate robust zero-shot
+                capabilities, while sub-2B models show the strongest BERTScore gains from Fine-Tuning, though compliance
+                improvements are not guaranteed. Contrary to assumptions regarding context saturation, Few-Shot
+                prompting serves as a highly effective calibration mechanism for select mid-sized models with short
+                context windows. Furthermore, high semantic diversity in offthe-shelf small models often correlates with
+                hallucination rather than productive exploration. These findings establish a rigorous baseline for
+                deploying sustainable, locally hosted architectural assistants.</p>
             </div>
           </div>
         </div>
@@ -556,8 +742,32 @@
                 2026</strong>, Singapore</p>
             <div class="pub-meta">
               <span class="badge badge--red">Workshop at CORE A*</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://openreview.net/forum?id=JnDLZSEwOD" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Underserved and extremely low-resource languages challenge current language technologies, especially
+                when lexical borrowing and synonymy undermine exact-match assumptions. We study Bahnaric-Vietnamese
+                lexical mapping as a step toward meaning-preserving sentence translation. Unlike prior work based on
+                static embeddings and Mean Squared Error (MSE) alignment, we learn sentence-aware word representations
+                with a small multilingual transformer pretrained on Vietnamese, adapt it with Low-rank adaptation (LoRA)
+                for parameter efficiency, and align Bahnaric-Vietnamese pairs using a two-layer projection trained with
+                InfoNCE contrastive loss. We exploit a new community-sourced lexicon of approximately 10,000
+                Bahnaric-Vietnamese pairs collected with local partners, capturing one-to-one, one-to-many, and
+                many-to-one anchor relations as well as extensive lexical borrowing. Experiments evaluate
+                retrieval-style alignment with Precision at K (P@K) and Mean Reciprocal Rank (MRR), as well as sentence
+                translation using top-1 accuracy, Bilingual Evaluation Understudy (BLEU), Character n-gram F-score
+                (ChrF), and embedding-based BERTScore. We also qualitatively analyze cases where n-gram metrics
+                under-credit semantically adequate outputs in synonym-rich settings, and our ablation analysis shows
+                that InfoNCE contrastive training dramatically outperforms MSE regression. On the
+                1k lexicon, our best model attains P@1
+                and MRR
+                , substantially improving over a static-embedding MSE baseline, while on the richer
+                10k community lexicon it reaches comparable sentence-level top-1 accuracy and BERTScore F1 despite
+                slightly lower BLEU and chrF, highlighting both the benefits of the expanded resource and the remaining
+                challenges of synonym-rich, low-frequency vocabulary.</p>
             </div>
           </div>
         </div>
@@ -574,8 +784,25 @@
                 2025</strong>, Shenzhen</p>
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://arxiv.org/pdf/2510.14708" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The Internet of Medical Things (IoMT) has revolutionized healthcare by transforming medical operations
+                into standardized, interoperable services. However, this service-oriented model introduces significant
+                security vulnerabilities in device management and communication, which are especially critical given the
+                sensitivity of medical data. To address these risks, this paper proposes SLIE (Secure and Lightweight
+                Identity Encryption), a novel cryptosystem based on Wildcard Key Derivation Identity-Based Encryption
+                (WKD-IBE). SLIE ensures scalable trust and secure omnidirectional communication through end-to-end
+                encryption, hierarchical access control, and a lightweight key management system designed for
+                resource-constrained devices. It incorporates constanttime operations, memory obfuscation, and
+                expiry-based key revocation to counter side-channel, man-in-the-middle, and unauthorized access attacks,
+                thereby ensuring compliance with standards like HIPAA and GDPR. Evaluations show that SLIE significantly
+                outperforms RSA, with encryption and decryption times of 0.936ms and 0.217ms for 1KB of data, an 84.54%
+                improvement in encryption speed, a 99.70% improvement in decryption speed, and an energy efficiency of
+                0.014 J/KB.</p>
             </div>
           </div>
         </div>
@@ -590,8 +817,22 @@
             <p class="pub-venue"><strong>AIED 2025</strong>, Palermo</p>
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/chapter/10.1007/978-3-031-99264-3_25" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>As large language models (LLMs) become more integrated into daily life, it is crucial to foster AI
+                literacy among high school students. However, most AI courses target college-level learners and assume
+                prior knowledge, while high schools often lack the foundational curriculum and infrastructure for
+                traditional LLM education. To bridge this gap, we present a hackathon-based framework that makes LLM
+                learning accessible, engaging, and hands-on. The program combines interactive lectures on core LLM
+                concepts with a guided competition where students fine-tune models and build real-world applications,
+                such as healthcare chatbots. This approach boosts motivation, programming skills, and practical
+                understanding. Post-hackathon survey results show students gained both functional LLM experience and
+                foundational knowledge. Furthermore, our framework can be extended to broader audiences, including
+                learners without prior AI/NLP experience, offering a rapid, application-driven introduction to LLMs.</p>
             </div>
           </div>
         </div>
@@ -606,8 +847,27 @@
                 2025</strong>, Marbella</p>
             <div class="pub-meta">
               <span class="badge badge--red">CORE C</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/chapter/10.1007/978-3-032-15635-8_10" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The University Course Timetabling Problem (UCTP) is a well-known NP-hard multi-objective optimization
+                problem influenced by variety of factors ranging from institutional policies and facilities,
+                institutional facilities, course characteristics to instructor availability, instructor preferences and
+                the diversity and variability of student registration behaviors. This paper introduces GADA, a novel
+                approach to automate course timetabling. Unlike traditional models that mostly assume static,
+                centralized scheduling, GADA is an adaptive geneticalgorithm-based approach tailored for decentralized,
+                credit-based systems where students independently register for courses and instructors have diverse time
+                preferences. GADA focuses on optimizing course-to-timeslot allocation while satisfying both hard
+                institutional constraints and soft instructor preferences. By automating critical steps in the
+                scheduling workflow, GADA significantly reduces manual effort, increases scheduling flexibility, and
+                adapts efficiently to late-stage registration changes. It has been implemented and evaluated extensively
+                in the real-world environment at the Faculty of Computer Science and Engineering at Ho Chi Minh City
+                University of Technology (CSE@HCMUT). The experimental results demonstrate GADA’s effectiveness and
+                practical applicability in generating conflict-free and operationally feasible schedules while
+                addressing the complex constraints inherent in decentralized academic timetabling.</p>
             </div>
           </div>
         </div>
@@ -623,8 +883,27 @@
               Tunis</p>
             <div class="pub-meta">
               <span class="badge badge--red">Workshop at CORE A</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-96-7238-7_16" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The proliferation of business and social mobile apps has led to an unprecedented surge in personal data
+                processing, raising significant privacy concerns. While the General Data Protection Regulation (GDPR)
+                provides a legal framework for data protection, many app developers struggle to create clear and concise
+                privacy policies that effectively communicate their data practices to users. Existing privacy policy
+                analysis methods, primarily focused on legal compliance, often overlook the qualitative aspects that are
+                crucial for user trust and understanding. To address this gap, this paper introduces GenAI, a novel
+                generative AI model designed to delve deeper into privacy policies and assess their quality against the
+                principles outlined in GDPR Article 5 - “Principles relating to processing of personal data”. GenAI
+                transcends traditional compliance checks by categorizing privacy policies based on “Good" and “Bad"
+                standards, aligning with the GDPR’s core principles. This comprehensive evaluation encompasses both
+                legal compliance and qualitative factors, providing a more nuanced understanding of privacy practices.
+                To validate our approach, we conducted a rigorous analysis of 100 business and 100 social apps,
+                revealing valuable insights into the current state of privacy policy quality. By doing this, our
+                research aims to contribute to a future where privacy policies are not merely legal necessities but
+                fundamental pillars of trust between app developers and users.</p>
             </div>
           </div>
         </div>
@@ -638,8 +917,23 @@
             <p class="pub-venue"><strong>PDCAT 2024</strong>, Hong Kong</p>
             <div class="pub-meta">
               <span class="badge badge--red">CORE C</span>
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://dl.acm.org/doi/abs/10.1007/978-981-96-4207-6_49" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The increasing adoption of electric vehicles (EVs) and integration of renewable energy sources present
+                challenges in energy management and trading that require innovative approaches beyond traditional
+                centralized models. This paper examines the efficacy of employing blockchain technology, the
+                InterPlanetary File System (IPFS), and RSA-encrypted Non-Fungible Tokens (NFTs) to create a
+                decentralized energy trading management system for EVs. By leveraging these technologies, the proposed
+                system addresses the lack of transparency and inefficiencies in traditional models by ensuring secure,
+                transparent, and efficient interactions among energy producers, consumers, and grid operators. The
+                financial viability of implementing this system is evaluated by analyzing transaction fees across
+                various Ethereum Virtual Machine (EVM)-compatible platforms including BNB chain, Fantom, Polygon and
+                Celo for stimulating and identifying cost-effective solutions for the integration of these advanced
+                technologies.</p>
             </div>
           </div>
         </div>
@@ -653,8 +947,25 @@
             <p class="pub-venue"><strong>IMCOM
                 2024</strong>, Kuala Lumpur</p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://ieeexplore.ieee.org/document/10418307" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> IEEE</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Money laundering poses a pervasive threat to the stability and integrity of global financial systems.
+                Since traditional anti-money laundering (AML) methods predominantly rely on rule-based systems and
+                statistical approaches, it has limitations to capture the intricate and interconnected relationships
+                that is inherent in money laundering networks. In response to this challenge, this paper proposes an
+                innovative approach to enhance money laundering detection through transactions. We begin by constructing
+                network graphs from a large dataset of bank transactions. Drawing insights from language modeling and
+                supervised learning, we transform these graphs into directed node representations that effectively
+                encode these intricate relationships and community structures within the transaction network.
+                Subsequently, we utilize Random Forest (RF) to predict suspicious behavior associated with money
+                laundering. Additionally, we address the specific challenges posed by highly imbalanced classes in the
+                context of money laundering detection through both oversampling and undersampling experiments to
+                overcome these challenges. The predictive performance of the RF model with oversampling yielded an
+                accuracy of 86%, whereas when undersampling was applied, the accuracy increased to 92%.</p>
             </div>
           </div>
         </div>
@@ -667,8 +978,28 @@
             <p class="pub-authors">T. K. Dang*, <strong>P. T. Tran-Truong</strong>, Trang T. H. Nguyen</p>
             <p class="pub-venue"><strong>FDSE 2023</strong>, Da Nang</p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-99-8296-7_2" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Federated learning is a recently dominant learning method for crowdsourced learning systems with
+                diverse scales. It plays a pivotal role in smart city operation technologies, such as cross-organization
+                (e.g., hospitals, banks, etc.), Mobile Ad hoc networks (MANETs), Mobile Edge Computing (MEC), Vehicle Ad
+                hoc Networks (VANETs), and Internet of Things (IoTs). Specifically, this method aggregates a global
+                model from local models trained on the private data of clients. To achieve high accuracy and collaborate
+                effectively, federated learning-based crowdsourced systems need to attract sufficient quality clients.
+                Therefore, a proper incentive mechanism is essential to motivate clients to join and contribute to the
+                best of their ability. However, it is challenging to design such a mechanism due to the fact that each
+                client has different system resources, data size, and effort. This implies that if the incentive
+                mechanism is not well-designed, it will lead to a moral hazard situation, where clients may free-ride
+                and the overall accuracy of the global model will undergo a downward spiral. Furthermore, the clients
+                who contribute most to the accuracy of the global model are not necessarily those with the most
+                decorated power and dedicated work. To address these challenges, we propose a joint optimization
+                mechanism that leverages contract theory and Shapley value. This mechanism helps to reveal private
+                information about clients and quantify their contribution to the global model, so that a suitable and
+                equitable incentive can be constituted for each client.</p>
             </div>
           </div>
         </div>
@@ -681,8 +1012,13 @@
             <p class="pub-authors"><strong>P. T. Tran-Truong*</strong> and T. K. Dang^</p>
             <p class="pub-venue"><strong>FDSE 2022</strong>, HCMC</p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-19-8069-5_22" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -695,8 +1031,13 @@
             <p class="pub-venue"><strong>ACOMP
                 2020</strong>, Quy Nhon</p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://ieeexplore.ieee.org/abstract/document/9353086" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> IEEE</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -711,8 +1052,30 @@
                 Tran-Truong</strong>, D.L. Vu</p>
             <p class="pub-venue"><em>Under submission: EuroS&P 2026</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://arxiv.org/abs/2512.12313" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 arXiv</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Software supply chain attacks targeting the npm ecosystem have become increasingly sophisticated,
+                leveraging obfuscation and complex logic to evade traditional detection mechanisms. Recently, large
+                language models (LLMs) have attracted significant attention for malicious code detection due to their
+                strong capabilities in semantic code understanding. However, the practical deployment of LLMs in this
+                domain is severely constrained by limited context windows and high computational costs. Naive
+                approaches, such as token-based code splitting, often fragment semantic context, leading to degraded
+                detection performance. To overcome these challenges, this paper introduces a novel LLM-based framework
+                for malicious npm package detection that leverages code slicing techniques. A specialized taint-based
+                slicing method tailored to the JavaScript ecosystem is proposed to recover malicious data flows. By
+                isolating security-relevant logic from benign boilerplate code, the approach reduces the input code
+                volume by over 99\% while preserving critical malicious behaviors. The framework is evaluated on a
+                curated dataset comprising over \num{7000} malicious and benign npm packages. Experimental results using
+                the DeepSeek-Coder-6.7B model demonstrate that the proposed approach achieves a detection accuracy of
+                \num{87.04}\%, significantly outperforming a full-package baseline based on naive token splitting
+                (\num{75.41}\%). These results indicate that semantically optimized input representations via code
+                slicing not only mitigate the LLM context window bottleneck but also enhance reasoning precision for
+                security analysis, providing an effective defense against evolving open-source software supply chain
+                threats.</p>
             </div>
           </div>
         </div>
@@ -723,6 +1086,27 @@
             <p class="pub-title">Candlestick Is All You Need for Temporal Recognition in Finance</p>
             <p class="pub-authors">Nguyen Quoc Anh*, <strong>P. T. Tran-Truong*</strong>, Son Ha, Phien Nguyen, Trung
               Phan, Thuan Nguyen, Nguyen Chan, Khoa Le</p>
+            <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6431502" target="_blank" class="pub-link"><i
+                  class="fas fa-link"></i>
+                SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Recognizing temporal patterns in financial time series remains a global bottleneck, particularly in
+                cryptocurrency ecosystems where price dynamics exhibit highly non-stationary and volatile behavior
+                across continuous timestamps. Although deep neural networks have been widely applied to analyze
+                directional trends, studying the intricate dependencies among multifaceted influencing factors often
+                leads to overfitting on historical noise, limiting efficient out-of-sample generalization and
+                explainability. This paper introduces a novel approach that transforms sequential cryptocurrency price
+                time series into candlestick chart images and leverages pre-trained vision backbones to perform trend
+                classification in a manner analogous to standard image classification tasks. This method substantially
+                reduces the need for specialized time-series architecture design while providing a broadly applicable
+                learned representation for sequence modeling. Extensive benchmarking under extreme conditions of diverse
+                training regimes, labeling schemes, trading horizons, degrees of missing data, and price sparsity
+                demonstrates strong robustness, with lightweight models attaining near-maximal F1 scores.</p>
+            </div>
           </div>
         </div>
 
@@ -734,8 +1118,27 @@
             <p class="pub-authors">Duy D. Nguyen*, <strong>P. T. Tran-Truong*^</strong></p>
             <p class="pub-venue"><em>arXiv:2603.22002</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://arxiv.org/pdf/2603.22002" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 arXiv</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The advent of Transformer and Mamba-based architectures has significantly advanced 3D medical image
+                segmentation by enabling global contextual modeling, a capability traditionally limited in Convolutional
+                Neural Networks (CNNs). However, state-of-the-art Transformer models often entail substantial
+                computational complexity and parameter counts, which is particularly prohibitive for volumetric data and
+                further exacerbated by the limited availability of annotated medical imaging datasets. To address these
+                limitations, this work introduces SegMaFormer, a lightweight hybrid architecture that synergizes Mamba
+                and Transformer modules within a hierarchical volumetric encoder for efficient long-range dependency
+                modeling. The model strategically employs Mamba-based layers in early, high-resolution stages to reduce
+                computational overhead while capturing essential spatial context, and reserves self-attention mechanisms
+                for later, lower-resolution stages to refine feature representation. This design is augmented with
+                generalized rotary position embeddings to enhance spatial awareness. Despite its compact structure,
+                SegMaFormer achieves competitive performance on three public benchmarks (Synapse, BraTS, and ACDC),
+                matching the Dice coefficient of significantly larger models. Empirically, our approach reduces
+                parameters by up to 75 × and substantially decreases FLOPs compared to current state-of-the-art models,
+                establishing an efficient and high-performing solution for 3D medical image segmentation.</p>
             </div>
           </div>
         </div>
@@ -750,8 +1153,28 @@
             <p class="pub-venue"><em>Under submission: Elsevier's
                 Ad Hoc Networks</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://arxiv.org/abs/2603.01876" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 arXiv</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The proliferation of IoT and V2X systems generates unprecedented sensitive data at the network edge,
+                demanding privacy-preserving architectures that enable secure sharing without exposing raw information.
+                Contemporary solutions face a fundamental privacy-efficiency-trust trilemma: achieving strong privacy
+                guarantees, computational efficiency for resource-constrained devices, and decentralized trust
+                simultaneously remains intractable with single-paradigm approaches. This survey systematically analyzes
+                75 technical papers (2007--2025) through a novel three-dimensional taxonomy classifying architectures
+                into Decentralized Computation, Cryptography-based, and Distributed Ledger approaches. Temporal analysis
+                reveals dramatic acceleration during 2024--2025, with 48% of all papers published in this period --
+                Decentralized Computation dominates at 44% of contributions and 59% of 2025 publications. Comprehensive
+                Security Threat Mapping and Technology Maturity Assessment demonstrate that mature solutions occupy
+                narrow design regions excelling in one or two dimensions while compromising others, conclusively
+                validating the trilemma hypothesis. We identify emerging hybrid architectures combining complementary
+                paradigms as the essential path forward. Critical challenges including security guarantee composition
+                across layers, multi-layer coordination overhead minimization, and post-quantum security integration
+                must be addressed for practical deployment in next-generation intelligent transportation systems and IoT
+                ecosystems.</p>
             </div>
           </div>
         </div>
@@ -765,8 +1188,26 @@
             <p class="pub-venue"><em>Under submission: Elsevier's
                 Information Sciences</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6022654" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>The rapid response required during health crises like the COVID-19 pandemic underscores the critical
+                need for real-time collaboration on data from wearable devices. However, aggregating such sensitive
+                information across institutional boundaries faces a fundamental conflict: ensuring robust statistical
+                utility while strictly maintaining patient privacy and data sovereignty. Existing solutions often
+                struggle to balance these needs, either sacrificing privacy for speed or incurring prohibitive
+                computational costs. This paper presents PA-EWD, a novel system that resolves this tension by
+                integrating: (1) Edge-optimized Hierarchical Identity-Based Encryption (HIBE) for fine-grained access
+                control; (2) Secure Multi-Party Computation (MPC) for aggregating statistics without decrypting raw
+                data; (3) Adaptive Differential Privacy (DP) to guarantee output indistinguishability; and (4) An
+                immutable blockchain ledger for query provenance. Evaluation on the LifeSnaps dataset demonstrates that
+                PA-EWD achieves a query latency of approximately 1.5 milliseconds—a 55$\times$ speedup over homomorphic
+                encryption baselines—while maintaining 99.7\% utility ($\varepsilon=1.0$). These findings demonstrate
+                that rigorous privacy and institutional autonomy can coexist with the high-throughput analytics required
+                for modern healthcare.</p>
             </div>
           </div>
         </div>
@@ -781,8 +1222,13 @@
             <p class="pub-venue"><em>Under submission: Elsevier's
                 Computer Networks</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6328396" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -797,8 +1243,13 @@
             <p class="pub-venue"><em>Under submission:
                 Information Processing &amp; Management</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5822942" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -824,8 +1275,13 @@
               Minh Nguyen, Tung Nguyen</p>
             <p class="pub-venue"><em>Under review: Journal of Parallel and Distributed Computing</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5878342" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -839,8 +1295,13 @@
             <p class="pub-venue"><em>Under review: Cluster
                 Computing</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://www.researchsquare.com/article/rs-7442795/v1" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
@@ -866,8 +1327,13 @@
             <p class="pub-venue"><em>1st revision under
                 review: Computers &amp; Security</em></p>
             <div class="pub-meta">
+              <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5064588" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
+            </div>
+            <div class="pub-abstract">
+              <h4 class="abstract-title">Abstract</h4>
+              <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
           </div>
         </div>
