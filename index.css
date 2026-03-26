@@ -538,6 +538,102 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
   backdrop-filter:blur(var(--card-blur));
   transition:all var(--transition-fast);
 }
+
+.pub-scholar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 20px;
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--accent-1);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  margin-top: 0.5rem;
+}
+
+.pub-scholar-link i {
+  font-size: 1.1rem;
+}
+
+.pub-scholar-link:hover {
+  background: var(--accent-1);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+
+/* --- Publication Search --- */
+.pub-search-container {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.pub-search-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pub-search-group:focus-within {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.search-icon {
+  color: var(--accent-1);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+#pub-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  width: 100%;
+}
+
+#pub-search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+#pub-search-clear {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 5px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+#pub-search-clear.visible {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+#pub-search-clear:hover {
+  opacity: 1;
+  color: var(--accent-1);
+}
+
 .pub-item:hover{border-color:var(--border-glow);transform:translateX(4px);}
 .pub-item.hidden{display:none;}
 .pub-year{
@@ -617,6 +713,86 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, rgba(99, 102, 241, 0.2), transparent);
+}
+
+.pub-bibtex-btn {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--accent-3);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.pub-bibtex-btn:hover {
+  background: var(--accent-3);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.pub-bibtex-btn.active {
+  background: var(--accent-1);
+  color: #fff;
+  border-color: var(--accent-1);
+}
+
+.pub-bibtex {
+  display: none;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid var(--accent-3);
+  border-radius: 0 12px 12px 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  animation: slideDown 0.4s var(--ease) forwards;
+  position: relative;
+}
+
+.pub-bibtex.active {
+  display: block;
+}
+
+.bibtex-wrapper {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+.pub-bibtex pre {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+}
+
+.copy-bibtex {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-bibtex:hover {
+  background: var(--accent-1);
+  color: #fff;
 }
 
 @keyframes slideDown {
