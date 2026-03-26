@@ -146,7 +146,7 @@
             <li>AgentOps</li>
             <li>DevSecOps</li>
             <li>Software Maintenance</li>
-            <li>Automated Software Engineering</li>
+            <li>Automatic Software Engineering</li>
           </ul>
         </div>
       </div>
@@ -354,10 +354,19 @@
       <h2 class="section-title reveal">Publications</h2>
       <p class="section-subtitle reveal">
         <a href="https://scholar.google.com/citations?user=id3PATEAAAAJ&view_op=list_works&sortby=pubdate"
-          target="_blank" rel="noopener">
+          target="_blank" rel="noopener" class="pub-scholar-link">
           <i class="ai ai-google-scholar"></i> View on Google Scholar →
         </a>
       </p>
+
+      <!-- Search Bar -->
+      <div class="pub-search-container reveal">
+        <div class="pub-search-group">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="pub-search-input" placeholder="Search publications by title, author, or venue..." aria-label="Search publications" />
+          <button id="pub-search-clear" aria-label="Clear search"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
 
       <!-- Filter buttons -->
       <div class="pub-filters reveal">
@@ -375,7 +384,7 @@
       <div class="pub-list" id="pub-list">
 
         <!-- ===== JOURNALS ===== -->
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[JNCA'26] POP2TIC: Performance Optimization for Privacy-Preserving Fog Computing using
@@ -386,6 +395,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 8.0</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S1084804526000536" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -406,10 +416,25 @@
                 demonstrates 3.16 ms average latency (75.3% reduction vs. existing fog solutions) and 91.7% attack
                 detection rate while consuming 135% CPU and 299MB memory.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2026caching,
+  title={POP2TIC: Performance Optimization for Privacy-Preserving Fog Computing using
+              TEE and Intelligent Caching},
+  author={P. T. Tran-Truong and Trung Mai and Ha X Son and Phien Nguyen-Ngoc and Bang K
+              Le and Khanh H Vo and Ngan NT Kim and Triet M Nguyen and Anh T Nguyen},
+  journal={Journal of Network and Computer Applications},
+  year={2026},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[CAEAI'26] Enhancing Large Language Model Performance for Automatic Zero-Shot MCQ
@@ -421,6 +446,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">ESCI Q1 · Top 1 Education</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S2666920X26000408" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
               <a href="https://github.com/LeoTTTPhat/STL-Prompting-For-ZeroShot-MCQA" target="_blank"
@@ -445,10 +471,26 @@
                 combined ARC dataset with Mistral 7B—a 9.36 percentage point gain over the original no-context baseline
                 (LTL) of 71.7%.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{dang2026prompting,
+  title={Enhancing Large Language Model Performance for Automatic Zero-Shot MCQ
+              Answering via Single-Token Logit Prompting},
+  author={P. Q. Dang and P. T. Tran-Truong and Duc-Ly Vu and Long S. T. Nguyen and Quynh
+              T. N. Vo and Tho Quan},
+  journal={Computers &amp;
+                Education: Artificial Intelligence},
+  year={2026},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[COMNET'26] PrivacyGuard: A Hierarchical Privacy-Preserving Framework for IoT-Fog-Cloud
@@ -460,6 +502,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 4.6</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S1389128626000885" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -477,10 +520,26 @@
                 demonstrate sub-100ms P99 latency (97.03ms) for single requests, graceful degradation to 2,059ms under
                 100 concurrent users, 91.7% MITM resistance, and 6.37× cache speedup.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2026architectures,
+  title={PrivacyGuard: A Hierarchical Privacy-Preserving Framework for IoT-Fog-Cloud
+              Architectures},
+  author={P. T. Tran-Truong and Trung Mai and Ha X. Son and Phien Nguyen-Ngoc and Bang
+              K. Le and Khanh H. Vo and Ngan N. T. Kim and Triet M. Nguyen and Anh T. Nguyen},
+  journal={Computer
+                Networks},
+  year={2026},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[EAAI'26] LiteFormer: A Lightweight Encoder-Only Transformer for Efficient Financial
@@ -492,6 +551,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 8.0</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197625037133" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -517,10 +577,26 @@
                 scalable solution with potential for multivariate extensions and real-world multi-modal applications in
                 predictive domain.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{anh2026forecasting,
+  title={LiteFormer: A Lightweight Encoder-Only Transformer for Efficient Financial
+              Time Series Forecasting},
+  author={Nguyen Quoc Anh and Tran Truong Tuan Phat and Ha Xuan Son and Thai Thi
+              Thanh Nhan and Nguyen Ngoc Phien Tuan and Trung Phan Hoang and Ngan Nguyen Thi Kim},
+  journal={Engineering
+                Applications of Artificial Intelligence},
+  year={2026},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[PMC'25] SecureWearTrade: A Comprehensive Blockchain-Enabled IoT Framework for Secure
@@ -532,6 +608,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 3.5</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.sciencedirect.com/science/article/pii/S1574119225001191" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -551,10 +628,25 @@
                 privacy-preserving data trading, SecureWearTrade offers a scalable and trustworthy solution for the
                 IoT-Cloud continuum.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2025devices,
+  title={SecureWearTrade: A Comprehensive Blockchain-Enabled IoT Framework for Secure
+              Personal Data Trading from Wearable Devices},
+  author={Phat T. Tran-Truong and Trung Mai and Ha Son and Phien Nguyen and Tuan
+              Le and Triet Nguyen and Khanh Vo and Bang Le and Ngan Nguyen and Minh Nguyen and Anh Nguyen and Tung Nguyen},
+  journal={Pervasive and Mobile Computing},
+  year={2025},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[HCCOM'25] TACKLE: Time-based Access Control and Key Delegation for Letter of Credit
@@ -565,6 +657,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 3.0</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://doi.org/10.1016/j.hcc.2025.100369" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -583,10 +676,25 @@
                 features and performance, TACKLE is a promising solution for modernizing international trade finance.
               </p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2025ecosystems,
+  title={TACKLE: Time-based Access Control and Key Delegation for Letter of Credit
+              Ecosystems},
+  author={Phat T. Tran-Truong and Ha X Son and Vo H Khanh and Nguyen M Triet and Nguyen
+              T Anh and Le K Bang and Nguyen TK Ngan},
+  journal={High-Confidence Computing},
+  year={2025},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[IJIS'25] CI2P-MedHFDroid: A Context-Aware Individual Privacy Preferences Model for
@@ -598,6 +706,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q2 · IF 3.2</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/article/10.1007/s10207-025-01098-w" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -618,10 +727,26 @@
                 developers to design transparent, user-centric privacy mechanisms. By balancing functionality and
                 privacy, CI2P-MedHFDroid offers a scalable, adaptive solution to enhance trust in healthcare apps.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{nguyen2025apps,
+  title={CI2P-MedHFDroid: A Context-Aware Individual Privacy Preferences Model for
+              Medical, Health &amp; Fitness Android Apps},
+  author={Phien N. Nguyen and P. T. Tran-Truong and Ha Xuan Son and Vo H Khanh and Triet
+              M Nguyen and Luong H Huong and Bang K Le and Ngan T. K. Nguyen},
+  journal={International
+                Journal of Information Security},
+  year={2025},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[JSA'25] A Systematic Review of Multi-Factor Authentication in Digital Payment Systems:
@@ -633,6 +758,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">SCIE Q1 · IF 4.1</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://doi.org/10.1016/j.sysarc.2025.103402" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -653,10 +779,26 @@
                 practitioners, and policymakers working to enhance the security and usability of digital payment
                 authentication systems.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2025analysis,
+  title={A Systematic Review of Multi-Factor Authentication in Digital Payment Systems:
+              NIST Standards Alignment and Industry Implementation Analysis},
+  author={Phat T. Tran-Truong and Minh Pham and Ha Son and Dat Nguyen and Minh
+              Nguyen and Khiem Tran and Loc CP Van and Kiet Le and Khanh Vo and Ngan Kim and Triet Nguyen and Anh Nguyen},
+  journal={Journal of Systems
+                Architecture},
+  year={2025},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="journal">
+        <div class="pub-item reveal" data-topic="ai" data-type="journal">
           <span class="pub-year">2024</span>
           <div class="pub-details">
             <p class="pub-title">[SNCS'24] A Pragmatic Privacy-Preserving Deep Learning Framework Satisfying
@@ -667,6 +809,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">Scopus Q2 · IF 3.1</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/article/10.1007/s42979-023-02437-1" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -690,11 +833,26 @@
                 distributed training settings. We hope that our work will encourage AI practitioners to adopt PETs and
                 build technologies with privacy in mind.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@article{tran-truong2024privacy,
+  title={A Pragmatic Privacy-Preserving Deep Learning Framework Satisfying
+              Differential Privacy},
+  author={T. K. Dang and Phat T. Tran-Truong},
+  journal={SN Computer
+                Science},
+  year={2024},
+  publisher={Elsevier}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ===== CONFERENCES ===== -->
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[ICSA'26] Exploring the Reasoning Depth of Small Language Models in Software
@@ -706,6 +864,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://arxiv.org/pdf/2603.07091" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 Link</a>
               <a href="https://github.com/LeoTTTPhat/SLM-ArchBench" target="_blank" class="pub-code"><i
@@ -728,10 +887,24 @@
                 hallucination rather than productive exploration. These findings establish a rigorous baseline for
                 deploying sustainable, locally hosted architectural assistants.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{vo2026architecture,
+  title={Exploring the Reasoning Depth of Small Language Models in Software
+              Architecture},
+  author={Ha Vo and Nhut Tran and Khang Vo and Phat T Tran-Truong and Son Ha},
+  booktitle={IEEE
+                ICSA 2026},
+  year={2026}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[LM4UC@AAAI] Sentence-Aware Bahnaric-Vietnamese Lexical Mapping with Contrastive
@@ -743,6 +916,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">Workshop at CORE A*</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://openreview.net/forum?id=JnDLZSEwOD" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -769,10 +943,25 @@
                 slightly lower BLEU and chrF, highlighting both the benefits of the expanded resource and the remaining
                 challenges of synonym-rich, low-frequency vocabulary.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2026representations,
+  title={Sentence-Aware Bahnaric-Vietnamese Lexical Mapping with Contrastive
+              Contextual Representations},
+  author={Ty Nguyen and P. T. Tran-Truong and Long Nguyen and Tan Sang Nguyen and Tho
+              Quan},
+  booktitle={LM4UC Workshop, AAAI
+                2026},
+  year={2026}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[ICSOC'25] SLIE: A Secure and Lightweight Cryptosystem for Data Sharing in IoT
@@ -785,6 +974,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://arxiv.org/pdf/2510.14708" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 Link</a>
             </div>
@@ -804,10 +994,25 @@
                 improvement in encryption speed, a 99.70% improvement in decryption speed, and an energy efficiency of
                 0.014 J/KB.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{son2025services,
+  title={SLIE: A Secure and Lightweight Cryptosystem for Data Sharing in IoT
+              Healthcare Services},
+  author={Ha Xuan Son and Nguyen Quoc Anh and P. T. Tran-Truong and Le Thanh Tuan and Pham
+              Thanh Nghiem},
+  booktitle={ICSOC
+                2025},
+  year={2025}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[AIED'25] Riding on The Back of A Whale: A Hackathon Framework for Introducing High
@@ -818,6 +1023,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">CORE A</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/chapter/10.1007/978-3-031-99264-3_25" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -834,10 +1040,24 @@
                 foundational knowledge. Furthermore, our framework can be extended to broader audiences, including
                 learners without prior AI/NLP experience, offering a rapid, application-driven introduction to LLMs.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2025llms,
+  title={Riding on The Back of A Whale: A Hackathon Framework for Introducing High
+              School Students to LLMs},
+  author={Duc Nguyen and Dong Le and Long Nguyen and Quyen Vu and Tran Le and Dung Nguyen and Nga Huynh and Huong
+              Nguyen and Phat Tran and Dang Le and Sang Truong and Sanmi Koyejo and Cuong Le and Tho Quan},
+  booktitle={AIED 2025},
+  year={2025}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[IJCCI'25] GADA: An Adaptive Genetic Algorithm-Based Framework for Dynamic University
@@ -848,6 +1068,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">CORE C</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/chapter/10.1007/978-3-032-15635-8_10" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -869,10 +1090,24 @@
                 practical applicability in generating conflict-free and operationally feasible schedules while
                 addressing the complex constraints inherent in decentralized academic timetabling.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2025timetabling,
+  title={GADA: An Adaptive Genetic Algorithm-Based Framework for Dynamic University
+              Course Timetabling},
+  author={Tam Nguyen and P. T. Tran-Truong and Anh Tuan Truong},
+  booktitle={IJCCI
+                2025},
+  year={2025}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2024</span>
           <div class="pub-details">
             <p class="pub-title">[ICSOCW'24] Decoding the Privacy Policy Implications of Personal Data Processing: A
@@ -884,6 +1119,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">Workshop at CORE A</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-96-7238-7_16" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -905,10 +1141,24 @@
                 research aims to contribute to a future where privacy policies are not merely legal necessities but
                 fundamental pillars of trust between app developers and users.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{tran-truong2024compliance,
+  title={Decoding the Privacy Policy Implications of Personal Data Processing: A
+              Framework for GDPR Compliance},
+  author={P. T. Tran-Truong and Nghiem Pham and Trung Phan and Bao
+              Tran and Nam Tran and Ngan Nguyen and Hieu Doan and Khiem Huynh},
+  booktitle={ICSOC Workshops 2024},
+  year={2024}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2024</span>
           <div class="pub-details">
             <p class="pub-title">[PDCAT'24] Decentralizing Energy Trading for Electric Vehicles using Blockchain
@@ -918,6 +1168,7 @@
             <div class="pub-meta">
               <span class="badge badge--red">CORE C</span>
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://dl.acm.org/doi/abs/10.1007/978-981-96-4207-6_49" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -935,10 +1186,23 @@
                 Celo for stimulating and identifying cost-effective solutions for the integration of these advanced
                 technologies.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{tran-truong2024technology,
+  title={Decentralizing Energy Trading for Electric Vehicles using Blockchain
+              Technology},
+  author={P. T. Tran-Truong and Phan Hoang Tuan Trung and Le K Bang},
+  booktitle={PDCAT 2024},
+  year={2024}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2024</span>
           <div class="pub-details">
             <p class="pub-title">[IMCOM'24] Money Laundering Detection using A Transaction-based Graph Learning Approach
@@ -948,6 +1212,7 @@
                 2024</strong>, Kuala Lumpur</p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://ieeexplore.ieee.org/document/10418307" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> IEEE</a>
             </div>
@@ -967,10 +1232,23 @@
                 overcome these challenges. The predictive performance of the RF model with oversampling yielded an
                 accuracy of 86%, whereas when undersampling was applied, the accuracy increased to 92%.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2024approach,
+  title={Money Laundering Detection using A Transaction-based Graph Learning Approach},
+  author={H. H. X. Nguyen and T. K. Dang and P. T. Tran-Truong},
+  booktitle={IMCOM
+                2024},
+  year={2024}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2023</span>
           <div class="pub-details">
             <p class="pub-title">[FDSE'23] An Enhanced Incentive Mechanism for Crowdsourced Federated Learning Based on
@@ -979,6 +1257,7 @@
             <p class="pub-venue"><strong>FDSE 2023</strong>, Da Nang</p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-99-8296-7_2" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -1001,10 +1280,23 @@
                 information about clients and quantify their contribution to the global model, so that a suitable and
                 equitable incentive can be constituted for each client.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{dang2023value,
+  title={An Enhanced Incentive Mechanism for Crowdsourced Federated Learning Based on
+              Contract Theory and Shapley Value},
+  author={T. K. Dang and P. T. Tran-Truong and Trang T. H. Nguyen},
+  booktitle={FDSE 2023},
+  year={2023}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2022</span>
           <div class="pub-details">
             <p class="pub-title">[FDSE'22] pPATE: A Pragmatic Private Aggregation of Teacher Ensembles Framework by
@@ -1013,6 +1305,7 @@
             <p class="pub-venue"><strong>FDSE 2022</strong>, HCMC</p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://link.springer.com/chapter/10.1007/978-981-19-8069-5_22" target="_blank"
                 class="pub-link"><i class="fas fa-link"></i> Link</a>
             </div>
@@ -1020,10 +1313,23 @@
               <h4 class="abstract-title">Abstract</h4>
               <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{dang2022humanintheloop,
+  title={pPATE: A Pragmatic Private Aggregation of Teacher Ensembles Framework by
+              SVT-Based Differential Privacy, Paillier Cryptosystem and Human-in-the-loop},
+  author={P. T. Tran-Truong and T. K. Dang},
+  booktitle={FDSE 2022},
+  year={2022}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="conference">
+        <div class="pub-item reveal" data-topic="ai" data-type="conference">
           <span class="pub-year">2020</span>
           <div class="pub-details">
             <p class="pub-title">[ACOMP'20] Data Poisoning Attack on Deep Neural Network and Some Defense Methods</p>
@@ -1032,6 +1338,7 @@
                 2020</strong>, Quy Nhon</p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://ieeexplore.ieee.org/abstract/document/9353086" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> IEEE</a>
             </div>
@@ -1039,11 +1346,24 @@
               <h4 class="abstract-title">Abstract</h4>
               <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{dang2020methods,
+  title={Data Poisoning Attack on Deep Neural Network and Some Defense Methods},
+  author={T. K. Dang and P. T. T. Truong and and P. T. Tran},
+  booktitle={ACOMP
+                2020},
+  year={2020}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ===== PREPRINTS ===== -->
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[EuroS&P] Taint-Based Code Slicing for LLMs-based Malicious NPM Package Detection</p>
@@ -1053,6 +1373,7 @@
             <p class="pub-venue"><em>Under submission: EuroS&P 2026</em></p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://arxiv.org/abs/2512.12313" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 arXiv</a>
             </div>
@@ -1077,10 +1398,24 @@
                 security analysis, providing an effective defense against evolving open-source software supply chain
                 threats.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2026detection,
+  title={Taint-Based Code Slicing for LLMs-based Malicious NPM Package Detection},
+  author={D.K. Nguyen and G.T. Ho and Q.M. Pham and T.A. Dang-Thi and M.K. Vu and T.C. Nguyen and P.
+                T.
+                Tran-Truong and D.L. Vu},
+  booktitle={P. T. Tran-Truong*},
+  year={2026}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">Candlestick Is All You Need for Temporal Recognition in Finance</p>
@@ -1110,7 +1445,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">SegMaFormer: A Hybrid State-Space and Transformer Model for Efficient
@@ -1119,6 +1454,7 @@
             <p class="pub-venue"><em>arXiv:2603.22002</em></p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://arxiv.org/pdf/2603.22002" target="_blank" class="pub-link"><i class="fas fa-link"></i>
                 arXiv</a>
             </div>
@@ -1140,10 +1476,23 @@
                 parameters by up to 75 × and substantially decreases FLOPs compared to current state-of-the-art models,
                 establishing an efficient and high-performing solution for 3D medical image segmentation.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{nguyen2026segmentation,
+  title={SegMaFormer: A Hybrid State-Space and Transformer Model for Efficient
+              Segmentation},
+  author={Duy D. Nguyen and P. T. Tran-Truong},
+  booktitle={Phat T. Tran-Truong*},
+  year={2026}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[AdHoc] Systematic Survey on Privacy-Preserving Architectures for IoT and Vehicular
@@ -1179,7 +1528,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2026</span>
           <div class="pub-details">
             <p class="pub-title">[InfoSci] PA-EWD: Privacy-Preserving Federated Analytics on Encrypted Wearable Data</p>
@@ -1189,6 +1538,7 @@
                 Information Sciences</em></p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6022654" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
             </div>
@@ -1209,10 +1559,22 @@
                 that rigorous privacy and institutional autonomy can coexist with the high-throughput analytics required
                 for modern healthcare.</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{tran-truong2026data,
+  title={PA-EWD: Privacy-Preserving Federated Analytics on Encrypted Wearable Data},
+  author={Phat T. Tran-Truong and S Ha and PN Nguyen and DTP Dang and VH Khanh and PT Lam and MT Nguyen and AN Le},
+  booktitle={Phat T. Tran-Truong*},
+  year={2026}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[ComNet] Urban Sentinel: Hierarchical Time-Bound Cryptographic Access Control for Smart
@@ -1233,7 +1595,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[IPM] Generative AI for User Experience: A Holistic Taxonomy of Tools across the Design
@@ -1244,6 +1606,7 @@
                 Information Processing &amp; Management</em></p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5822942" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> SSRN</a>
             </div>
@@ -1251,10 +1614,24 @@
               <h4 class="abstract-title">Abstract</h4>
               <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{tran-truong2025framework,
+  title={Generative AI for User Experience: A Holistic Taxonomy of Tools across the Design
+              Thinking Framework},
+  author={P. T. Tran-Truong and Kiet Le and Son Ha and Phien Nguyen and Chan Nguyen and Vo
+              Khanh and Phat Lam and Minh Nguyen and Khoa Le},
+  booktitle={P. T. Tran-Truong*},
+  year={2025}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[MONET] SPM-HealSer: Hierarchical Identity-Based Encryption for Scalable
@@ -1266,7 +1643,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[JPDC] SHIELD-Traffic: A Comprehensive Fog-Assisted Architecture for Secure and
@@ -1286,7 +1663,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[Cluster] CertiMed: Identity-Aware Access Framework for Electronic Health Records</p>
@@ -1296,6 +1673,7 @@
                 Computing</em></p>
             <div class="pub-meta">
               <button class="pub-abstract-btn"><i class="fas fa-file-alt"></i> Abstract</button>
+              <button class="pub-bibtex-btn"><i class="fas fa-quote-right"></i> BibTeX</button>
               <a href="https://www.researchsquare.com/article/rs-7442795/v1" target="_blank" class="pub-link"><i
                   class="fas fa-link"></i> Link</a>
             </div>
@@ -1303,10 +1681,23 @@
               <h4 class="abstract-title">Abstract</h4>
               <p>Abstract content for this publication. (Toggle to read more)</p>
             </div>
+            <div class="pub-bibtex">
+              <h4 class="abstract-title">BibTeX</h4>
+              <div class="bibtex-wrapper">
+                <pre><code>@inproceedings{son2025records,
+  title={CertiMed: Identity-Aware Access Framework for Electronic Health Records},
+  author={Ha X. Son and P. T. Tran-Truong and Hieu T Thai and Binh T Nguyen and Minh N
+              Nguyen and Phien N Nguyen and Khanh H Vo and Triet M Nguyen and Bang K Le and Ngan TK Nguyen},
+  booktitle={P. T. Tran-Truong*},
+  year={2025}
+}</code></pre>
+                <button class="copy-bibtex" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2025</span>
           <div class="pub-details">
             <p class="pub-title">[TOPS] Bpids: A Blockchain-Based Personal IoT Data Storage Framework with Time-Bounded
@@ -1318,7 +1709,7 @@
           </div>
         </div>
 
-        <div class="pub-item reveal" data-type="preprint">
+        <div class="pub-item reveal" data-topic="ai" data-type="preprint">
           <span class="pub-year">2024</span>
           <div class="pub-details">
             <p class="pub-title">[COSE] Acb: Authority Control Bluetooth Devices in Smarthome Environment System</p>
