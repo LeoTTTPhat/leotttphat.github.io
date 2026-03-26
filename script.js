@@ -59,11 +59,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /* ---------- Publication filter ---------- */
+  /* ---------- Publication Search & Filter ---------- */
   const filterBtns = document.querySelectorAll('.pub-filter-btn');
   const pubItems = document.querySelectorAll('.pub-item');
+  const searchInput = document.getElementById('pub-search-input');
+  const searchClear = document.getElementById('pub-search-clear');
 
-  /* Inject paper counts into filter buttons */
+  const updateFilters = () => {
+    const activeFilter = document.querySelector('.pub-filter-btn.active').dataset.filter;
+    const searchQuery = searchInput.value.toLowerCase().trim();
+    
+    // Toggle clear button visibility
+    searchClear.classList.toggle('visible', searchQuery.length > 0);
+
+    pubItems.forEach(item => {
+      const typeMatch = activeFilter === 'all' || item.dataset.type === activeFilter;
+      
+      // Get searchable text (Title, Authors, Venue)
+      const title = item.querySelector('.pub-title').textContent.toLowerCase();
+      const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
+      const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
+      
+      const searchMatch = !searchQuery || 
+                          title.includes(searchQuery) || 
+                          authors.includes(searchQuery) || 
+                          venue.includes(searchQuery);
+
+      if (typeMatch && searchMatch) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  };
+
+  /* Category filter buttons */
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateFilters();
+    });
+  });
+
+  /* Search input */
+  searchInput.addEventListener('input', updateFilters);
+
+  /* Clear search */
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    updateFilters();
+    searchInput.focus();
+  });
+
+  /* Inject paper counts into filter buttons (count all regardless of search) */
   const totalCount = pubItems.length;
   const countByType = {};
   pubItems.forEach(item => {
@@ -73,23 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
   filterBtns.forEach(btn => {
     const f = btn.dataset.filter;
     const n = f === 'all' ? totalCount : (countByType[f] || 0);
-    btn.innerHTML = `${btn.textContent} <span class="pub-count">${n}</span>`;
-  });
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-
-      pubItems.forEach(item => {
-        if (filter === 'all' || item.dataset.type === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
+    const label = btn.textContent.split(' ')[0]; // Preserve original name
+    btn.innerHTML = `${label} <span class="pub-count">${n}</span>`;
   });
   
   /* ---------- Abstract toggle ---------- */
@@ -139,6 +173,60 @@ document.addEventListener('DOMContentLoaded', () => {
       theme = 'light';
     }
     localStorage.setItem('theme', theme);
+  });
+
+  /* ---------- BibTeX toggle ---------- */
+  const bibtexBtns = document.querySelectorAll('.pub-bibtex-btn');
+  bibtexBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pubItem = btn.closest('.pub-item');
+      const bibtexDiv = pubItem.querySelector('.pub-bibtex');
+      
+      if (bibtexDiv) {
+        const isVisible = bibtexDiv.classList.contains('active');
+        
+        if (isVisible) {
+          bibtexDiv.classList.remove('active');
+          btn.classList.remove('active');
+          btn.innerHTML = '<i class="fas fa-quote-right"></i> BibTeX';
+        } else {
+          // Optional: close abstracts if citation opened
+          const abstractDiv = pubItem.querySelector('.pub-abstract');
+          if (abstractDiv && abstractDiv.classList.contains('active')) {
+            abstractDiv.classList.remove('active');
+            const absBtn = pubItem.querySelector('.pub-abstract-btn');
+            if (absBtn) {
+              absBtn.classList.remove('active');
+              absBtn.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
+            }
+          }
+
+          bibtexDiv.classList.add('active');
+          btn.classList.add('active');
+          btn.innerHTML = '<i class="fas fa-times"></i> Close';
+        }
+      }
+    });
+  });
+
+  /* ---------- Copy BibTeX to clipboard ---------- */
+  const copyBtns = document.querySelectorAll('.copy-bibtex');
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bibtexBlock = btn.parentElement.querySelector('pre code');
+      if (bibtexBlock) {
+        const text = bibtexBlock.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          const originalIcon = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i>';
+          btn.style.background = 'var(--accent-2)';
+          setTimeout(() => {
+            btn.innerHTML = originalIcon;
+            btn.style.background = '';
+          }, 2000);
+        });
+      }
+    });
   });
 
   /* ---------- Smooth scroll for nav links ---------- */
