@@ -636,6 +636,9 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
 
 .pub-item:hover{border-color:var(--border-glow);transform:translateX(4px);}
 .pub-item.hidden{display:none;}
+.pub-item {
+  min-width: 0; /* Prevent flex children from expanding */
+}
 .pub-year{
   flex-shrink:0;
   font-size:.82rem;font-weight:800;
@@ -643,7 +646,10 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
   min-width:42px;
   padding-top:2px;
 }
-.pub-details{flex:1;}
+.pub-details {
+  flex: 1;
+  min-width: 0; /* Prevent flex children from expanding */
+}
 .pub-details .pub-title{font-size:.92rem;font-weight:600;margin-bottom:.3rem;}
 .pub-details .pub-authors{color:var(--text-secondary);font-size:.84rem;margin-bottom:.2rem;}
 .pub-details .pub-venue{color:var(--text-secondary);font-size:.84rem;margin-bottom:.4rem;font-style:italic;}
@@ -765,29 +771,56 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
 .bibtex-wrapper {
   position: relative;
   background: rgba(0, 0, 0, 0.2);
-  padding: 1rem;
   border-radius: 8px;
   margin-top: 0.5rem;
-  overflow-x: auto;
+  /* overflow moved to pre */
+}
+
+/* Custom scrollbar for BibTeX */
+.pub-bibtex pre::-webkit-scrollbar {
+  height: 6px;
+}
+.pub-bibtex pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.pub-bibtex pre::-webkit-scrollbar-thumb {
+  background: var(--accent-3);
+  border-radius: 10px;
 }
 
 .pub-bibtex pre {
   margin: 0;
+  padding: 1.2rem;
+  padding-right: 3.5rem; /* Space for copy button */
   font-family: 'JetBrains Mono', monospace;
   color: var(--text-primary);
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto; /* Scroll here instead of wrapper */
+  display: block;
+}
+
+.pub-bibtex code {
+  white-space: pre;
+  display: block; /* Ensure it behaves as a block to avoid inline gaps */
+  margin: 0;
+  padding: 0;
 }
 
 .copy-bibtex {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 0.75rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-secondary);
-  padding: 5px 8px;
-  border-radius: 4px;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+  z-index: 5;
 }
 
 .copy-bibtex:hover {
