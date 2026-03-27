@@ -607,6 +607,27 @@ body.light #theme-icon-light{display:block;color:#f59e0b;}
   width: 100%;
 }
 
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-card);
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 #pub-search-input::placeholder {
   color: var(--text-secondary);
   opacity: 0.6;
