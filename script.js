@@ -66,19 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchClear = document.getElementById('pub-search-clear');
 
   const updateFilters = () => {
-    const activeFilter = document.querySelector('.pub-filter-btn.active').dataset.filter;
+    const activeFilterBtn = document.querySelector('.pub-filter-btn.active');
+    const activeFilter = activeFilterBtn ? activeFilterBtn.dataset.filter : 'all';
     const searchQuery = searchInput.value.toLowerCase().trim();
     
     // Toggle clear button visibility
     searchClear.classList.toggle('visible', searchQuery.length > 0);
 
-    pubItems.forEach(item => {
-      const typeMatch = activeFilter === 'all' || item.dataset.type === activeFilter;
+    const currentItems = document.querySelectorAll('.pub-item');
+    currentItems.forEach(item => {
+      const type = item.getAttribute('data-type') || '';
+      const typeMatch = (activeFilter === 'all' || type === activeFilter);
       
-      // Get searchable text (Title, Authors, Venue)
-      const title = item.querySelector('.pub-title').textContent.toLowerCase();
-      const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
-      const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
+      const title = (item.querySelector('.pub-title')?.textContent || '').toLowerCase();
+      const authors = (item.querySelector('.pub-authors')?.textContent || '').toLowerCase();
+      const venue = (item.querySelector('.pub-venue')?.textContent || '').toLowerCase();
       
       const searchMatch = !searchQuery || 
                           title.includes(searchQuery) || 
