@@ -242,4 +242,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Teaching toggle ---------- */
+  const teachingBtns = document.querySelectorAll('.teaching-toggle-btn');
+  teachingBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.teaching-card');
+      const details = card.querySelector('.teaching-details');
+      if (details) {
+        const isExpanded = details.classList.contains('active');
+        if (isExpanded) {
+          details.classList.remove('active');
+          btn.classList.remove('active');
+          btn.innerHTML = '<i class="fas fa-plus"></i> Read More';
+        } else {
+          details.classList.add('active');
+          btn.classList.add('active');
+          btn.innerHTML = '<i class="fas fa-times"></i> Close';
+        }
+      }
+    });
+  });
 });
