@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 260">
+  <rect width="356" height="260" fill="#edf2f6" />
+  <g fill="none" stroke="#7f9ab1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="47" y="77" width="76" height="68" rx="6"/>
+  <path d="m76 99-10 11 10 11m18-22 10 11-10 11m29-10h49m0 0 43-38m-43 38h43m-43 0 43 38"/>
+  <rect x="215" y="58" width="89" height="28" rx="4"/><rect x="215" y="97" width="89" height="28" rx="4"/>
+  <rect x="215" y="136" width="89" height="28" rx="4"/><path d="M230 72h40m-40 39h51m-51 39h32" stroke="#245b98"/>
+  </g>
+  <text x="178" y="204" fill="#526b82" font-family="sans-serif" font-size="12" text-anchor="middle">PROGRAM SAMPLES</text>
+</svg>

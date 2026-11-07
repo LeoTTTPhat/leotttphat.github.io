@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teaching &amp; Supervision — Phat T. Tran-Truong</title>
+    <meta
+      name="description"
+      content="Courses taught and undergraduate research supervised by Phat T. Tran-Truong at HCMUT."
+    />
+    <meta name="author" content="Phat T. Tran-Truong" />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta
+      property="og:title"
+      content="Teaching &amp; Supervision — Phat T. Tran-Truong"
+    />
+    <meta
+      property="og:description"
+      content="Courses taught and undergraduate research supervised by Phat T. Tran-Truong at HCMUT."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leotttphat.github.io/teaching/" />
+    <meta
+      property="og:image"
+      content="https://leotttphat.github.io/assets/social-card.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Phat Tuan Tran-Truong — Security and reliability for LLM agents"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://leotttphat.github.io/teaching/" />
+    <script>
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (_) {}
+        if (
+          theme === "dark" ||
+          (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+          document.documentElement.dataset.theme = "dark";
+      })();
+    </script>
+    <link rel="icon" href="../favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../index.css?v=20261107" />
+    <script src="../script.js?v=20261107" defer></script>
+  </head>
+  <body data-page="teaching">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="nav-logo" href="../" aria-label="Phat T. Tran-Truong — Home"
+          ><span class="monogram" aria-hidden="true">PT</span
+          ><span class="full-name">Phat T. Tran-Truong</span></a
+        >
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="../">Home</a>
+          <a href="../research/">Research</a>
+          <a href="../publications/">Publications</a>
+          <a href="../teaching/" aria-current="page">Teaching</a>
+          <a href="../service/">Service</a>
+          <a href="../about/">About</a>
+          <a href="../news/">News</a>
+          <a class="cv-link" href="../cv_Phat.pdf" target="_blank" rel="noopener">
+            CV
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6" />
+            </svg>
+          </a>
+        </nav>
+        <button
+          class="icon-button theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"
+            /></svg
+          ><svg class="icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg>
+        </button>
+        <button
+          class="icon-button menu-toggle"
+          id="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <svg class="icon menu-bars" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" /></svg
+          ><svg class="icon menu-close" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="container page-header">
+        <p class="eyebrow">Education &amp; mentorship</p>
+        <h1>Teaching &amp; supervision</h1>
+        <p class="section-intro">
+          Lecturer in the Department of Software Engineering at HCMUT since June
+          2024. I teach software engineering, software security, AI, and
+          mathematics foundations.
+        </p>
+      </div>
+      <div class="container page-content">
+        <nav class="subnav" aria-label="On this page">
+          <span class="subnav-label" aria-hidden="true">On this page</span>
+          <a href="#teaching">Courses</a>
+          <a href="#supervision">Student research</a>
+        </nav>
+        <section class="content-section" id="teaching">
+          <h2 class="section-title">Courses</h2>
+          <p class="section-subtitle">
+            Select a course to view its topics and teaching load.
+          </p>
+          <div class="teaching-grid">
+            <details class="course-details" id="course-software-engineering">
+              <summary>Software Engineering</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Software Processes &amp; Agile
+                  Foundations, Requirements Engineering, System
+                  Modelling,Software Architecture, UML, Software Design &amp;
+                  Implementation, Quality Assurance, Deployment, DevOps &amp;
+                  Monitoring.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-advanced-programming-paradigms">
+              <summary>Advanced Programming Paradigms</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every bi-semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Object-Oriented Programming, Functional
+                  Programming.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-software-architecture-design">
+              <summary>Software Architecture &amp; Design</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for ~120 students/semester —
+                  elective for SE specialization
+                </p>
+                <p>
+                  <b>Covered topics:</b> SOLID Design Principles, Software
+                  Modularity, Component-Based Software Design, Architecture
+                  Characteristics, Architectural Styles &amp; Patterns, SA
+                  Documentation, Architectural Decisions.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-advanced-software-engineering">
+              <summary>Advanced Software Engineering</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for ~60 students — elective,
+                  delivered when assigned
+                </p>
+                <p>
+                  <b>Covered topics:</b> Dependable systems, Reliability
+                  engineering, Safety engineering, Security engineering,
+                  Resilience engineering, Software reuse, Component-based SE,
+                  Distributed SE, Service-oriented SE, Systems engineering,
+                  Systems of systems.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-software-maintenance-evolution">
+              <summary>Software Maintenance &amp; Evolution</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for ~60 students — elective,
+                  delivered when assigned
+                </p>
+                <p>
+                  <b>Covered topics:</b> Maintenance Processes, Software
+                  Comprehension, Reverse Engineering, Static &amp; Dynamic
+                  Analysis, Software Refactoring, Reengineering, Architecture
+                  Evolution, Software Metrics, Configuration &amp; Release
+                  Management.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-software-security">
+              <summary>Software Security</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for ~60 students — elective,
+                  delivered when assigned
+                </p>
+                <p>
+                  <b>Covered topics:</b> Security Fundamentals, Secure Software
+                  Development, Cryptography, Web Application Security, Memory
+                  Safety &amp; Binary Exploitation, Authentication, SAST, DAST,
+                  IAST &amp; SCA, Fuzzing, DevSecOps, Cloud Security, API
+                  Security, Emerging Topics.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-introduction-to-ai">
+              <summary>Introduction to AI</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Search, Games, Knowledge
+                  Representation, Planning, Uncertainty Quantification,
+                  Reasoning, Supervised Learning, Reinforcement Learning.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-machine-learning">
+              <summary>Machine Learning</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Concept Learning, Supervised Learning
+                  (Decision Trees, Linear/Logistic Regression, SVM, KNN, Naive
+                  Bayes, Ensemble Methods, PLA, Neural Networks), Unsupervised
+                  Learning (Clustering, EM Method, Dimensionality Reduction),
+                  Model Evaluation &amp; Selection, Feature Engineering, Deep
+                  Learning.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-introduction-to-computing">
+              <summary>Introduction to Computing</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> History of Computing, Introduction to
+                  Structural Programming, Computer Architecture, Computer
+                  Networks, Database Theory, AI, LLMs, IoT, Security &amp;
+                  Privacy, Quantum Computing, Scientific Writing.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-discrete-structures">
+              <summary>Discrete Structures</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Propositional Logic, Predicate Logic,
+                  Inference Rules &amp; Proofs, Boolean Algebra, Set Theory,
+                  Functions, Sequences, Relations &amp; Order, Counting,
+                  Permutations &amp; Combinations, Graph Theory, Trees, Flows.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-probability-and-statistics">
+              <summary>Probability and Statistics</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Teaching load:</b> 15 lectures for &gt;240
+                  students/semester — almost every semester
+                </p>
+                <p>
+                  <b>Covered topics:</b> Probability Basics, Conditional
+                  Probability, Discrete Random Variables, Continuous Random
+                  Variables, Joint Distributions &amp; Central Limit Theorem,
+                  Descriptive Statistics, Sampling Methods, Point &amp;
+                  Confidence Intervals Estimation, Hypothesis Testings,
+                  Regression.
+                </p>
+              </div>
+            </details>
+            <details class="course-details" id="course-se-ai-projects-thesis-supervision">
+              <summary>SE/AI Projects &amp; Thesis Supervision</summary>
+              <div class="teaching-details">
+                <p>
+                  <b>Load:</b> Mentor/instruct ~20 groups/semester; supervise
+                  &gt;10 bachelor's theses
+                </p>
+                <span class="role-badge">Instructor / Mentor / Supervisor</span>
+              </div>
+            </details>
+          </div>
+        </section>
+        <section class="content-section" id="supervision">
+          <h2 class="section-title">Student research</h2>
+          <p class="students-intro-text">
+              I mentor undergraduate research on LLM-based software engineering,
+              software supply chain security, and trustworthy AI systems.
+          </p>
+          <p class="supervision-count">
+              <strong>70+ bachelor’s students</strong> supervised on graduation
+              theses and capstone projects.
+          </p>
+          <p class="students-intro-text">
+              Selected undergraduate research projects and theses.
+          </p>
+          <div class="students-grid">
+              <div class="student-project-card">
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span
+                        >Le Bao Tan Phong, Tran Tan Phat, Tran Van Thien
+                        Kim</span
+                      >
+                    </div>
+                    <div class="student-info-detail">
+                      <b>BEng. in Computer Science (2026-)</b>
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li>
+                      <strong>Topic:</strong> Agentic AI integration for
+                      DevSecOps
+                    </li>
+                  </ul>
+                </div>
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span>Tran Duong Tien, Le Duc Nghia</span>
+                    </div>
+                    <div class="student-info-detail">
+                      <b
+                        >BEng. in Computer Science (2026-), Co-supervised by Dr.
+                        Duc-Ly Vu (EIU university)</b
+                      >
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li>
+                      <strong>Topic:</strong> Research on Detecting Chrome
+                      Malicious Extensions in the Google Web Store
+                    </li>
+                  </ul>
+                </div>
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span>Hoang Thi Thanh Tam</span>
+                    </div>
+                    <div class="student-info-detail">
+                      <b
+                        >BEng. in Computer Science (2026-), Co-supervised by Dr.
+                        Ha Xuan Son (RMIT university)</b
+                      >
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li><strong>Topic:</strong> Quantum Blockchain Security</li>
+                  </ul>
+                </div>
+
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span>Vo Xuan Ha, Tran Trung Nhut, Vo Huu Khang</span>
+                    </div>
+                    <div class="student-info-detail">
+                      <b>BEng. in Computer Science (2025-)</b>
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li>
+                      <strong>Topic:</strong> Exploring SLMs' reasoning
+                      capabilities on software architecture decisions
+                    </li>
+                    <li>
+                      <strong>Result:</strong>
+                      <a href="../publications/#slm-archbench"
+                        >IEEE ICSA-C 2026</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span
+                        >Nguyen Dang Khoa, Ho Gia Thang, Pham Quang Minh</span
+                      >
+                    </div>
+                    <div class="student-info-detail">
+                      <b
+                        >BEng. in Computer Science (2025-), Co-supervised by Dr.
+                        Duc-Ly Vu (EIU university)</b
+                      >
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li>
+                      <strong>Topic:</strong> Combining Static Analysis and LLMs
+                      for malicious NPM package detection
+                    </li>
+                    <li>
+                      <strong>Result:</strong>
+                      <a href="../publications/#npm-detection"
+                        >ARES 2026 International Workshops</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="student-project-item">
+                  <div class="student-names">
+                    <div class="student-name-header">
+                      <span>Nguyen Dat Duy</span>
+                    </div>
+                    <div class="student-info-detail">
+                      <b>BEng. in Computer Science (2024-2025)</b>
+                    </div>
+                  </div>
+                  <ul class="student-project-details">
+                    <li>
+                      <strong>Topic:</strong> Combining Transformer and State
+                      Space Models (Mamba) for efficient segmentation tasks
+                    </li>
+                    <li>
+                      <strong>Result:</strong>
+                      <a href="../publications/#segmaformer"
+                        >Accepted to WACV 2027</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 Phat T. Tran-Truong · HCMUT, VNU-HCM</p>
+        <div class="footer-links">
+          <a href="../about/">About &amp; background</a
+          ><a
+            href="https://orcid.org/0000-0003-3199-6333"
+            target="_blank"
+            rel="noopener"
+            >ORCID</a
+          ><a
+            href="https://www.linkedin.com/in/tuanphat"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          ><a href="mailto:phatttt@hcmut.edu.vn">Email</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research — Phat T. Tran-Truong</title>
+    <meta
+      name="description"
+      content="Research on LLM agent security and reliability, privacy-preserving computing, and program analysis for model-generated code."
+    />
+    <meta name="author" content="Phat T. Tran-Truong" />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta property="og:title" content="Research — Phat T. Tran-Truong" />
+    <meta
+      property="og:description"
+      content="Research on LLM agent security and reliability, privacy-preserving computing, and program analysis for model-generated code."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leotttphat.github.io/research/" />
+    <meta
+      property="og:image"
+      content="https://leotttphat.github.io/assets/social-card.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Phat Tuan Tran-Truong — Security and reliability for LLM agents"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://leotttphat.github.io/research/" />
+    <script>
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (_) {}
+        if (
+          theme === "dark" ||
+          (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+          document.documentElement.dataset.theme = "dark";
+      })();
+    </script>
+    <link rel="icon" href="../favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../index.css?v=20261107" />
+    <script src="../script.js?v=20261107" defer></script>
+  </head>
+  <body data-page="research">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="nav-logo" href="../" aria-label="Phat T. Tran-Truong — Home"
+          ><span class="monogram" aria-hidden="true">PT</span
+          ><span class="full-name">Phat T. Tran-Truong</span></a
+        >
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="../">Home</a>
+          <a href="../research/" aria-current="page">Research</a>
+          <a href="../publications/">Publications</a>
+          <a href="../teaching/">Teaching</a>
+          <a href="../service/">Service</a>
+          <a href="../about/">About</a>
+          <a href="../news/">News</a>
+          <a class="cv-link" href="../cv_Phat.pdf" target="_blank" rel="noopener">
+            CV
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6" />
+            </svg>
+          </a>
+        </nav>
+        <button
+          class="icon-button theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark mode"
+        >
+          <svg class="icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"
+            /></svg
+          ><svg class="icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg>
+        </button>
+        <button
+          class="icon-button menu-toggle"
+          id="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <svg class="icon menu-bars" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" /></svg
+          ><svg class="icon menu-close" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="container page-header">
+        <p class="eyebrow">Research agenda</p>
+        <h1>Security and reliability for LLM agents</h1>
+        <p class="section-intro">
+          I build tools to audit agent memory, measure workflow reliability,
+          enforce delegated capabilities, and analyze model-generated code. This
+          work builds on my research in privacy-preserving distributed systems.
+        </p>
+      </div>
+      <div class="container page-content">
+        <nav class="subnav" aria-label="On this page">
+          <span class="subnav-label" aria-hidden="true">On this page</span>
+          <a href="#secure-ai">Agent security</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#software">Program analysis</a>
+          <a href="#doctoral-directions">Doctoral research</a>
+        </nav>
+        <section class="content-section research-detail" id="secure-ai">
+          <span class="research-number" aria-hidden="true">01</span>
+          <div>
+            <h2>Agent Security &amp; Reliability</h2>
+            <p>
+              I quantify what information leaks between sessions in shared graph
+              memories and estimate the reliability of multi-step agent
+              pipelines. I also design runtime controls for the capabilities
+              that agents receive when they act on someone else’s behalf.
+            </p>
+            <h3>Topics I work on</h3>
+            <ul class="interest-list">
+              <li>Cross-session memory leakage</li>
+              <li>Agent workflow reliability</li>
+              <li>Absorbing Markov chains</li>
+              <li>Purpose-bound delegation</li>
+              <li>Runtime capability enforcement</li>
+            </ul>
+            <h3>Related work</h3>
+            <ul class="related-papers">
+              <li>
+                <a href="../publications/#graphmemshield">GraphMemShield</a>
+              </li>
+              <li>
+                <a href="../publications/#markov-agent-reliability"
+                  >Markov chain reliability for LLM agents</a
+                >
+              </li>
+              <li>
+                <a href="../publications/#delegateguard">DelegateGuard</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="content-section research-detail" id="privacy">
+          <span class="research-number" aria-hidden="true">02</span>
+          <div>
+            <h2>Privacy-Preserving Computing</h2>
+            <p>
+              I design privacy-preserving systems for sensitive data and measure
+              what protections cost in practice. My work spans differential
+              privacy, anonymization, and secure computation across IoT, fog,
+              and cloud environments.
+            </p>
+            <h3>Topics I work on</h3>
+            <ul class="interest-list">
+              <li>Differential privacy</li>
+              <li>Data anonymization</li>
+              <li>Trusted execution environments</li>
+              <li>Privacy measurement</li>
+              <li>Cryptographic access control</li>
+              <li>IoT, fog, and cloud computing</li>
+            </ul>
+            <h3>Related work</h3>
+            <ul class="related-papers">
+              <li><a href="../publications/#privacyguard">PrivacyGuard</a></li>
+              <li><a href="../publications/#pop2tic">POP2TIC</a></li>
+              <li>
+                <a href="../publications/#pragmatic-dp"
+                  >Pragmatic differential privacy</a
+                >
+              </li>
+              <li>
+                <a href="../publications/#privacy-architectures"
+                  >Privacy-preserving architectures review</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="content-section research-detail" id="software">
+          <span class="research-number" aria-hidden="true">03</span>
+          <div>
+            <h2>Program Analysis &amp; Software Security</h2>
+            <p>
+              I treat language models as program samplers and study the
+              distribution of their outputs. I also develop taint-based analyses
+              to isolate suspicious behavior in software dependencies.
+            </p>
+            <h3>Topics I work on</h3>
+            <ul class="interest-list">
+              <li>Distributional program analysis</li>
+              <li>Static and dynamic analysis</li>
+              <li>Model-generated code</li>
+              <li>Taint-based slicing</li>
+              <li>Software supply chain security</li>
+            </ul>
+            <h3>Related work</h3>
+            <ul class="related-papers">
+              <li>
+                <a href="../publications/#distributional-program-analysis"
+                  >Distributional program analysis</a
+                >
+              </li>
+              <li>
+                <a href="../publications/#npm-detection"
+                  >Code slicing for malicious npm package detection</a
+                >
+              </li>
+              <li>
+                <a href="../publications/#slm-archbench">SLM-ArchBench</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="content-section" id="doctoral-directions">
+          <div class="prose">
+            <h2>Doctoral research directions</h2>
+            <p>
+              I am seeking a PhD in trustworthy AI, software engineering, and
+              security and privacy.
+            </p>
+            <ul>
+              <li>
+                Extend reliability bounds toward certified behavioral guarantees
+                for multi-step agent pipelines.
+              </li>
+              <li>
+                Establish when a security benchmark score supports a claim about
+                the property it is meant to measure.
+              </li>
+              <li>
+                Develop static analyses that characterize distributions of
+                model-generated programs.
+              </li>
+              <li>
+                Formalize privacy and authority guarantees for purpose-bound
+                delegation.
+              </li>
+              <li>
+                Detect malicious dependencies in machine-generated software
+                using taint analysis.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 Phat T. Tran-Truong · HCMUT, VNU-HCM</p>
+        <div class="footer-links">
+          <a href="../about/">About &amp; background</a
+          ><a
+            href="https://orcid.org/0000-0003-3199-6333"
+            target="_blank"
+            rel="noopener"
+            >ORCID</a
+          ><a
+            href="https://www.linkedin.com/in/tuanphat"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          ><a href="mailto:phatttt@hcmut.edu.vn">Email</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

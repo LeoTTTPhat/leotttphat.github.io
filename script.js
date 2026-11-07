@@ -1,265 +1,309 @@
-/* ============================================================
-   Personal Academic Website — Phat Tuan Tran-Truong
-   Interactive Scripts
-   ============================================================ */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ---------- Navbar scroll effect ---------- */
-  const navbar = document.getElementById('navbar');
-  const onScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+/* Shared interactions; all records and disclosures work without JavaScript. */
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  const mobileLayout = window.matchMedia("(max-width: 700px)");
+  const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const storedTheme = () => {
+    try {
+      return localStorage.getItem("theme");
+    } catch (_) {
+      return null; /* Storage may be unavailable. */
+    }
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ---------- Mobile hamburger ---------- */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  /* ---------- Active nav link highlight ---------- */
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = navLinks.querySelectorAll('a');
-  const highlightNav = () => {
-    const scrollY = window.scrollY + 120;
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      const id = sec.getAttribute('id');
-      const link = navLinks.querySelector(`a[href="#${id}"]`);
-      if (link) {
-        link.classList.toggle('active', scrollY >= top && scrollY < top + height);
-      }
-    });
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    themeColor?.setAttribute(
+      "content",
+      theme === "dark" ? "#111b25" : "#faf9f6"
+    );
+    const label = `Switch to ${theme === "dark" ? "light" : "dark"} mode`;
+    themeToggle?.setAttribute("aria-label", label);
+    themeToggle?.setAttribute("title", label);
   };
-  window.addEventListener('scroll', highlightNav, { passive: true });
+  applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
+  themeToggle?.addEventListener("click", () => {
+    const theme = root.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (_) {
+      /* Storage may be unavailable. */
+    }
+  });
+  // Follow the system setting until the visitor picks a theme themselves.
+  darkScheme.addEventListener("change", (event) => {
+    if (!storedTheme()) applyTheme(event.matches ? "dark" : "light");
+  });
 
-  /* ---------- Scroll reveal (Intersection Observer) ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
+  const menuToggle = document.getElementById("menu-toggle");
+  const navigation = document.getElementById("nav-links");
+  const setMenu = (open, restoreFocus = false) => {
+    navigation?.classList.toggle("open", open);
+    document.body.classList.toggle("menu-open", open);
+    document.querySelectorAll("main, .footer").forEach((element) => {
+      element.toggleAttribute("inert", open);
+      if (open) element.setAttribute("aria-hidden", "true");
+      else element.removeAttribute("aria-hidden");
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-
-
-
-
-  /* ---------- Publication Search & Filter ---------- */
-  const filterBtns = document.querySelectorAll('.pub-filter-btn');
-  const pubItems = document.querySelectorAll('.pub-item');
-  const searchInput = document.getElementById('pub-search-input');
-  const searchClear = document.getElementById('pub-search-clear');
-
-  const updateFilters = () => {
-    const activeFilterBtn = document.querySelector('.pub-filter-btn.active');
-    const activeFilter = activeFilterBtn ? activeFilterBtn.dataset.filter : 'all';
-    const searchQuery = searchInput.value.toLowerCase().trim();
-    
-    // Toggle clear button visibility
-    searchClear.classList.toggle('visible', searchQuery.length > 0);
-
-    const currentItems = document.querySelectorAll('.pub-item');
-    currentItems.forEach(item => {
-      const type = item.getAttribute('data-type') || '';
-      const typeMatch = (activeFilter === 'all' || type === activeFilter);
-      
-      const title = (item.querySelector('.pub-title')?.textContent || '').toLowerCase();
-      const authors = (item.querySelector('.pub-authors')?.textContent || '').toLowerCase();
-      const venue = (item.querySelector('.pub-venue')?.textContent || '').toLowerCase();
-      
-      const searchMatch = !searchQuery || 
-                          title.includes(searchQuery) || 
-                          authors.includes(searchQuery) || 
-                          venue.includes(searchQuery);
-
-      if (typeMatch && searchMatch) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
+    menuToggle?.setAttribute("aria-expanded", String(open));
+    menuToggle?.setAttribute(
+      "aria-label",
+      open ? "Close navigation" : "Open navigation"
+    );
+    if (restoreFocus) menuToggle?.focus();
   };
-
-  /* Category filter buttons */
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      updateFilters();
-    });
+  menuToggle?.addEventListener("click", () =>
+    setMenu(menuToggle.getAttribute("aria-expanded") !== "true")
+  );
+  navigation
+    ?.querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (event) => {
+    if (!document.body.classList.contains("menu-open")) return;
+    if (event.key === "Escape") setMenu(false, true);
+    if (event.key !== "Tab") return;
+    const controls = [
+      ...document.querySelectorAll(".nav-links a, .theme-toggle, .menu-toggle"),
+    ];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  mobileLayout.addEventListener("change", (event) => {
+    if (!event.matches) setMenu(false);
   });
 
-  /* Search input */
-  searchInput.addEventListener('input', updateFilters);
-
-  /* Clear search */
-  searchClear.addEventListener('click', () => {
-    searchInput.value = '';
-    updateFilters();
-    searchInput.focus();
-  });
-
-  /* Inject paper counts into filter buttons (count all regardless of search) */
-  const totalCount = pubItems.length;
-  const countByType = {};
-  pubItems.forEach(item => {
-    const t = item.dataset.type;
-    countByType[t] = (countByType[t] || 0) + 1;
-  });
-  filterBtns.forEach(btn => {
-    const f = btn.dataset.filter;
-    const n = f === 'all' ? totalCount : (countByType[f] || 0);
-    const label = btn.textContent.split(' ')[0]; // Preserve original name
-    btn.innerHTML = `${label} <span class="pub-count">${n}</span>`;
-  });
-  
-  /* ---------- Abstract toggle ---------- */
-  const abstractBtns = document.querySelectorAll('.pub-abstract-btn');
-  abstractBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const pubItem = btn.closest('.pub-item');
-      const abstractDiv = pubItem.querySelector('.pub-abstract');
-      
-      if (abstractDiv) {
-        const isVisible = abstractDiv.classList.contains('active');
-        
-        if (isVisible) {
-          abstractDiv.classList.remove('active');
-          btn.classList.remove('active');
-          btn.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
-        } else {
-          // Optional: close other abstracts
-          // document.querySelectorAll('.pub-abstract.active').forEach(div => div.classList.remove('active'));
-          // document.querySelectorAll('.pub-abstract-btn.active').forEach(b => {
-          //   b.classList.remove('active');
-          //   b.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
-          // });
-
-          abstractDiv.classList.add('active');
-          btn.classList.add('active');
-          btn.innerHTML = '<i class="fas fa-times"></i> Close';
-        }
+  const compactPanels = [
+    ...document.querySelectorAll(".about-panel, .pub-figure"),
+  ];
+  const aboutToggle = document.getElementById("about-toggle");
+  const figureToggle = document.getElementById("figure-toggle");
+  const panelToggle = aboutToggle || figureToggle;
+  if (compactPanels.length) {
+    const figurePositions = [...document.querySelectorAll(".pub-figure")].map(
+      (panel) => ({
+        panel,
+        row: panel.parentElement,
+        actions: panel.parentElement.querySelector(".pub-actions"),
+      })
+    );
+    const revealAboutSection = (hash) => {
+      const panel = document
+        .getElementById(hash.slice(1))
+        ?.querySelector(":scope > .about-panel");
+      if (panel) panel.open = true;
+    };
+    const hasClosedPanel = () => compactPanels.some((panel) => !panel.open);
+    const updatePanelToggle = () => {
+      panelToggle.textContent = hasClosedPanel()
+        ? panelToggle.dataset.expandLabel
+        : panelToggle.dataset.collapseLabel;
+    };
+    const setPanelsOpen = (open) => {
+      compactPanels.forEach((panel) => (panel.open = open));
+    };
+    const applyPanelLayout = () => {
+      setPanelsOpen(!mobileLayout.matches);
+      figurePositions.forEach(({ panel, row, actions }) => {
+        (mobileLayout.matches ? actions : row).append(panel);
+      });
+      if (aboutToggle) revealAboutSection(window.location.hash);
+      if (panelToggle) {
+        panelToggle.hidden = !mobileLayout.matches;
+        updatePanelToggle();
       }
-    });
-  });
-
-  /* ---------- Theme toggle (Light/Dark mode) ---------- */
-  const themeToggle = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme');
-
-  if (currentTheme === 'dark') {
-    document.body.classList.remove('light');
-  } else if (currentTheme === 'light') {
-    document.body.classList.add('light');
+    };
+    if (panelToggle) {
+      panelToggle.addEventListener("click", () => {
+        setPanelsOpen(hasClosedPanel());
+        updatePanelToggle();
+      });
+      compactPanels.forEach((panel) =>
+        panel.addEventListener("toggle", updatePanelToggle)
+      );
+    }
+    if (aboutToggle) {
+      document.querySelectorAll(".subnav a").forEach((link) =>
+        link.addEventListener("click", () => revealAboutSection(link.hash))
+      );
+      window.addEventListener("hashchange", () =>
+        revealAboutSection(window.location.hash)
+      );
+    }
+    applyPanelLayout();
+    mobileLayout.addEventListener("change", applyPanelLayout);
   }
 
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light');
-    let theme = 'dark';
-    if (document.body.classList.contains('light')) {
-      theme = 'light';
+  // A citation link from the homepage opens the addressed native disclosure.
+  const openLinkedCitation = () => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target?.matches("details")) {
+      target.open = true;
+      target.closest(".pub-item")?.scrollIntoView();
     }
-    localStorage.setItem('theme', theme);
-  });
+  };
+  openLinkedCitation();
+  window.addEventListener("hashchange", openLinkedCitation);
 
-  /* ---------- BibTeX toggle ---------- */
-  const bibtexBtns = document.querySelectorAll('.pub-bibtex-btn');
-  bibtexBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const pubItem = btn.closest('.pub-item');
-      const bibtexDiv = pubItem.querySelector('.pub-bibtex');
-      
-      if (bibtexDiv) {
-        const isVisible = bibtexDiv.classList.contains('active');
-        
-        if (isVisible) {
-          bibtexDiv.classList.remove('active');
-          btn.classList.remove('active');
-          btn.innerHTML = '<i class="fas fa-quote-right"></i> BibTeX';
-        } else {
-          // Optional: close abstracts if citation opened
-          const abstractDiv = pubItem.querySelector('.pub-abstract');
-          if (abstractDiv && abstractDiv.classList.contains('active')) {
-            abstractDiv.classList.remove('active');
-            const absBtn = pubItem.querySelector('.pub-abstract-btn');
-            if (absBtn) {
-              absBtn.classList.remove('active');
-              absBtn.innerHTML = '<i class="fas fa-file-alt"></i> Abstract';
-            }
-          }
+  // Preserve bookmarks to records that moved off the homepage.
+  if (document.body.dataset.page === "home") {
+    const destinations = {
+      education: "about/#education",
+      experience: "about/#experience",
+      awards: "about/#awards",
+      skills: "about/#skills",
+      services: "service/",
+      activities: "service/#activities",
+    };
+    const destination = destinations[window.location.hash.slice(1)];
+    if (destination) window.location.replace(destination);
+  }
 
-          bibtexDiv.classList.add('active');
-          btn.classList.add('active');
-          btn.innerHTML = '<i class="fas fa-times"></i> Close';
-        }
+  const search = document.getElementById("pub-search-input");
+  if (search) {
+    const clear = document.getElementById("pub-search-clear");
+    const buttons = [
+      ...document.querySelectorAll(".pub-filters .pub-filter-btn"),
+    ];
+    const items = [...document.querySelectorAll(".pub-item")];
+    const groups = [...document.querySelectorAll(".pub-group")];
+    const status = document.getElementById("pub-results");
+    const empty = document.getElementById("pub-empty");
+    const params = new URLSearchParams(window.location.search);
+    const validFilters = buttons.map((button) => button.dataset.filter);
+    let filter = validFilters.includes(params.get("type"))
+      ? params.get("type")
+      : "all";
+    search.value = params.get("q") || "";
+    const normalize = (text) =>
+      text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    const matchesType = (item, type) =>
+      type === "all" || item.dataset.type === type;
+    const searchable = new Map(
+      items.map((item) => [
+        item,
+        normalize(
+          [
+            item.querySelector(".pub-title")?.textContent,
+            item.querySelector(".pub-authors")?.textContent,
+            item.querySelector(".paper-badges")?.textContent,
+            item.dataset.topics,
+            item.querySelector(".pub-year")?.textContent,
+          ].join(" ")
+        ),
+      ])
+    );
+    buttons.forEach((button) => {
+      const count = document.createElement("span");
+      count.className = "pub-count";
+      count.setAttribute("aria-hidden", "true");
+      count.textContent = items.filter((item) =>
+        matchesType(item, button.dataset.filter)
+      ).length;
+      button.append(count);
+    });
+    const update = (updateURL = true) => {
+      const words = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+      let visible = 0;
+      items.forEach((item) => {
+        const match =
+          matchesType(item, filter) &&
+          words.every((word) => searchable.get(item).includes(word));
+        item.hidden = !match;
+        if (match) visible++;
+      });
+      buttons.forEach((button) =>
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.filter === filter)
+        )
+      );
+      groups.forEach((group) => {
+        group.hidden = ![...group.querySelectorAll(".pub-item")].some(
+          (item) => !item.hidden
+        );
+      });
+      clear.hidden = search.value.length === 0;
+      status.textContent = `Showing ${visible} of ${items.length} publications`;
+      empty.hidden = visible > 0;
+      if (updateURL) {
+        const url = new URL(window.location.href);
+        if (search.value.trim()) url.searchParams.set("q", search.value.trim());
+        else url.searchParams.delete("q");
+        if (filter !== "all") url.searchParams.set("type", filter);
+        else url.searchParams.delete("type");
+        window.history.replaceState(null, "", url);
+      }
+    };
+    search.addEventListener("input", () => update());
+    buttons.forEach((button) =>
+      button.addEventListener("click", () => {
+        filter = button.dataset.filter;
+        update();
+      })
+    );
+    clear.addEventListener("click", () => {
+      search.value = "";
+      update();
+      search.focus();
+    });
+    document.getElementById("pub-reset")?.addEventListener("click", () => {
+      filter = "all";
+      search.value = "";
+      update();
+      search.focus();
+    });
+    update(false);
+  }
+
+  document.querySelectorAll(".copy-bibtex").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const panel = button.closest(".citation-panel");
+      const code = panel.querySelector("code");
+      const message = panel.querySelector(".copy-message");
+      try {
+        await navigator.clipboard.writeText(code.textContent);
+        button.textContent = "Copied";
+        message.textContent = "Citation copied to clipboard.";
+        setTimeout(() => {
+          button.textContent = "Copy BibTeX";
+          message.textContent = "";
+        }, 2500);
+      } catch (_) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        message.textContent =
+          "Citation selected. Use your keyboard to copy it.";
       }
     });
   });
 
-  /* ---------- Copy BibTeX to clipboard ---------- */
-  const copyBtns = document.querySelectorAll('.copy-bibtex');
-  copyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const bibtexBlock = btn.parentElement.querySelector('pre code');
-      if (bibtexBlock) {
-        const text = bibtexBlock.textContent;
-        navigator.clipboard.writeText(text).then(() => {
-          const originalIcon = btn.innerHTML;
-          btn.innerHTML = '<i class="fas fa-check"></i>';
-          btn.style.background = 'var(--accent-2)';
-          setTimeout(() => {
-            btn.innerHTML = originalIcon;
-            btn.style.background = '';
-          }, 2000);
-        });
-      }
-    });
-  });
-
-  /* ---------- Smooth scroll for nav links ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  /* ---------- Teaching toggle ---------- */
-  const teachingBtns = document.querySelectorAll('.teaching-toggle-btn');
-  teachingBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.teaching-card');
-      const details = card.querySelector('.teaching-details');
-      if (details) {
-        const isExpanded = details.classList.contains('active');
-        if (isExpanded) {
-          details.classList.remove('active');
-          btn.classList.remove('active');
-          btn.innerHTML = '<i class="fas fa-plus"></i> Read More';
-        } else {
-          details.classList.add('active');
-          btn.classList.add('active');
-          btn.innerHTML = '<i class="fas fa-times"></i> Close';
-        }
-      }
-    });
+  // Tell screen-reader users which links open a new tab (the icons are
+  // hidden). Runs last so the hint never enters the publication search index.
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    const label = link.getAttribute("aria-label");
+    if (label) {
+      if (!/new tab/i.test(label))
+        link.setAttribute("aria-label", `${label} (opens in a new tab)`);
+    } else if (!link.querySelector(".new-tab-hint")) {
+      const hint = document.createElement("span");
+      hint.className = "sr-only new-tab-hint";
+      hint.textContent = " (opens in a new tab)";
+      link.append(hint);
+    }
   });
 });

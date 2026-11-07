@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 260">
+  <rect width="356" height="260" fill="#edf2f6" />
+  <g fill="none" stroke="#7f9ab1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M83 104h47m46 0h47m43 0h43m-156 20v27h63m28-27v27h-28"/>
+  <circle cx="62" cy="104" r="20"/><circle cx="153" cy="104" r="20"/><circle cx="245" cy="104" r="20"/>
+  <path d="m302 98 7 6-7 6m-87 35 7 6-7 6" stroke="#245b98"/>
+  <circle cx="222" cy="151" r="8" fill="#245b98"/>
+  </g>
+  <text x="178" y="204" fill="#526b82" font-family="sans-serif" font-size="12" text-anchor="middle">AGENT PIPELINE RELIABILITY</text>
+</svg>

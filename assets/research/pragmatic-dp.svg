@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 260">
+  <rect width="356" height="260" fill="#edf2f6" />
+  <g fill="none" stroke="#a9bccd" stroke-width="2">
+    <path d="m81 72 80 66m-80-8 80 8m-80 50 80-50m34 0h68" />
+    <circle cx="73" cy="68" r="22" />
+    <circle cx="73" cy="130" r="22" />
+    <circle cx="73" cy="192" r="22" />
+  </g>
+  <rect
+    x="145"
+    y="108"
+    width="64"
+    height="59"
+    rx="8"
+    fill="#fff"
+    stroke="#245b98"
+    stroke-width="2"
+  />
+  <text
+    x="177"
+    y="145"
+    fill="#245b98"
+    text-anchor="middle"
+    font-family="Georgia,serif"
+    font-size="30"
+  >
+    ε
+  </text>
+  <circle cx="283" cy="138" r="29" fill="#245b98" />
+  <g
+    fill="#526b82"
+    font-family="sans-serif"
+    font-size="12"
+    text-anchor="middle"
+  >
+    <text x="73" y="229">TEACHERS</text>
+    <text x="177" y="193">PRIVATE VOTE</text>
+    <text x="283" y="193">STUDENT</text>
+  </g>
+</svg>

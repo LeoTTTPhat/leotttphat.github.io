@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 260">
+  <rect width="356" height="260" fill="#edf2f6" />
+  <g fill="none" stroke="#7f9ab1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M66 72l49 22m-49 30 49-30m0 0 56 45m16-45 54 43m-54-43 74-22m-20 65 52-16"/>
+  <circle cx="66" cy="72" r="12"/><circle cx="66" cy="124" r="12"/><circle cx="115" cy="94" r="12"/>
+  <circle cx="171" cy="139" r="12"/><circle cx="187" cy="94" r="12"/><circle cx="241" cy="137" r="12"/>
+  <circle cx="261" cy="72" r="12"/><circle cx="293" cy="121" r="12"/>
+  <path d="M158 55v105" stroke-dasharray="4 5"/><path d="M126 94h48" stroke="#245b98" stroke-dasharray="5 4"/>
+  </g>
+  <text x="178" y="204" fill="#526b82" font-family="sans-serif" font-size="12" text-anchor="middle">CROSS-SESSION LEAKAGE</text>
+</svg>

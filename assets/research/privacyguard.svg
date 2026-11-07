@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 260">
+  <rect width="356" height="260" fill="#edf2f6" />
+  <g fill="none" stroke="#a9bccd" stroke-width="2">
+    <path d="M76 80v44h204V80M178 124v36" />
+    <rect x="46" y="44" width="60" height="38" rx="5" />
+    <rect x="148" y="44" width="60" height="38" rx="5" />
+    <rect x="250" y="44" width="60" height="38" rx="5" />
+  </g>
+  <path
+    d="m178 148 45 17v33c0 23-45 41-45 41s-45-18-45-41v-33Z"
+    fill="#fff"
+    stroke="#245b98"
+    stroke-width="3"
+  />
+  <path
+    d="m158 191 13 13 27-29"
+    fill="none"
+    stroke="#245b98"
+    stroke-width="4"
+  />
+  <g
+    fill="#526b82"
+    font-family="sans-serif"
+    font-size="12"
+    text-anchor="middle"
+  >
+    <text x="76" y="68">IoT</text>
+    <text x="178" y="68">EDGE</text>
+    <text x="280" y="68">CLOUD</text>
+  </g>
+</svg>
