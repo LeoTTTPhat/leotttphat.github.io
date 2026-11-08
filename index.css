@@ -6,12 +6,13 @@
   --wash: #f0f3f5;
   --ink: #182c42;
   --body: #3e4b58;
-  --muted: #62707d;
+  --muted: #57636f;
   --blue: #245b98;
   --blue-wash: #eaf0f7;
   --ok: #2f7a4c;
   --line: #dce0e3;
   --figure-bg: #fff;
+  --marker: #fbe8a6;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   /* Type scale: nothing on the site should render below --text-2xs. */
@@ -40,6 +41,7 @@ html[data-theme="dark"] {
   --line: #334351;
   /* Diagrams keep a light ground, slightly dimmed to cut glare. */
   --figure-bg: #e6e6e6;
+  --marker: #4d4118;
 }
 *,
 *::before,
@@ -305,14 +307,15 @@ html[data-theme="dark"] .sun-icon {
   display: none;
 }
 .hero {
-  padding: 44px 0 34px;
+  padding: 34px 0 26px;
 }
+/* The portrait takes about 29% of the row, with room for the bio beside it. */
 .hero-layout {
   display: grid;
   grid-template-areas: "identity portrait" "details portrait";
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 29%, 306px);
   grid-template-rows: auto 1fr;
-  gap: 15px 72px;
+  gap: 12px clamp(32px, 4vw, 48px);
   align-items: start;
 }
 .hero-identity {
@@ -334,47 +337,25 @@ html[data-theme="dark"] .sun-icon {
   font: italic var(--text-md) var(--serif);
   color: var(--muted);
 }
-.research-statement {
-  font: 400 clamp(1.45rem, 2.5vw, var(--text-2xl)) / 1.35 var(--serif);
-  color: var(--ink);
-  letter-spacing: -0.015em;
-  max-width: 570px;
-}
-/* About 70 characters per line keeps the bio comfortable to read. */
 .hero-bio {
-  max-width: 35rem;
-  margin-top: 12px;
-  font-size: var(--text-md);
-}
-.availability {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  width: fit-content;
-  max-width: 640px;
-  margin-top: 18px;
-  padding: 9px 14px 9px 12px;
-  /* A faint wash of the status colour marks this as the key message. */
-  border: 1px solid color-mix(in srgb, var(--ok) 30%, var(--line));
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--ok) 6%, var(--surface));
-  color: var(--body);
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   line-height: 1.6;
 }
-.availability strong {
+.hero-bio + .hero-bio {
+  margin-top: 10px;
+}
+/* Research areas read as bold. Only the current focus carries a marker
+   stroke behind the lower half; it may wrap, each line keeping its stroke. */
+.keyword {
   color: var(--ink);
   font-weight: 600;
 }
-.status-dot {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  /* Centre the dot on the first line of text. */
-  margin-top: calc((1.6em - 8px) / 2);
-  border-radius: 50%;
-  background: var(--ok);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 22%, transparent);
+.keyword--focus {
+  padding-inline: 0.1em;
+  border-radius: 2px;
+  background: linear-gradient(transparent 55%, var(--marker) 55%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .hero-actions {
   display: flex;
@@ -431,10 +412,13 @@ html[data-theme="dark"] .sun-icon {
   text-decoration: none;
 }
 .hero .profile-links {
-  margin-top: 14px;
+  gap: 2px 12px;
+  margin-top: 6px;
+}
+.hero-profile {
+  grid-area: portrait;
 }
 .portrait {
-  grid-area: portrait;
   margin: 4px 0 0;
 }
 .portrait picture,
@@ -455,11 +439,32 @@ html[data-theme="dark"] .sun-icon {
   line-height: 1.7;
   text-wrap: balance;
 }
+/* On wide screens, both columns end with a row of links at the same height. */
+@media (min-width: 70rem) {
+  .hero-details,
+  .hero-profile {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+  .hero-details .hero-actions {
+    margin-top: auto;
+    padding-top: 18px;
+  }
+  .hero .profile-links {
+    margin-top: auto;
+    padding-top: 6px;
+  }
+  .hero .profile-links a {
+    min-height: 44px;
+  }
+}
 .content-section {
   padding: 55px 0;
   border-top: 1px solid var(--line);
 }
-[data-page="home"] #publications {
+/* The first section under the hero sits a little closer to it. */
+[data-page="home"] .hero + .content-section {
   padding-top: 38px;
 }
 [data-page="home"] #publications .section-heading {
@@ -527,15 +532,26 @@ html[data-theme="dark"] .sun-icon {
   margin-top: 13px;
   color: var(--muted);
 }
+/* Three cards per row on a six-column grid, each card spanning two columns,
+   so a short last row can sit centred. */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0 32px;
 }
-/* Each card spans four shared rows (number, title, summary, link), so the
-   titles, summaries, and links line up across cards whatever their length. */
+/* Cards past the third wrap to a second row, set apart from the first. */
+.research-card:nth-child(n + 4) {
+  margin-top: 40px;
+}
+/* The fourth card starts one column in, so cards 4 and 5 are centred. */
+.research-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+/* Each card spans four shared rows (number, title, summary, details), so the
+   titles, summaries, and toggles line up across cards whatever their length. */
 .research-card {
   display: grid;
+  grid-column: span 2;
   grid-row: span 4;
   grid-template-rows: subgrid;
   align-content: start;
@@ -556,11 +572,24 @@ html[data-theme="dark"] .sun-icon {
   font-size: var(--text-sm);
   line-height: 1.75;
 }
-.research-card .text-link {
-  justify-self: start;
+/* Each card's topics and related papers sit behind a "+" toggle. */
+.research-more {
   align-self: start;
-  margin-top: 18px;
-  font-size: var(--text-xs);
+  margin-top: 14px;
+}
+.research-more > p {
+  margin-top: 10px;
+}
+.research-label {
+  margin-top: 16px;
+  color: var(--muted);
+  font: 600 var(--text-2xs) / 1.6 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.research-more .interest-list,
+.research-more .related-papers {
+  margin-top: 8px;
 }
 .selected-list {
   display: grid;
@@ -708,11 +737,6 @@ html[data-theme="dark"] .paper-visual img {
   text-decoration: none;
   font-weight: 600;
 }
-.selection-note {
-  color: var(--muted);
-  font-size: var(--text-2xs);
-  margin-top: 12px;
-}
 .news-list {
   display: grid;
 }
@@ -740,6 +764,55 @@ html[data-theme="dark"] .paper-visual img {
 .news-item p {
   max-width: 72ch;
   margin: 0;
+}
+/* Homepage news box: the script sizes it to the first four items plus a
+   glimpse of the next; this max-height is the fallback without it. */
+.news-scroll {
+  position: relative;
+  max-height: 21rem;
+  overflow-y: auto;
+  padding-right: 16px;
+}
+/* A fade over the bottom edge shows that more items follow. At the end of
+   the list it covers only the list's bottom padding. */
+.news-scroll::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  height: 44px;
+  margin-top: -44px;
+  background: linear-gradient(transparent, var(--paper));
+  pointer-events: none;
+}
+.news-scroll > .news-list {
+  padding-bottom: 44px;
+}
+/* A thin scrollbar that stays visible, so the box reads as scrollable. */
+.news-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.news-scroll::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: var(--wash);
+}
+.news-scroll::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--muted) 55%, var(--wash));
+}
+.news-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+@supports not selector(::-webkit-scrollbar) {
+  .news-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--muted) 55%, var(--wash))
+      var(--wash);
+  }
+}
+/* The link after the news list is for phones, where the box does not scroll. */
+.news-more {
+  display: none;
 }
 .teaching-summary {
   display: grid;
@@ -791,6 +864,125 @@ html[data-theme="dark"] .paper-visual img {
 .course-preview a:hover .icon {
   color: var(--blue);
   transform: translateX(3px);
+}
+/* Background reads like a CV: a label column for each group, then dated
+   entries. Long lists sit behind the same "+" toggles as publications. */
+.cv-group {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px 32px;
+  padding-block: 26px;
+  border-top: 1px solid var(--line);
+}
+.cv-group:last-child {
+  padding-bottom: 0;
+}
+.cv-heading {
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.cv-list {
+  display: grid;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-list > li {
+  margin: 0;
+}
+.cv-list--tight {
+  gap: 12px;
+}
+.cv-item {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 2px 24px;
+}
+.cv-meta {
+  padding-top: 1px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+.cv-item h4 {
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+.cv-org {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+/* Organisation links stay quiet so role titles lead each entry. */
+.cv-org a {
+  color: var(--body);
+  text-decoration-color: var(--line);
+}
+.cv-org a:hover {
+  color: var(--blue);
+  text-decoration-color: currentColor;
+}
+/* Short entries (awards) keep title and description on one line. */
+.cv-list--inline .cv-item > div {
+  font-size: var(--text-xs);
+  line-height: 1.6;
+}
+.cv-list--inline .cv-item h4,
+.cv-list--inline .cv-item .cv-note {
+  display: inline;
+}
+.cv-list--inline .cv-note::before {
+  content: "·";
+  content: "·" / "";
+  margin-inline: 0.5em;
+}
+.cv-note {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+}
+.cv-more {
+  margin-top: 4px;
+  font-size: var(--text-xs);
+}
+.cv-more > summary {
+  width: fit-content;
+}
+.cv-more ul {
+  font-size: var(--text-sm);
+}
+.cv-more > .cv-list {
+  margin-top: 12px;
+}
+/* Earlier roles fold under one list-level toggle, set apart from the
+   per-role "Details" toggles above it. */
+.cv-earlier {
+  margin-top: 18px;
+}
+.cv-earlier > .cv-list {
+  margin-top: 18px;
+}
+.cv-skills .interest-list {
+  margin-top: 0;
+}
+.cv-courses {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-sm);
+}
+.cv-courses li + li {
+  margin-top: 4px;
+}
+.cv-when {
+  color: var(--muted);
 }
 /* Closing call to action: the same heading size as every other section,
    with the address visible so it can be copied. */
@@ -1126,7 +1318,8 @@ html[data-theme="dark"] .paper-visual img {
   margin-top: 13px;
 }
 .pub-actions > a,
-.pub-actions summary {
+.pub-actions summary,
+.cv-more > summary {
   font-size: var(--text-xs);
   color: var(--blue);
   font-weight: 600;
@@ -1148,24 +1341,42 @@ html[data-theme="dark"] .paper-visual img {
 .pub-actions details[open] {
   flex-basis: 100%;
 }
-.pub-actions summary {
+/* On phones the homepage's figure toggles join its row of paper links. */
+.paper-links details {
+  min-width: 0;
+  max-width: 100%;
+}
+.paper-links details[open] {
+  flex-basis: 100%;
+}
+.pub-actions summary,
+.paper-links summary,
+.cv-more > summary {
   cursor: pointer;
   list-style: none;
   padding: 3px 0;
 }
-.pub-actions summary::-webkit-details-marker {
+.pub-actions summary::-webkit-details-marker,
+.paper-links summary::-webkit-details-marker,
+.cv-more > summary::-webkit-details-marker {
   display: none;
 }
-.pub-actions summary::before {
+.pub-actions summary::before,
+.paper-links summary::before,
+.cv-more > summary::before {
   content: "+";
   margin-right: 5px;
   font-weight: 400;
 }
-.pub-actions details[open] summary::before {
+.pub-actions details[open] summary::before,
+.paper-links details[open] summary::before,
+.cv-more[open] > summary::before {
   content: "−";
 }
 .pub-actions summary:hover,
-.pub-actions > a:hover {
+.pub-actions > a:hover,
+.paper-links summary:hover,
+.cv-more > summary:hover {
   text-decoration: underline;
 }
 .detail-panel {
@@ -1224,26 +1435,6 @@ pre {
 .empty-state p {
   font-size: var(--text-sm);
 }
-.research-detail {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 25px;
-}
-.research-detail .research-number {
-  font: var(--text-2xl) var(--serif);
-  color: var(--blue);
-  margin-top: 3px;
-}
-.research-detail h2 {
-  margin-bottom: 18px;
-}
-.research-detail p {
-  max-width: 740px;
-}
-.research-detail h3 {
-  font-size: var(--text-sm);
-  margin-top: 25px;
-}
 .interest-list {
   display: flex;
   flex-wrap: wrap;
@@ -1264,35 +1455,6 @@ pre {
   margin-top: 16px;
   font-size: var(--text-sm);
 }
-.related-papers a {
-  display: inline-block;
-  padding-block: 4px;
-}
-.about-panel > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  list-style: none;
-  cursor: pointer;
-}
-.about-panel > summary::-webkit-details-marker {
-  display: none;
-}
-.about-panel > summary::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  margin: -4px 5px 0 0;
-  border-right: 1.5px solid var(--blue);
-  border-bottom: 1.5px solid var(--blue);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-.about-panel[open] > summary::after {
-  margin-top: 4px;
-  transform: rotate(225deg);
-}
 .panel-toggle {
   min-height: 36px;
   padding: 3px 10px;
@@ -1303,64 +1465,12 @@ pre {
   font-size: var(--text-xs);
   font-weight: 600;
 }
-.about-toggle {
-  display: block;
-  margin: 0 0 8px auto;
-}
-.timeline {
-  display: grid;
-  gap: 30px;
-  margin-top: 28px;
-}
-.timeline,
-.experience-cards,
 .services-grid,
 [data-page="news"] .news-list {
   max-width: 900px;
 }
 [data-page="news"] .news-list {
   margin-top: 19px;
-}
-.timeline-content,
-.exp-card {
-  border-left: 2px solid var(--line);
-  padding-left: 24px;
-}
-.timeline-content h3 {
-  margin-bottom: 8px;
-}
-.institution,
-.org {
-  color: var(--body);
-  font-size: var(--text-sm);
-}
-.date {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  margin-top: 6px;
-}
-.timeline ul,
-.exp-card ul {
-  font-size: var(--text-sm);
-}
-.experience-cards {
-  display: grid;
-  gap: 35px;
-  margin-top: 28px;
-}
-.exp-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 24px;
-}
-.exp-card-header .date {
-  white-space: nowrap;
-  margin-top: 2px;
-}
-.exp-card h4 {
-  font-size: var(--text-sm);
-  margin-top: 22px;
 }
 .project-tag {
   display: inline-block;
@@ -1432,24 +1542,6 @@ pre {
 .student-project-details {
   font-size: var(--text-sm);
 }
-.awards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px 36px;
-  margin-top: 28px;
-}
-.award-card {
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-}
-.award-card p {
-  font-size: var(--text-sm);
-  margin-top: 8px;
-}
-.award-card .award-year {
-  color: var(--blue);
-  font-size: var(--text-2xs);
-}
 .service-card {
   margin-top: 28px;
 }
@@ -1471,29 +1563,6 @@ pre {
 .service-list li {
   break-inside: avoid;
 }
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px 36px;
-  margin-top: 28px;
-}
-.skill-card h4 {
-  margin-bottom: 18px;
-}
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-.skill-tags span {
-  padding: 4px 9px;
-  background: var(--wash);
-  font-size: var(--text-2xs);
-  border-radius: 3px;
-}
-.learning-courses-section {
-  margin-top: 35px;
-}
 .activities-list {
   display: grid;
   gap: 26px;
@@ -1512,14 +1581,6 @@ pre {
   }
   .nav-links {
     gap: 15px;
-  }
-  /* Tablet widths leave little room, so the links drop back a size. */
-  .nav-links a {
-    font-size: var(--text-xs);
-  }
-  .hero-layout {
-    column-gap: 40px;
-    grid-template-columns: minmax(0, 1fr) 200px;
   }
   .hero h1 {
     font-size: 2.8rem;
@@ -1623,13 +1684,25 @@ pre {
     display: block;
   }
   .hero {
-    padding: 30px 0 32px;
+    padding: 26px 0;
   }
+  /* The buttons follow the name so they show without scrolling; the bio and
+     profile links come after them. */
   .hero-layout {
-    grid-template-areas: "identity portrait" "details details";
+    grid-template-areas: "identity portrait" "actions actions" "bio bio" "profiles profiles";
     grid-template-columns: minmax(0, 1fr) 84px;
     grid-template-rows: auto;
-    gap: 16px;
+    gap: 12px;
+  }
+  .hero-details {
+    display: contents;
+  }
+  .hero-bio-group {
+    grid-area: bio;
+  }
+  .hero-actions {
+    grid-area: actions;
+    margin-top: 4px;
   }
   .hero h1 {
     font-size: clamp(1.8rem, 7.4vw, 2.6rem);
@@ -1645,14 +1718,8 @@ pre {
   .hero-eyebrow > .eyebrow-sep {
     display: none;
   }
-  .research-statement {
-    font-size: 1.35rem;
-  }
   .hero-bio {
     font-size: var(--text-base);
-  }
-  .availability {
-    font-size: var(--text-sm);
   }
   .profile-links {
     gap: 0 20px;
@@ -1660,18 +1727,24 @@ pre {
   .profile-links a {
     padding-block: 10px;
   }
-  .hero .profile-links {
-    margin-top: 8px;
-  }
   /* Standalone links get a full-size touch target on phones. */
   .text-link {
     min-height: 44px;
   }
+  .hero-profile {
+    display: contents;
+  }
   .portrait {
+    grid-area: portrait;
     margin-top: 0;
   }
   .portrait figcaption {
     display: none;
+  }
+  .hero .profile-links {
+    grid-area: profiles;
+    gap: 0 10px;
+    margin-top: 0;
   }
   .content-section {
     padding: 38px 0;
@@ -1687,24 +1760,35 @@ pre {
   }
   .research-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
+    gap: 20px;
   }
-  /* Stacked cards have nothing to line up with, so they drop the subgrid. */
+  /* Stacked cards have nothing to line up with, so they drop the subgrid,
+     and the number sits beside the title instead of above it. */
   .research-card {
-    display: flex;
-    flex-direction: column;
+    grid-column: auto;
     grid-row: auto;
-    padding-top: 15px;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: none;
+    column-gap: 10px;
+    align-items: baseline;
+    padding-top: 14px;
+  }
+  .research-card > :not(.research-number, h3) {
+    grid-column: 1 / -1;
+  }
+  .research-card:nth-child(n + 4) {
+    grid-column: auto;
+    margin-top: 0;
   }
   .research-number {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   .research-card h3 {
     max-width: none;
     margin-bottom: 8px;
   }
-  .research-card .text-link {
-    margin-top: 2px;
+  .research-more {
+    margin-top: 6px;
   }
   .teaching-summary .text-link {
     margin-top: 6px;
@@ -1735,8 +1819,12 @@ pre {
     margin-top: 4px;
     font-size: var(--text-sm);
   }
-  .paper-links a {
+  .paper-links a,
+  .paper-links .pub-figure > summary {
     padding-block: 10px;
+  }
+  .paper-links .pub-figure > summary {
+    font-size: inherit;
   }
   .pub-stat {
     grid-template-columns: 64px minmax(0, 1fr);
@@ -1752,9 +1840,52 @@ pre {
   .news-date {
     font-size: var(--text-2xs);
   }
+  /* A scroll box inside the page traps swipes on phones, so the news list
+     shows the latest four items as plain rows and links to the rest. */
+  .news-scroll {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .news-scroll::after {
+    display: none;
+  }
+  .news-scroll > .news-list {
+    padding-bottom: 0;
+  }
+  .news-scroll .news-item:nth-child(n + 5) {
+    display: none;
+  }
+  .news-scroll .news-item:nth-child(4) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  #news .section-heading > .text-link {
+    display: none;
+  }
+  .news-more {
+    display: inline-flex;
+    margin-top: 8px;
+  }
   .teaching-summary {
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+  /* The CV ledger stacks: group label, then each date above its entry. */
+  .cv-group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding-block: 22px;
+  }
+  .cv-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .cv-skills .cv-meta {
+    margin-bottom: 6px;
+  }
+  .cv-more > summary {
+    padding-block: 8px;
   }
   .contact-section {
     padding: 35px 0;
@@ -1857,49 +1988,7 @@ pre {
   .citation-panel {
     padding-top: 53px;
   }
-  .research-detail {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 9px;
-  }
-  .research-detail .research-number {
-    display: none;
-  }
-  [data-page="about"] .subnav {
-    display: none;
-  }
-  .page-content .about-section {
-    padding: 0;
-    border-top: 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .page-content .about-section:first-of-type {
-    border-top: 1px solid var(--line);
-  }
-  .about-panel > summary {
-    min-height: 52px;
-    padding: 9px 3px;
-  }
-  .about-panel > summary h2 {
-    font: 600 var(--text-md)/1.35 var(--sans);
-    letter-spacing: 0;
-  }
-  .about-panel[open] {
-    padding-bottom: 20px;
-  }
-  .about-panel .prose p:first-child {
-    margin-top: 4px;
-  }
-  .exp-card-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .timeline-content,
-  .exp-card {
-    padding-left: 18px;
-  }
-  .teaching-grid,
-  .awards-grid,
-  .skills-grid {
+  .teaching-grid {
     grid-template-columns: 1fr;
   }
   .service-list {

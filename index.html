@@ -46,6 +46,10 @@
           "name": "Ho Chi Minh City University of Technology (HCMUT), VNU-HCM",
           "url": "https://hcmut.edu.vn/"
         },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Ho Chi Minh City University of Technology (HCMUT), VNU-HCM"
+        },
         "url": "https://leotttphat.github.io/",
         "image": "https://leotttphat.github.io/assets/portrait-640.jpg",
         "email": "mailto:phatttt@hcmut.edu.vn",
@@ -79,8 +83,8 @@
     <link rel="icon" href="favicon.ico" sizes="32x32" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="index.css?v=20261107" />
-    <script src="script.js?v=20261107" defer></script>
+    <link rel="stylesheet" href="index.css?v=20261108-23" />
+    <script src="script.js?v=20261108-4" defer></script>
   </head>
   <body data-page="home">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -92,12 +96,12 @@
         >
         <nav class="nav-links" id="nav-links" aria-label="Main navigation">
           <a href="./" aria-current="page">Home</a>
-          <a href="research/">Research</a>
+          <a href="#research">Research</a>
           <a href="publications/">Publications</a>
           <a href="teaching/">Teaching</a>
           <a href="service/">Service</a>
-          <a href="about/">About</a>
           <a href="news/">News</a>
+          <a href="#background">Background</a>
           <a class="cv-link" href="cv_Phat.pdf" target="_blank" rel="noopener">
             CV
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -145,71 +149,38 @@
               ><span class="eyebrow-sep" aria-hidden="true">·</span
               ><span class="nowrap">HCMUT, VNU-HCM</span>
             </p>
-            <h1>Phat Tuan <span class="family-name">Tran-Truong</span></h1>
-            <p class="name-note">I go by Leo.</p>
+            <h1>Phat T. <span class="family-name">Tran-Truong</span></h1>
+            <p class="name-note">
+              I go by Leo (English) or Phat (Vietnamese). My full legal name is
+              Tran Truong Tuan Phat.
+            </p>
           </div>
-          <div class="hero-details">
-            <p class="research-statement">
-              Security and reliability for LLM agents
-            </p>
-            <p class="hero-bio">
-              I teach in the
-              <a
-                href="https://cse.hcmut.edu.vn/en/bo-mon-cong-nghe-phan-mem"
-                target="_blank"
-                rel="noopener"
-                >Department of Software Engineering</a
-              >
-              at Ho Chi Minh City University of Technology. I study memory
-              leakage, workflow reliability, and delegated permissions in LLM
-              agents, as well as the code they generate.
-            </p>
-            <p class="hero-bio">
-              I’m affiliated with
-              <a
-                class="nowrap"
-                href="https://ura.hcmut.edu.vn/people"
-                target="_blank"
-                rel="noopener"
-                >URA Lab</a
-              >
-              <span class="nowrap">(Assoc. Prof. Tho Quan)</span> and
-              <a
-                class="nowrap"
-                href="https://raise-website.vercel.app/"
-                target="_blank"
-                rel="noopener"
-                >RAISE Lab</a
-              >
-              <span class="nowrap">(Dr. Xuan-Bach Le).</span>
-            </p>
-            <p class="availability">
-              <span class="status-dot" aria-hidden="true"></span>
-              <span
-                ><strong>Seeking a PhD position</strong> in trustworthy AI,
-                software engineering, and security &amp; privacy.</span
-              >
-            </p>
-            <div class="hero-actions">
-              <a
-                class="hero-action hero-action-primary"
-                href="cv_Phat.pdf"
-                target="_blank"
-                rel="noopener"
-              >
-                View CV
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6" />
-                </svg>
-              </a>
-              <a class="hero-action" href="mailto:phatttt@hcmut.edu.vn">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 6 9 7 9-7" />
-                </svg>
-                Email me
-              </a>
-            </div>
+          <div class="hero-profile">
+            <figure class="portrait">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/portrait-320.webp 320w,
+                    assets/portrait-640.webp 640w
+                  "
+                  sizes="(max-width: 700px) 84px, clamp(200px, calc(29vw - 19px), 306px)"
+                />
+                <img
+                  src="assets/portrait-640.jpg"
+                  srcset="
+                    assets/portrait-320.jpg 320w,
+                    assets/portrait-640.jpg 640w
+                  "
+                  sizes="(max-width: 700px) 84px, clamp(200px, calc(29vw - 19px), 306px)"
+                  width="814"
+                  height="1226"
+                  alt="Portrait of Phat Tuan Tran-Truong"
+                  fetchpriority="high"
+                />
+              </picture>
+              <figcaption>Ho Chi Minh City, Vietnam</figcaption>
+            </figure>
             <ul class="profile-links" aria-label="Academic profiles">
               <li>
                 <a
@@ -245,31 +216,702 @@
               </li>
             </ul>
           </div>
-          <figure class="portrait">
-            <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  assets/portrait-320.webp 320w,
-                  assets/portrait-640.webp 640w
-                "
-                sizes="(max-width: 700px) 84px, (max-width: 1000px) 200px, 240px"
-              />
-              <img
-                src="assets/portrait-640.jpg"
-                srcset="
-                  assets/portrait-320.jpg 320w,
-                  assets/portrait-640.jpg 640w
-                "
-                sizes="(max-width: 700px) 84px, (max-width: 1000px) 200px, 240px"
-                width="814"
-                height="1226"
-                alt="Portrait of Phat Tuan Tran-Truong"
-                fetchpriority="high"
-              />
-            </picture>
-            <figcaption>Ho Chi Minh City, Vietnam</figcaption>
-          </figure>
+          <div class="hero-details">
+            <div class="hero-bio-group">
+              <p class="hero-bio">
+                I am currently a lecturer (faculty member) in the
+                <a
+                  href="https://cse.hcmut.edu.vn/en/bo-mon-cong-nghe-phan-mem"
+                  target="_blank"
+                  rel="noopener"
+                  >Faculty of Computer Science &amp; Engineering</a
+                >, Ho Chi Minh City University of Technology (HCMUT),
+                <span class="nowrap"
+                  >VNU-HCM
+                  <svg
+                    width="18"
+                    height="12"
+                    viewBox="0 0 30 20"
+                    role="img"
+                    aria-label="Vietnam flag"
+                  >
+                    <g id="vietnam-flag-art">
+                      <rect width="30" height="20" fill="#da251d" />
+                      <path
+                        fill="#ff0"
+                        d="M15 4l1.35 4.15h4.36l-3.53 2.56 1.35 4.15L15 12.3l-3.53 2.56 1.35-4.15-3.53-2.56h4.36Z"
+                      />
+                    </g>
+                  </svg></span
+                >. I work with
+                <a
+                  class="nowrap"
+                  href="https://ura.hcmut.edu.vn/people"
+                  target="_blank"
+                  rel="noopener"
+                  >URA Lab</a
+                >, led by
+                <a
+                  class="nowrap"
+                  href="https://www.cse.hcmut.edu.vn/qttho/doku.php?id=start"
+                  target="_blank"
+                  rel="noopener"
+                  >Assoc. Prof. Tho Quan</a
+                >, and
+                <a
+                  class="nowrap"
+                  href="https://raise-website.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  >RAISE Lab</a
+                >, led by
+                <a
+                  class="nowrap"
+                  href="https://lexuanbach.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >Dr. Xuan-Bach Le</a
+                >.
+              </p>
+              <p class="hero-bio">
+                I earned my BEng (Honors) and MEng (by Research) in Computer
+                Science at HCMUT. Before focusing on my academic career, I worked
+                as a software engineer and technical lead on AI and big data
+                systems.
+              </p>
+              <p class="hero-bio">
+                My research spans <strong class="keyword">AI Safety</strong>,
+                <strong class="keyword">Trustworthy AI</strong>,
+                <strong class="keyword">AI/Software Security</strong>,
+                <strong class="keyword">Data Privacy</strong>, and
+                <strong class="keyword">Machine Learning</strong>. I develop methods to
+                make AI and software systems secure, private, and reliable by
+                combining probabilistic modeling, formal methods, data mining,
+                secure software engineering, and privacy-preserving techniques.
+                My recent work focuses on
+                <strong class="keyword keyword--focus"
+                  >Verified and Auditable Agentic Systems</strong
+                >: what they leak from memory, how reliably they complete
+                multi-step tasks, and how to keep the permissions they are given
+                within bounds.
+              </p>
+            </div>
+            <div class="hero-actions">
+              <a
+                class="hero-action hero-action-primary"
+                href="cv_Phat.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                View CV
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6" />
+                </svg>
+              </a>
+              <a class="hero-action" href="mailto:phatttt@hcmut.edu.vn">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 6 9 7 9-7" />
+                </svg>
+                Email me
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content-section" id="news">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="news-heading">Recent news</h2>
+            <a class="text-link" href="news/"
+              >All updates
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <!-- Shows the latest four items; older ones scroll into view. Phones
+               list the four, then link to the rest. -->
+          <div
+            class="news-scroll"
+            role="region"
+            aria-labelledby="news-heading"
+            tabindex="0"
+            data-visible="4"
+          >
+            <div class="news-list">
+              <div class="news-item">
+                <time class="news-date" datetime="2026-11">Nov 2026</time>
+                <p>
+                  <a href="publications/#relationalrag-tables">RelationalRAG-Tables</a>
+                  has been accepted for publication in <strong>Machine Learning</strong>
+                  through the ACML 2026 journal track.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-11">Nov 2026</time>
+                <p>
+                  Our
+                  <a href="publications/#phishing-rewrite-audit"
+                    >study on rewrite augmentation for phishing detection</a
+                  >
+                  is available in <strong>Expert Systems with Applications</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-11">Nov 2026</time>
+                <p>
+                  <a href="publications/#trust-gated-median">Trust-Gated Robust Median</a>
+                  has been accepted for publication in the
+                  <strong>Journal of Information Security and Applications</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-11">Nov 2026</time>
+                <p>
+                  Five papers were accepted to <strong>WSDM 2027</strong>,
+                  including
+                  <a href="publications/#symbolic-pattern-mining"
+                    >work on symbolic pattern mining</a
+                  >
+                  and
+                  <a href="publications/#misinformation-propagation-audit"
+                    >a Findings paper on misinformation detection</a
+                  >.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-11">Nov 2026</time>
+                <p>
+                  Our
+                  <a href="publications/#privacy-architectures"
+                    >review of privacy-preserving architectures for IoT and
+                    vehicular data sharing</a
+                  >
+                  is published in <strong>Ad Hoc Networks</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-10">Oct 2026</time>
+                <p>
+                  <a href="publications/#semreuse">SemReuse</a> is available as
+                  an <strong>arXiv preprint</strong>. It reuses cached
+                  natural-language filter results and audits each new query
+                  for recall and precision. This marks my first completed
+                  collaboration with Assoc. Prof. Tung Kieu and Prof. Christian
+                  S. Jensen at Aalborg University, and Prof. Bin Yang at East
+                  China Normal University.
+                </p>
+              </div>
+              <div class="news-item" id="jaws-ase-2026">
+                <time class="news-date" datetime="2026-10">Oct 2026</time>
+                <p>
+                  “When the Judge Is the Bottleneck: Measuring Where an
+                  Adversarial NL-to-LTL Loop Actually Fails” was accepted to the
+                  <strong><a href="https://conf.researchr.org/home/ase-2026/jaws-2-2026#program">JAWs 2 workshop at ASE 2026</a></strong>
+                  and listed in the October 12 program.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-10">Oct 2026</time>
+                <p>
+                  <a href="publications/#segmaformer">SegMaFormer</a> was
+                  accepted to <strong>WACV 2027</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-10">Oct 2026</time>
+                <p>
+                  <a href="publications/#synthetic-data-audit"
+                    >Our study on synthetic-data selection</a
+                  >
+                  appeared in <strong>EMNLP 2026 Findings</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-09">Sep 2026</time>
+                <p>
+                  Five papers on agent services, orchestration, and access control
+                  were accepted to <strong>ICSOC 2026</strong>, including
+                  <a href="publications/#agent-failure-taxonomy"
+                    >a taxonomy of LLM agent failure modes</a
+                  >.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-08">Aug 2026</time>
+                <p>
+                  <a href="publications/#graphmemshield">GraphMemShield</a> was
+                  accepted to the <strong>CIKM 2026 full research track</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-08">Aug 2026</time>
+                <p>
+                  <a href="publications/#verified-data-mining"
+                    >From Natural-Language Hypotheses to Verified Data-Mining
+                    Discoveries</a
+                  >
+                  was accepted to the <strong>ICDM 2026 research track</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-08">Aug 2026</time>
+                <p>
+                  <a href="publications/#markov-agent-reliability"
+                    >Markov Chain Reliability for LLM Agents</a
+                  >
+                  was accepted to <strong>ISSRE 2026</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-07">Jul 2026</time>
+                <p>
+                  <a href="publications/#delegateguard">DelegateGuard</a> was
+                  accepted to <strong>SecAssure at ESORICS 2026</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-07">Jul 2026</time>
+                <p>
+                  <a href="publications/#distributional-program-analysis"
+                    >Distributional Program Analysis</a
+                  >
+                  was accepted to the <strong>ASE 2026 NIER track</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-06">Jun 2026</time>
+                <p>
+                  <a href="publications/#slm-archbench">SLM-ArchBench</a>, our
+                  work on small language models for software architecture, appears
+                  in the <strong>IEEE ICSA-C 2026 Companion proceedings</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-06">Jun 2026</time>
+                <p>
+                  <a href="publications/#pop2tic">POP2TIC</a>, our work on
+                  secure, privacy-preserving fog computing, was published in the
+                  <strong>Journal of Network and Computer Applications</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-06">Jun 2026</time>
+                <p>
+                  Our paper on <em>Single-Token Logit Prompting</em> for LLM-based
+                  multiple-choice questions was published in
+                  <strong>Computers &amp; Education: AI</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-04">Apr 2026</time>
+                <p>
+                  <a href="publications/#privacyguard">PrivacyGuard</a>, our work on
+                  secure, privacy-preserving fog computing, was published in
+                  <strong>Computer Networks</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-03">Mar 2026</time>
+                <p>
+                  Our paper on <em>LiteFormer</em> for financial time series was
+                  published in
+                  <strong>Engineering Applications of Artificial Intelligence</strong>.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2026-01">Jan 2026</time>
+                <p>
+                  Our paper on Bahnaric-Vietnamese lexical mapping appeared at the
+                  <strong>LM4UC workshop at AAAI 2026</strong> in Singapore.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2025-12">Dec 2025</time>
+                <p>
+                  Received the
+                  <strong>National “Creative Youth” Award</strong> from the
+                  Central Committee of the Vietnamese Youth Union.
+                </p>
+              </div>
+              <div class="news-item">
+                <time class="news-date" datetime="2025-07">Jul 2025</time>
+                <p>
+                  Our paper on an LLM summer school for high-school students was
+                  published in the <strong>AIED 2025 Companion proceedings</strong>
+                  for the conference in Palermo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <a class="text-link news-more" href="news/"
+            >All updates
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+          ></a>
+        </div>
+      </section>
+      <section class="content-section" id="research">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Research directions</h2>
+          </div>
+          <div class="research-grid">
+            <article class="research-card" id="secure-ai">
+              <span class="research-number">01</span>
+              <h3>Agent Security &amp; Reliability</h3>
+              <p>
+                Auditing cross-session memory leakage, estimating reliability in
+                multi-step workflows, and enforcing purpose-bound delegation.
+              </p>
+              <details class="cv-more research-more">
+                <summary>
+                  Topics and related work<span class="sr-only">
+                    in agent security and reliability</span
+                  >
+                </summary>
+                <p>
+                  I quantify what information leaks between sessions in shared
+                  graph memories and estimate the reliability of multi-step
+                  agent pipelines. I also design runtime controls for the
+                  capabilities that agents receive when they act on someone
+                  else’s behalf.
+                </p>
+                <h4 class="research-label">Topics</h4>
+                <ul class="interest-list">
+                  <li>Cross-session memory leakage</li>
+                  <li>Agent workflow reliability</li>
+                  <li>Absorbing Markov chains</li>
+                  <li>Purpose-bound delegation</li>
+                  <li>Runtime capability enforcement</li>
+                </ul>
+                <h4 class="research-label">Related work</h4>
+                <ul class="related-papers">
+                  <li>
+                    <a href="publications/#graphmemshield">GraphMemShield</a>
+                    (CIKM'26)
+                  </li>
+                  <li>
+                    <a href="publications/#markov-agent-reliability"
+                      >Markov chain reliability for LLM agents</a
+                    >
+                    (ISSRE'26)
+                  </li>
+                  <li>
+                    <a href="publications/#delegateguard">DelegateGuard</a>
+                    (SecAssure at ESORICS'26)
+                  </li>
+                  <li>
+                    <a href="publications/#deon">Deon</a> (ICSOC'26)
+                  </li>
+                  <li>
+                    <a href="publications/#agent-failure-taxonomy"
+                      >A Failure-Mode Taxonomy for LLM-Agent Services</a
+                    >
+                    (ICSOC'26)
+                  </li>
+                </ul>
+              </details>
+            </article>
+            <article class="research-card" id="trustworthy-ai">
+              <span class="research-number">02</span>
+              <h3>Trustworthy AI Evaluation &amp; Verification</h3>
+              <p>
+                Checking that AI results hold up: auditing whether evaluations
+                support their claims, and verifying AI-assisted discoveries,
+                table joins, and retrieved evidence.
+              </p>
+              <details class="cv-more research-more">
+                <summary>
+                  Topics and related work<span class="sr-only">
+                    in trustworthy AI evaluation and verification</span
+                  >
+                </summary>
+                <p>
+                  I test when benchmark and evaluation results support the
+                  claims made from them, controlling for data leakage, selection
+                  effects, and audit quality. I also build verifiers for what
+                  AI-assisted analysis produces, from data-mining discoveries
+                  and table joins to the evidence behind retrieval-augmented
+                  answers.
+                </p>
+                <h4 class="research-label">Topics</h4>
+                <ul class="interest-list">
+                  <li>Measurement validity</li>
+                  <li>Leakage-resistant evaluation</li>
+                  <li>Statistical auditing</li>
+                  <li>Verified data mining</li>
+                  <li>Retrieval-augmented verification</li>
+                  <li>Semantic operators</li>
+                </ul>
+                <h4 class="research-label">Related work</h4>
+                <ul class="related-papers">
+                  <li>
+                    <a href="publications/#verified-data-mining"
+                      >From Natural-Language Hypotheses to Verified Data-Mining
+                      Discoveries</a
+                    >
+                    (ICDM'26)
+                  </li>
+                  <li>
+                    <a href="publications/#symbolic-pattern-mining"
+                      >Noise-corrected symbolic pattern mining</a
+                    >
+                    (WSDM'27)
+                  </li>
+                  <li>
+                    <a href="publications/#learned-stopping-audit"
+                      >A Selection-Aware Audit of Learned Stopping</a
+                    >
+                    (WSDM'27)
+                  </li>
+                  <li>
+                    <a href="publications/#misinformation-propagation-audit"
+                      >When Do Propagation Models Beat Cascade Summaries?</a
+                    >
+                    (WSDM'27)
+                  </li>
+                  <li>
+                    <a href="publications/#evidencegraph">EvidenceGraph</a>
+                    (WSDM'27)
+                  </li>
+                  <li>
+                    <a href="publications/#synthetic-data-audit"
+                      >When Audit Quality Fails to Predict Downstream Utility</a
+                    >
+                    (EMNLP'26 Findings)
+                  </li>
+                  <li>
+                    <a href="publications/#phishing-rewrite-audit"
+                      >Leakage-resistant evaluation of phishing detection</a
+                    >
+                    (ESWA'26)
+                  </li>
+                  <li>
+                    <a href="publications/#relationalrag-tables"
+                      >RelationalRAG-Tables</a
+                    >
+                    (MLJ'26)
+                  </li>
+                  <li>
+                    <a href="publications/#semreuse">SemReuse</a> (preprint)
+                  </li>
+                </ul>
+              </details>
+            </article>
+            <article class="research-card" id="software">
+              <span class="research-number">03</span>
+              <h3>Program Analysis &amp; Software Security</h3>
+              <p>
+                Studying model-generated code across many samples and using
+                taint-based slicing to detect malicious software dependencies.
+              </p>
+              <details class="cv-more research-more">
+                <summary>
+                  Topics and related work<span class="sr-only">
+                    in program analysis and software security</span
+                  >
+                </summary>
+                <p>
+                  I treat language models as program samplers and study the
+                  distribution of their outputs. I also develop taint-based
+                  analyses to isolate suspicious behavior in software
+                  dependencies.
+                </p>
+                <h4 class="research-label">Topics</h4>
+                <ul class="interest-list">
+                  <li>Distributional program analysis</li>
+                  <li>Static and dynamic analysis</li>
+                  <li>Model-generated code</li>
+                  <li>Taint-based slicing</li>
+                  <li>Software supply chain security</li>
+                  <li>LLM-based program repair</li>
+                </ul>
+                <h4 class="research-label">Related work</h4>
+                <ul class="related-papers">
+                  <li>
+                    <a href="publications/#distributional-program-analysis"
+                      >Distributional program analysis</a
+                    >
+                    (ASE'26 NIER)
+                  </li>
+                  <li>
+                    <a href="publications/#npm-detection"
+                      >Code slicing for malicious npm package detection</a
+                    >
+                    (ARES'26 Workshops)
+                  </li>
+                  <li>
+                    <a href="publications/#quantum-program-repair"
+                      >LLM repair of quantum programs</a
+                    >
+                    (ICECCS'26)
+                  </li>
+                  <li>
+                    <a href="publications/#slm-archbench">SLM-ArchBench</a>
+                    (ICSA-C'26)
+                  </li>
+                </ul>
+              </details>
+            </article>
+            <article class="research-card" id="privacy">
+              <span class="research-number">04</span>
+              <h3>Privacy-Preserving Computing</h3>
+              <p>
+                Using differential privacy, trusted execution environments, and
+                cryptographic access control to protect data in distributed
+                systems and federated learning.
+              </p>
+              <details class="cv-more research-more">
+                <summary>
+                  Topics and related work<span class="sr-only">
+                    in privacy-preserving computing</span
+                  >
+                </summary>
+                <p>
+                  I design privacy-preserving systems for sensitive data and
+                  measure what protections cost in practice. My work spans
+                  differential privacy, anonymization, and secure computation
+                  across IoT, fog, and cloud environments. I also make
+                  federated learning robust to backdoor attacks.
+                </p>
+                <h4 class="research-label">Topics</h4>
+                <ul class="interest-list">
+                  <li>Differential privacy</li>
+                  <li>Data anonymization</li>
+                  <li>Trusted execution environments</li>
+                  <li>Privacy measurement</li>
+                  <li>Cryptographic access control</li>
+                  <li>IoT, fog, and cloud computing</li>
+                  <li>Federated learning</li>
+                </ul>
+                <h4 class="research-label">Related work</h4>
+                <ul class="related-papers">
+                  <li>
+                    <a href="publications/#privacyguard">PrivacyGuard</a>
+                    (COMNET'26)
+                  </li>
+                  <li><a href="publications/#pop2tic">POP2TIC</a> (JNCA'26)</li>
+                  <li>
+                    <a href="publications/#trust-gated-median"
+                      >Trust-Gated Robust Median</a
+                    >
+                    (JISA'26)
+                  </li>
+                  <li>
+                    <a href="publications/#pragmatic-dp"
+                      >Pragmatic differential privacy</a
+                    >
+                    (SNCS'24)
+                  </li>
+                  <li>
+                    <a href="publications/#privacy-architectures"
+                      >Privacy-preserving architectures for IoT and Vehicular
+                      Data Sharing review</a
+                    >
+                    (AdHoc'26)
+                  </li>
+                  <li><a href="publications/#acaas">ACaaS</a> (ICSOC'26)</li>
+                  <li><a href="publications/#slie">SLIE</a> (ICSOC'25)</li>
+                  <li>
+                    <a href="publications/#secureweartrade">SecureWearTrade</a>
+                    (PMC'25)
+                  </li>
+                  <li><a href="publications/#tackle">TACKLE</a> (HCCOM'25)</li>
+                  <li>
+                    <a href="publications/#ci2p-medhfdroid">CI2P-MedHFDroid</a>
+                    (IJIS'25)
+                  </li>
+                  <li>
+                    <a href="publications/#financial-privacy-survey"
+                      >Privacy-Preserving Computation in Financial Systems
+                      review</a
+                    >
+                    (InfoSys'26)
+                  </li>
+                </ul>
+              </details>
+            </article>
+            <article class="research-card" id="applied-ai">
+              <span class="research-number">05</span>
+              <h3>Applied AI</h3>
+              <p>
+                Building efficient models and practical tools: lightweight
+                forecasting and 3D medical image segmentation, Bahnar–Vietnamese
+                language resources, and LLMs for education.
+              </p>
+              <details class="cv-more research-more">
+                <summary>
+                  Topics and related work<span class="sr-only">
+                    in applied AI</span
+                  >
+                </summary>
+                <p>
+                  With collaborators, I work on efficient deep-learning models
+                  for financial forecasting and 3D medical image segmentation,
+                  on language resources and benchmarks for Bahnar and
+                  Vietnamese, and on how large language models can support
+                  teaching and learning.
+                </p>
+                <h4 class="research-label">Topics</h4>
+                <ul class="interest-list">
+                  <li>Efficient transformers</li>
+                  <li>State-space models</li>
+                  <li>Time-series forecasting</li>
+                  <li>Medical image segmentation</li>
+                  <li>Low-resource NLP</li>
+                  <li>LLMs in education</li>
+                </ul>
+                <h4 class="research-label">Related work</h4>
+                <ul class="related-papers">
+                  <li>
+                    <a href="publications/#segmaformer">SegMaFormer</a>
+                    (WACV'27)
+                  </li>
+                  <li>
+                    <a href="publications/#liteformer">LiteFormer</a> (EAAI'26)
+                  </li>
+                  <li>
+                    <a href="publications/#money-laundering"
+                      >Money laundering detection with transaction graph
+                      learning</a
+                    >
+                    (IMCOM'24)
+                  </li>
+                  <li>
+                    <a href="publications/#bahnar-parallel-retrieval"
+                      >Bahnar–Vietnamese parallel-sentence retrieval</a
+                    >
+                    (AACL-IJCNLP'26)
+                  </li>
+                  <li>
+                    <a href="publications/#bahnaric-vietnamese"
+                      >Bahnaric–Vietnamese lexical mapping</a
+                    >
+                    (LM4UC at AAAI'26)
+                  </li>
+                  <li>
+                    <a href="publications/#vietnamese-cultural-benchmark"
+                      >Fluent but Foreign</a
+                    >
+                    (WSDM'27)
+                  </li>
+                  <li>
+                    <a href="publications/#stl-prompting"
+                      >Zero-shot multiple-choice question answering with LLMs</a
+                    >
+                    (CAEAI'26)
+                  </li>
+                  <li>
+                    <a href="publications/#llm-summer-school"
+                      >An LLM hackathon for high-school students</a
+                    >
+                    (AIED'25 Companion)
+                  </li>
+                </ul>
+              </details>
+            </article>
+          </div>
         </div>
       </section>
       <section class="content-section" id="publications">
@@ -297,7 +939,14 @@
                 <abbr title="Machine Learning (Springer)">MLJ</abbr>&nbsp;·
                 <abbr title="Journal of Network and Computer Applications">JNCA</abbr>&nbsp;·
                 <abbr title="Computers and Education: Artificial Intelligence">CAEAI</abbr>&nbsp;·
-                <abbr title="Journal of Information Security and Applications">JISA</abbr>
+                <abbr title="Journal of Information Security and Applications">JISA</abbr>&nbsp;·
+                <abbr title="Ad Hoc Networks">AdHoc</abbr>&nbsp;·
+                <abbr title="Computer Networks">COMNET</abbr>&nbsp;·
+                <abbr title="Information Systems">InfoSys</abbr>&nbsp;·
+                <abbr title="Journal of Systems Architecture">JSA</abbr>&nbsp;·
+                <abbr title="High-Confidence Computing">HCCOM</abbr>&nbsp;·
+                <abbr title="Pervasive and Mobile Computing">PMC</abbr>&nbsp;·
+                <abbr title="International Journal of Information Security">IJIS</abbr>
               </dd>
             </div>
             <div class="pub-stat">
@@ -341,7 +990,6 @@
                   <span class="paper-badge paper-badge--track">Full research track</span>
                   <a class="paper-badge pub-metric--core" href="https://portal.core.edu.au/conf-ranks/25/">CORE A</a>
                   <a class="paper-badge pub-metric--acceptance" href="https://raise-website.vercel.app/news/graphmemshield-cikm-2026">Acceptance rate 26.9% (597/2,216)</a>
-                  <span class="paper-badge paper-badge--accepted">Accepted</span>
                 </p>
                 <p class="paper-summary">
                   Defines a cross-session leakage threat model for graph-based
@@ -358,28 +1006,31 @@
                   <a href="publications/#graphmemshield-citation">BibTeX</a>
                 </div>
               </div>
-              <figure class="paper-figure">
-                <a class="paper-visual" href="assets/research/graphmemshield-figure-1.png">
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/research/thumbs/graphmemshield-figure-1-640.webp 640w, assets/research/thumbs/graphmemshield-figure-1-1185.webp 1185w"
-                      sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
-                    />
-                    <img
-                      src="assets/research/graphmemshield-figure-1.png"
-                      width="1185"
-                      height="405"
-                      alt="Full-size GraphMemShield diagram. A retrieval guard controls which graph edges enter the response context, while an audit harness monitors the data flow."
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>
-                  <a href="https://lexuanbach.github.io/publication/CIKM2026.pdf#page=2">Fig. 1</a>
-                  · Retrieval and auditing
-                </figcaption>
-              </figure>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for GraphMemShield</span></summary>
+                <figure class="paper-figure">
+                  <a class="paper-visual" href="assets/research/graphmemshield-figure-1.png">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/thumbs/graphmemshield-figure-1-640.webp 640w, assets/research/thumbs/graphmemshield-figure-1-1185.webp 1185w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/graphmemshield-figure-1.png"
+                        width="1185"
+                        height="405"
+                        alt="Full-size GraphMemShield diagram. A retrieval guard controls which graph edges enter the response context, while an audit harness monitors the data flow."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://lexuanbach.github.io/publication/CIKM2026.pdf#page=2">Fig. 1</a>
+                    · Retrieval and auditing
+                  </figcaption>
+                </figure>
+              </details>
             </article>
             <article class="selected-paper">
               <div>
@@ -401,7 +1052,6 @@
                 <p class="paper-badges">
                   <span class="paper-badge paper-badge--venue">ISSRE 2026</span>
                   <a class="paper-badge pub-metric--core" href="https://portal.core.edu.au/conf-ranks/1411/">CORE A</a>
-                  <span class="paper-badge paper-badge--accepted">Accepted</span>
                 </p>
                 <p class="paper-summary">
                   Uses Markov chains to estimate end-to-end reliability and
@@ -419,28 +1069,102 @@
                   >
                 </div>
               </div>
-              <figure class="paper-figure">
-                <a class="paper-visual" href="assets/research/tracetochain-figure-2.png">
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/research/thumbs/tracetochain-figure-2-640.webp 640w, assets/research/thumbs/tracetochain-figure-2-1056.webp 1056w"
-                      sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
-                    />
-                    <img
-                      src="assets/research/tracetochain-figure-2.png"
-                      width="1056"
-                      height="798"
-                      alt="Full-size TraceToChain diagram. The agent cycles through planning, tool calls, and observing outputs until it solves the task or fails."
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>
-                  <a href="https://arxiv.org/pdf/2604.24579#page=3">Fig. 2</a>
-                  · Agent loop and outcomes
-                </figcaption>
-              </figure>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for Markov chain reliability for LLM agents</span></summary>
+                <figure class="paper-figure">
+                  <a class="paper-visual" href="assets/research/tracetochain-figure-2.png">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/thumbs/tracetochain-figure-2-640.webp 640w, assets/research/thumbs/tracetochain-figure-2-1056.webp 1056w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/tracetochain-figure-2.png"
+                        width="1056"
+                        height="798"
+                        alt="Full-size TraceToChain diagram. The agent cycles through planning, tool calls, and observing outputs until it solves the task or fails."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://arxiv.org/pdf/2604.24579#page=3">Fig. 2</a>
+                    · Agent loop and outcomes
+                  </figcaption>
+                </figure>
+              </details>
+            </article>
+            <article class="selected-paper">
+              <div>
+                <p class="paper-kicker">
+                  Trustworthy AI evaluation &amp; verification
+                </p>
+                <h3>
+                  <a
+                    href="https://drive.google.com/file/d/1IBgIK8Lyibf76n4FMg_w81IpcrzArCyB/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener"
+                    >From Natural-Language Hypotheses to Verified Data-Mining
+                    Discoveries</a
+                  >
+                </h3>
+                <p class="pub-authors">
+                  <strong>P. T. Tran-Truong</strong>, Son Ha, Quang-Tung Nguyen,
+                  Xuan-Bach Le
+                </p>
+                <p class="paper-badges">
+                  <span class="paper-badge paper-badge--venue">ICDM 2026</span>
+                  <span class="paper-badge paper-badge--track">Research track</span>
+                  <a class="paper-badge pub-metric--core" href="https://portal.core.edu.au/conf-ranks/642/">CORE A*</a>
+                  <a class="paper-badge pub-metric--acceptance" href="https://lexuanbach.github.io/">Acceptance rate 19.9% (392/1,966)</a>
+                </p>
+                <p class="paper-summary">
+                  Turns hypotheses proposed by language models into typed
+                  data-mining queries, and accepts a discovery only after a
+                  separate verifier checks its statistical support and
+                  replication on held-out data.
+                </p>
+                <div class="paper-links">
+                  <a
+                    href="https://drive.google.com/file/d/1IBgIK8Lyibf76n4FMg_w81IpcrzArCyB/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener"
+                    >Paper</a
+                  >
+                  <a
+                    href="https://github.com/LeoTTTPhat/VeraDM"
+                    target="_blank"
+                    rel="noopener"
+                    >Code</a
+                  >
+                  <a href="publications/#verified-data-mining-citation">BibTeX</a>
+                </div>
+              </div>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for From Natural-Language Hypotheses to Verified Data-Mining Discoveries</span></summary>
+                <figure class="paper-figure">
+                  <a class="paper-visual" href="assets/research/publications/verified-data-mining-figure-1.png">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/publications/thumbs/verified-data-mining-figure-1-640.webp 640w, assets/research/publications/thumbs/verified-data-mining-figure-1-1280.webp 1280w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/publications/verified-data-mining-figure-1.png"
+                        width="1301"
+                        height="322"
+                        alt="Full-size figure. VeraDM proposal and verification pipeline."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://drive.google.com/file/d/1IBgIK8Lyibf76n4FMg_w81IpcrzArCyB/view">Fig. 1</a> · VeraDM proposal and verification pipeline
+                  </figcaption>
+                </figure>
+              </details>
             </article>
             <article class="selected-paper">
               <div>
@@ -483,92 +1207,31 @@
                   >
                 </div>
               </div>
-              <figure class="paper-figure">
-                <a class="paper-visual" href="assets/research/dpa-figure-1.png">
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/research/thumbs/dpa-figure-1-640.webp 640w, assets/research/thumbs/dpa-figure-1-1239.webp 1239w"
-                      sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
-                    />
-                    <img
-                      src="assets/research/dpa-figure-1.png"
-                      width="1239"
-                      height="330"
-                      alt="Full-size program analysis diagram. An LLM samples several programs from one specification. An analyzer counts how often each inferred property recurs."
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>
-                  <a href="https://lexuanbach.github.io/publication/ASE2026-NIER.pdf#page=2">Fig. 1</a>
-                  · Program sampling (illustrative rates)
-                </figcaption>
-              </figure>
-            </article>
-            <article class="selected-paper">
-              <div>
-                <p class="paper-kicker">
-                  Agent security &amp; reliability
-                </p>
-                <h3>
-                  <a
-                    href="https://drive.google.com/file/d/1foMEteLbqABRqgmAv1CuxYEIwFM6WK-b/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener"
-                    >DelegateGuard: Purpose-Bound Capabilities for Delegated LLM
-                    Agent Workflows</a
-                  >
-                </h3>
-                <p class="pub-authors">
-                  <strong>P. T. Tran-Truong</strong>, Ha Vo, Khang Vo, Nhut
-                  Tran, Thai-Minh Truong
-                </p>
-                <p class="paper-badges">
-                  <span class="paper-badge paper-badge--venue">SecAssure at ESORICS 2026</span>
-                  <span class="paper-badge paper-badge--track">Workshop</span>
-                  <a class="paper-badge pub-metric--core" href="https://portal.core.edu.au/conf-ranks/515/">ESORICS CORE A</a>
-                  <span class="paper-badge paper-badge--accepted">Accepted</span>
-                </p>
-                <p class="paper-summary">
-                  Defines and enforces purpose-bound capabilities for workflows
-                  that delegate tasks to LLM agents.
-                </p>
-                <div class="paper-links">
-                  <a
-                    href="https://drive.google.com/file/d/1foMEteLbqABRqgmAv1CuxYEIwFM6WK-b/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener"
-                    >Manuscript</a
-                  >
-                  <a href="publications/#delegateguard-citation">BibTeX</a>
-                </div>
-              </div>
-              <figure class="paper-figure">
-                <a
-                  class="paper-visual"
-                  href="assets/research/delegateguard-figure-3.png"
-                >
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/research/thumbs/delegateguard-figure-3-640.webp 640w, assets/research/thumbs/delegateguard-figure-3-1280.webp 1280w"
-                      sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
-                    />
-                    <img
-                      src="assets/research/delegateguard-figure-3.png"
-                      width="1770"
-                      height="717"
-                      alt="Full-size DelegateGuard runtime diagram. A reference monitor checks agent proposals against their capabilities and allows only authorized operations to reach the destination."
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>
-                  <a href="https://arxiv.org/pdf/2610.16005v1#page=8">Fig. 3</a>
-                  · Runtime authorization
-                </figcaption>
-              </figure>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for Distributional Program Analysis</span></summary>
+                <figure class="paper-figure">
+                  <a class="paper-visual" href="assets/research/dpa-figure-1.png">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/thumbs/dpa-figure-1-640.webp 640w, assets/research/thumbs/dpa-figure-1-1239.webp 1239w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/dpa-figure-1.png"
+                        width="1239"
+                        height="330"
+                        alt="Full-size program analysis diagram. An LLM samples several programs from one specification. An analyzer counts how often each inferred property recurs."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://lexuanbach.github.io/publication/ASE2026-NIER.pdf#page=2">Fig. 1</a>
+                    · Program sampling (illustrative rates)
+                  </figcaption>
+                </figure>
+              </details>
             </article>
             <article class="selected-paper">
               <div>
@@ -618,160 +1281,100 @@
                   <a href="publications/#privacyguard-citation">BibTeX</a>
                 </div>
               </div>
-              <figure class="paper-figure">
-                <a
-                  class="paper-visual"
-                  href="https://ars.els-cdn.com/content/image/1-s2.0-S1389128626000885-gr4_lrg.jpg"
-                >
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/research/thumbs/privacyguard-figure-4-640.webp 640w, assets/research/thumbs/privacyguard-figure-4-769.webp 769w"
-                      sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
-                    />
-                    <img
-                      src="assets/research/privacyguard-figure-4.jpg"
-                      width="769"
-                      height="571"
-                      alt="Full-size PrivacyGuard architecture. IoT sensors feed an edge device that collects user preferences, fog nodes validate and process encrypted data, and the cloud receives validated data."
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>
-                  <a href="https://doi.org/10.1016/j.comnet.2026.112076">Fig. 4</a>
-                  · Four-tier data flow
-                </figcaption>
-              </figure>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for PrivacyGuard</span></summary>
+                <figure class="paper-figure">
+                  <a
+                    class="paper-visual"
+                    href="https://ars.els-cdn.com/content/image/1-s2.0-S1389128626000885-gr4_lrg.jpg"
+                  >
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/thumbs/privacyguard-figure-4-640.webp 640w, assets/research/thumbs/privacyguard-figure-4-769.webp 769w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/privacyguard-figure-4.jpg"
+                        width="769"
+                        height="571"
+                        alt="Full-size PrivacyGuard architecture. IoT sensors feed an edge device that collects user preferences, fog nodes validate and process encrypted data, and the cloud receives validated data."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://doi.org/10.1016/j.comnet.2026.112076">Fig. 4</a>
+                    · Four-tier data flow
+                  </figcaption>
+                </figure>
+              </details>
             </article>
-          </div>
-          <p class="selection-note">
-            Selected journal, conference, and workshop work across my research
-            directions. * Equal contribution.
-          </p>
-        </div>
-      </section>
-      <section class="content-section" id="research">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Research directions</h2>
-            <a class="text-link" href="research/"
-              >Research overview
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h16m-6-6 6 6-6 6" /></svg
-            ></a>
-          </div>
-          <div class="research-grid">
-            <article class="research-card">
-              <span class="research-number">01</span>
-              <h3>Agent Security &amp; Reliability</h3>
-              <p>
-                Auditing cross-session memory leakage, estimating reliability in
-                multi-step workflows, and enforcing purpose-bound delegation.
-              </p>
-              <a class="text-link" href="research/#secure-ai"
-                >Agent security research
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 12h16m-6-6 6 6-6 6" /></svg
-              ></a>
+            <article class="selected-paper">
+              <div>
+                <p class="paper-kicker">Applied AI</p>
+                <h3>
+                  <a
+                    href="https://arxiv.org/abs/2603.22002"
+                    target="_blank"
+                    rel="noopener"
+                    >SegMaFormer: A Hybrid State-Space and Transformer Model for
+                    Efficient 3D Medical Image Segmentation</a
+                  >
+                </h3>
+                <p class="pub-authors">
+                  Duy D. Nguyen, <strong>P. T. Tran-Truong</strong>, Xuan-Bach Le
+                </p>
+                <p class="paper-badges">
+                  <span class="paper-badge paper-badge--venue">WACV 2027</span>
+                  <a class="paper-badge pub-metric--core" href="https://portal.core.edu.au/conf-ranks/763/">CORE A</a>
+                </p>
+                <p class="paper-summary">
+                  Combines state-space layers at high resolution with attention
+                  at low resolution to segment 3D medical images efficiently,
+                  with substantially fewer parameters than larger models.
+                </p>
+                <div class="paper-links">
+                  <a
+                    href="https://arxiv.org/abs/2603.22002"
+                    target="_blank"
+                    rel="noopener"
+                    >Preprint</a
+                  >
+                  <a
+                    href="https://github.com/duydngn89/SegMaFormer"
+                    target="_blank"
+                    rel="noopener"
+                    >Code</a
+                  >
+                  <a href="publications/#segmaformer-citation">BibTeX</a>
+                </div>
+              </div>
+              <details class="pub-figure" open>
+                <summary>Figure<span class="sr-only"> for SegMaFormer</span></summary>
+                <figure class="paper-figure">
+                  <a class="paper-visual" href="assets/research/publications/segmaformer-figure-1.png">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="assets/research/publications/thumbs/segmaformer-figure-1-640.webp 640w, assets/research/publications/thumbs/segmaformer-figure-1-1280.webp 1280w"
+                        sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 380px, 270px"
+                      />
+                      <img
+                        src="assets/research/publications/segmaformer-figure-1.png"
+                        width="1301"
+                        height="875"
+                        alt="Full-size figure. SegMaFormer encoder and decoder (preprint)."
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>
+                    <a href="https://arxiv.org/pdf/2603.22002#page=4">Fig. 1</a> · SegMaFormer encoder and decoder (preprint)
+                  </figcaption>
+                </figure>
+              </details>
             </article>
-            <article class="research-card">
-              <span class="research-number">02</span>
-              <h3>Privacy-Preserving Computing</h3>
-              <p>
-                Using differential privacy, trusted execution environments, and
-                cryptographic access control to protect data in distributed
-                systems.
-              </p>
-              <a class="text-link" href="research/#privacy"
-                >Privacy research
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 12h16m-6-6 6 6-6 6" /></svg
-              ></a>
-            </article>
-            <article class="research-card">
-              <span class="research-number">03</span>
-              <h3>Program Analysis &amp; Software Security</h3>
-              <p>
-                Studying model-generated code across many samples and using
-                taint-based slicing to detect malicious software dependencies.
-              </p>
-              <a class="text-link" href="research/#software"
-                >Program analysis research
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 12h16m-6-6 6 6-6 6" /></svg
-              ></a>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="content-section" id="news">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Recent news</h2>
-            <a class="text-link" href="news/"
-              >All updates
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h16m-6-6 6 6-6 6" /></svg
-            ></a>
-          </div>
-          <div class="news-list">
-            <div class="news-item">
-              <time class="news-date" datetime="2026-11">Nov 2026</time>
-              <p>
-                Five papers were accepted to <strong>WSDM 2027</strong>,
-                including
-                <a href="publications/#symbolic-pattern-mining"
-                  >work on symbolic pattern mining</a
-                >
-                and
-                <a href="publications/#misinformation-propagation-audit"
-                  >a Findings paper on misinformation detection</a
-                >.
-              </p>
-            </div>
-            <div class="news-item">
-              <time class="news-date" datetime="2026-10">Oct 2026</time>
-              <p>
-                <a href="publications/#segmaformer">SegMaFormer</a> was
-                accepted to <strong>WACV 2027</strong>.
-              </p>
-            </div>
-            <div class="news-item">
-              <time class="news-date" datetime="2026-08">Aug 2026</time>
-              <p>
-                <a href="publications/#graphmemshield">GraphMemShield</a> was
-                accepted to the <strong>CIKM 2026 full research track</strong>.
-              </p>
-            </div>
-            <div class="news-item">
-              <time class="news-date" datetime="2026-08">Aug 2026</time>
-              <p>
-                <a href="publications/#verified-data-mining"
-                  >From Natural-Language Hypotheses to Verified Data-Mining
-                  Discoveries</a
-                >
-                was accepted to the <strong>ICDM 2026 research track</strong>.
-              </p>
-            </div>
-            <div class="news-item">
-              <time class="news-date" datetime="2026-08">Aug 2026</time>
-              <p>
-                <a href="publications/#markov-agent-reliability"
-                  >Markov Chain Reliability for LLM Agents</a
-                >
-                was accepted to <strong>ISSRE 2026</strong>.
-              </p>
-            </div>
-            <div class="news-item">
-              <time class="news-date" datetime="2026-07">Jul 2026</time>
-              <p>
-                <a href="publications/#distributional-program-analysis"
-                  >Distributional Program Analysis</a
-                >
-                was accepted to the <strong>ASE 2026 NIER track</strong>.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -819,6 +1422,579 @@
           </ul>
         </div>
       </section>
+      <section class="content-section" id="background">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Background</h2>
+            <a class="text-link" href="cv_Phat.pdf" target="_blank" rel="noopener"
+              >Full CV
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6" /></svg
+            ></a>
+          </div>
+          <div class="cv-group" id="education">
+            <h3 class="cv-heading">Education</h3>
+            <ol class="cv-list">
+              <li class="cv-item">
+                <p class="cv-meta">2021 – 2023</p>
+                <div>
+                  <h4>MEng (by Research), Computer Science</h4>
+                  <p class="cv-org">
+                    Ho Chi Minh City University of Technology, <span class="nowrap">VNU-HCM</span> · CGPA
+                    9.05/10 · Very Good
+                  </p>
+                  <details class="cv-more">
+                    <summary>
+                      Thesis and supervisors<span class="sr-only">
+                        for the MEng</span
+                      >
+                    </summary>
+                    <p class="cv-note">
+                      Thesis: Privacy-Preserving Deep Learning Methods · Grade
+                      9.3/10
+                    </p>
+                    <p class="cv-note">
+                      Supervisors: Assoc. Prof. Hong Trang Le &amp; Assoc. Prof.
+                      Tran Khanh Dang
+                    </p>
+                  </details>
+                </div>
+              </li>
+              <li class="cv-item">
+                <p class="cv-meta">2016 – 2020</p>
+                <div>
+                  <h4>BEng (Honors), Computer Science</h4>
+                  <p class="cv-org">
+                    Ho Chi Minh City University of Technology, <span class="nowrap">VNU-HCM</span> · Very
+                    Good
+                  </p>
+                  <details class="cv-more">
+                    <summary>
+                      Thesis and project<span class="sr-only">
+                        for the BEng</span
+                      >
+                    </summary>
+                    <p class="cv-note">
+                      Thesis: Privacy-Preserving Open Data Publishing Based on
+                      Data Anonymization · Grade 9.85/10
+                    </p>
+                    <p class="cv-note">
+                      Project: Chief member, Anonymization Infrastructure for
+                      Open Data (funded by HCMC Department of Science and
+                      Technology)
+                    </p>
+                  </details>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="cv-group" id="experience">
+            <h3 class="cv-heading">Experience</h3>
+            <div>
+              <ol class="cv-list">
+                <li class="cv-item">
+                  <p class="cv-meta">Jun 2024 – Present</p>
+                  <div>
+                    <h4>Full-time Lecturer &amp; Researcher</h4>
+                    <p class="cv-org">
+                      <a
+                        href="https://cse.hcmut.edu.vn/en/bo-mon-cong-nghe-phan-mem"
+                        target="_blank"
+                        rel="noopener"
+                        >HCMUT, VNU-HCM — Dept. of Software Engineering</a
+                      >
+                    </p>
+                    <details class="cv-more">
+                      <summary>
+                        Selected projects<span class="sr-only">
+                          as lecturer and researcher at HCMUT</span
+                        >
+                      </summary>
+                      <ul>
+                        <li>
+                          Formulated the threat model and built the evaluation
+                          harness for
+                          <a href="publications/#graphmemshield"
+                            >cross-session agent memory leakage</a
+                          >.
+                        </li>
+                        <li>
+                          Derived
+                          <a href="publications/#markov-agent-reliability"
+                            >Markov-chain reliability bounds</a
+                          >
+                          for multi-step agent pipelines and implemented the
+                          estimator.
+                        </li>
+                        <li>
+                          Proposed
+                          <a href="publications/#distributional-program-analysis"
+                            >distributional program analysis</a
+                          >
+                          for model-generated code and ran the experiments.
+                        </li>
+                        <li>
+                          Designed and implemented
+                          <a href="publications/#delegateguard"
+                            >purpose-bound capability enforcement</a
+                          >
+                          for delegated agent workflows.
+                        </li>
+                        <li>
+                          Designed a pipeline for
+                          <a href="publications/#verified-data-mining"
+                            >verifying data-mining discoveries from
+                            natural-language hypotheses</a
+                          >
+                          and led its experimental design.
+                        </li>
+                        <li>
+                          <span class="project-tag">Ongoing</span>
+                          <span class="project-tag">Research</span>
+                          Low-resource multilingual LLMs — collaboration with NUS,
+                          Singapore
+                        </li>
+                        <li>
+                          <span class="project-tag">Ongoing</span>
+                          <span class="project-tag">Research</span>
+                          Leverage LLMs for program generation &amp; verification
+                          — funded by VNU-HCM
+                        </li>
+                        <li>
+                          <span class="project-tag">Ongoing</span>
+                          <span class="project-tag">Research</span>
+                          Lead research on
+                          <a href="publications/#npm-detection"
+                            >malicious npm package detection</a
+                          >, including taint-based slicing and evaluation design.
+                        </li>
+                        <li>
+                          <span class="project-tag">Finished</span>
+                          <span class="project-tag">Research</span>
+                          Improve open-source LLMs’ performance on Educational
+                          MCQs — funded by USAID, published in Elsevier’s CAEAI
+                        </li>
+                        <li>
+                          <span class="project-tag">Finished</span>
+                          <span class="project-tag">App</span>
+                          Hung Vuong Hospital’s Intelligent Maternity Ward — AI
+                          for obstetric diagnosis
+                        </li>
+                        <li>
+                          <span class="project-tag">Finished</span>
+                          <span class="project-tag">Research</span>
+                          Privacy preference prediction in health Android apps —
+                          published in Springer’s IJIS
+                        </li>
+                        <li>
+                          <span class="project-tag">Finished</span>
+                          <span class="project-tag">Research</span>
+                          NIST standards in digital payments — published in
+                          Elsevier’s JSA
+                        </li>
+                        <li>
+                          <span class="project-tag">Finished</span>
+                          <span class="project-tag">App</span>
+                          LLM curriculum &amp; summer school for high-school
+                          students — published at AIED
+                        </li>
+                      </ul>
+                    </details>
+                  </div>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">2019 – 2024</p>
+                  <div>
+                    <h4>Teaching &amp; Research Assistant</h4>
+                    <p class="cv-org">HCMUT, VNU-HCM</p>
+                    <details class="cv-more">
+                      <summary>
+                        Details<span class="sr-only">
+                          of teaching and research assistant role</span
+                        >
+                      </summary>
+                      <ul>
+                        <li>
+                          Implemented anonymization methods for the funded open
+                          data project that became my undergraduate thesis.
+                        </li>
+                        <li>
+                          Built a
+                          <a href="publications/#pragmatic-dp"
+                            >differentially private training framework</a
+                          >
+                          and measured its privacy and utility tradeoffs.
+                        </li>
+                        <li>
+                          Worked on
+                          <a href="publications/#money-laundering"
+                            >transaction graph learning for money laundering
+                            detection</a
+                          >
+                          and
+                          <a href="publications/#data-poisoning"
+                            >data poisoning attacks and defenses</a
+                          >.
+                        </li>
+                      </ul>
+                    </details>
+                  </div>
+                </li>
+              </ol>
+              <details class="cv-more cv-earlier">
+                <summary>3 earlier roles, 2020 – 2024</summary>
+                <ol class="cv-list">
+                  <li class="cv-item">
+                    <p class="cv-meta">May 2022 – Jun 2024</p>
+                    <div>
+                      <h4>Associate Lecturer &amp; SE Lead / Deputy Head</h4>
+                      <p class="cv-org">
+                        <a href="https://huit.edu.vn/" target="_blank" rel="noopener"
+                          >HCM City University of Industry &amp; Trade — Institute
+                          of Digital Transformation</a
+                        >
+                      </p>
+                      <details class="cv-more">
+                        <summary>
+                          Details<span class="sr-only">
+                            of associate lecturer role</span
+                          >
+                        </summary>
+                        <ul>
+                          <li>
+                            Taught Database, NoSQL, InfoSec, Discrete Math,
+                            Cryptography, Biometrics, Java courses
+                          </li>
+                          <li>
+                            Supervised 20+ bachelor’s theses &amp; capstone projects
+                            in SE &amp; AI
+                          </li>
+                          <li>
+                            Organized a software development team; designed,
+                            developed and allocated tasks
+                          </li>
+                          <li>Administered cloud servers: VPS, AWS, Naver AI</li>
+                        </ul>
+                      </details>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">Jul 2023 – Jan 2024</p>
+                    <div>
+                      <h4>Research Intern</h4>
+                      <p class="cv-org">
+                        <a
+                          href="https://sw.skku.edu/eng_sw/index.do"
+                          target="_blank"
+                          rel="noopener"
+                          >Sungkyunkwan University</a
+                        >
+                        &amp;
+                        <a
+                          href="https://www.hippotnc.com/"
+                          target="_blank"
+                          rel="noopener"
+                          >Hippo T&amp;C Company</a
+                        >
+                      </p>
+                      <details class="cv-more">
+                        <summary>
+                          Details<span class="sr-only"> of research internship</span>
+                        </summary>
+                        <ul>
+                          <li>
+                            Healthcare &amp; Digital Therapeutics projects using IoT
+                            devices &amp; AI
+                          </li>
+                          <li>
+                            Built mobile app for IoT data collection; deep learning
+                            models for speech emotion recognition
+                          </li>
+                          <li>Tech: Python, TensorFlow, AWS, Linux</li>
+                        </ul>
+                      </details>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">Sep 2020 – Mar 2022</p>
+                    <div>
+                      <h4>Software Engineer (Big Data Processing &amp; Analysis)</h4>
+                      <p class="cv-org">
+                        <a
+                          href="https://viettelhightech.vn/en"
+                          target="_blank"
+                          rel="noopener"
+                          >Viettel High Technology Industries Corporation, Viettel
+                          Group</a
+                        >
+                      </p>
+                      <details class="cv-more">
+                        <summary>
+                          Details<span class="sr-only">
+                            of software engineer role</span
+                          >
+                        </summary>
+                        <ul>
+                          <li>
+                            Weather information management system — backend
+                            microservices &amp; Elasticsearch
+                          </li>
+                          <li>
+                            OSINT system — Kafka cluster, data synchronization,
+                            Prometheus, Docker &amp; K8s
+                          </li>
+                          <li>
+                            CI/CD pipelines &amp; UI component library with
+                            Storybook
+                          </li>
+                          <li>
+                            Tech: Java Spring, Python, React/Redux, MongoDB,
+                            Elasticsearch, Docker, K8s
+                          </li>
+                        </ul>
+                      </details>
+                    </div>
+                  </li>
+                </ol>
+              </details>
+            </div>
+          </div>
+          <div class="cv-group" id="awards">
+            <h3 class="cv-heading">Honors &amp; awards</h3>
+            <div>
+              <ol class="cv-list cv-list--tight cv-list--inline">
+                <li class="cv-item">
+                  <p class="cv-meta">2025</p>
+                  <div>
+                    <h4>National “Creative Youth” Award</h4>
+                    <p class="cv-note">
+                      Central Committee of the Vietnamese Youth Union — for
+                      Vietnamese people under 35
+                    </p>
+                  </div>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">2023</p>
+                  <div>
+                    <h4>Excellent Master Student Award</h4>
+                    <p class="cv-note">
+                      Merit certificate granted by the President of HCMUT for
+                      outstanding postgraduates
+                    </p>
+                  </div>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">2020</p>
+                  <div>
+                    <h4>Consolation Prize — Bach Khoa Innovation</h4>
+                    <p class="cv-note">
+                      Top 15 finalist in Bach Khoa Innovation contest
+                    </p>
+                  </div>
+                </li>
+              </ol>
+              <details class="cv-more">
+                <summary>6 earlier honors, 2015 – 2020</summary>
+                <ol class="cv-list cv-list--tight cv-list--inline">
+                  <li class="cv-item">
+                    <p class="cv-meta">2018 – 2019</p>
+                    <div>
+                      <h4>Excellent Comprehensive Student</h4>
+                      <p class="cv-note">
+                        Merit certificate for excellent academic achievements at
+                        HCMUT
+                      </p>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">2018 – 2019</p>
+                    <div>
+                      <h4>Student of 5 Merits</h4>
+                      <p class="cv-note">
+                        Outstanding in ethics, learning, physical strength,
+                        volunteer, and integration
+                      </p>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">2017 – 2020</p>
+                    <div>
+                      <h4>HCMUT Honors Program Scholarship</h4>
+                      <p class="cv-note">Awarded to top honors students at HCMUT</p>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">2016</p>
+                    <div>
+                      <h4>Direct University Admission</h4>
+                      <p class="cv-note">
+                        Direct admission to HCMUT and HCMUS, Vietnam National
+                        University — HCM
+                      </p>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">2015 – 2016</p>
+                    <div>
+                      <h4>Silver Medal — Math Olympic</h4>
+                      <p class="cv-note">
+                        High-school Math Olympic competition &amp; summer camp,
+                        Southern Vietnam
+                      </p>
+                    </div>
+                  </li>
+                  <li class="cv-item">
+                    <p class="cv-meta">2015 – 2016</p>
+                    <div>
+                      <h4>First Prize — Math Competition</h4>
+                      <p class="cv-note">
+                        High-school Math competition for Vinh Long city &amp;
+                        province
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </details>
+            </div>
+          </div>
+          <div class="cv-group">
+            <h3 class="cv-heading">Skills</h3>
+            <details class="cv-more cv-skills" id="skills">
+              <summary>Technical skills, languages, and recent courses</summary>
+              <ul class="cv-list cv-list--tight">
+                <li class="cv-item">
+                  <p class="cv-meta">Programming languages</p>
+                  <ul class="interest-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>JavaScript/TypeScript</li>
+                    <li>C++</li>
+                    <li>C</li>
+                    <li>SQL</li>
+                    <li>LaTeX</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Tools, frameworks &amp; libraries</p>
+                  <ul class="interest-list">
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Linux</li>
+                    <li>PyTorch</li>
+                    <li>TensorFlow</li>
+                    <li>LangChain</li>
+                    <li>NumPy</li>
+                    <li>Pandas</li>
+                    <li>PySpark</li>
+                    <li>Kubernetes</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">ML / Deep learning</p>
+                  <ul class="interest-list">
+                    <li>Supervised/Unsupervised Learning</li>
+                    <li>Self-supervised Learning</li>
+                    <li>Reinforcement Learning</li>
+                    <li>Transformer Architecture</li>
+                    <li>Large Language Models</li>
+                    <li>RAG</li>
+                    <li>Federated Learning</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Data privacy</p>
+                  <ul class="interest-list">
+                    <li>Differential Privacy</li>
+                    <li>Data Anonymization</li>
+                    <li>Homomorphic Encryption</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Security</p>
+                  <ul class="interest-list">
+                    <li>Blockchain Design</li>
+                    <li>Cryptography</li>
+                    <li>Access Control</li>
+                    <li>Program Analysis</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Agent security &amp; empirical methods</p>
+                  <ul class="interest-list">
+                    <li>Agent memory leakage</li>
+                    <li>Purpose-bound capabilities</li>
+                    <li>Absorbing Markov chains</li>
+                    <li>Unobserved failure estimation</li>
+                    <li>Experimental design</li>
+                    <li>Benchmark validity</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Program analysis &amp; privacy measurement</p>
+                  <ul class="interest-list">
+                    <li>Static and dynamic analysis</li>
+                    <li>Taint-based slicing</li>
+                    <li>Android privacy analysis</li>
+                    <li>JavaScript package analysis</li>
+                    <li>Cross-platform tracking</li>
+                    <li>Fingerprinting</li>
+                    <li>Trusted execution environments</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Mathematics</p>
+                  <ul class="interest-list">
+                    <li>Probability</li>
+                    <li>Statistics</li>
+                    <li>Linear Algebra</li>
+                    <li>Game Theory</li>
+                    <li>Optimization</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Languages</p>
+                  <ul class="interest-list">
+                    <li>Vietnamese (Native)</li>
+                    <li>English (IELTS 7.0)</li>
+                  </ul>
+                </li>
+                <li class="cv-item">
+                  <p class="cv-meta">Recent courses</p>
+                  <ul class="cv-courses">
+                    <li>
+                      <a
+                        href="https://agenticai-learning.org/f25"
+                        target="_blank"
+                        rel="noopener"
+                        >Agentic AI</a
+                      >
+                      <span class="cv-when">· Nov 2025 – Feb 2026</span>
+                    </li>
+                    <li>
+                      <a
+                        href="https://dcai.csail.mit.edu/2024/"
+                        target="_blank"
+                        rel="noopener"
+                        >Introduction to Data-Centric AI</a
+                      >
+                      <span class="cv-when">· Dec 2025 – Jan 2026</span>
+                    </li>
+                    <li>
+                      <a
+                        href="https://rail.eecs.berkeley.edu/deeprlcourse-fa23/"
+                        target="_blank"
+                        rel="noopener"
+                        >Deep Reinforcement Learning</a
+                      >
+                      <span class="cv-when">· Jul 2025 – Sep 2025</span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </section>
       <section class="contact-section" id="contact">
         <div class="container contact-inner">
           <div class="contact-copy">
@@ -829,7 +2005,10 @@
             </p>
             <address>
               Ho Chi Minh City University of Technology<br />268 Ly Thuong
-              Kiet Street, Dien Hong Ward, Ho Chi Minh City, Vietnam
+              Kiet Street, Dien Hong Ward, Ho Chi Minh City, Vietnam<br /><a
+                href="tel:+84368865745"
+                >(+84) 368 865 745</a
+              >
             </address>
           </div>
           <div class="hero-actions contact-actions">
@@ -862,7 +2041,7 @@
       <div class="container footer-inner">
         <p>© 2026 Phat T. Tran-Truong · HCMUT, VNU-HCM</p>
         <div class="footer-links">
-          <a href="about/">About &amp; background</a
+          <a href="#background">Background</a
           ><a
             href="https://orcid.org/0000-0003-3199-6333"
             target="_blank"

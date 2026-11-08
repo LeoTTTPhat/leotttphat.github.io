@@ -81,85 +81,94 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!event.matches) setMenu(false);
   });
 
-  const compactPanels = [
-    ...document.querySelectorAll(".about-panel, .pub-figure"),
-  ];
-  const aboutToggle = document.getElementById("about-toggle");
+  // Publication figures sit beside each record on wide screens and fold
+  // into its row of links as a collapsed disclosure on phones (on both the
+  // Publications page and the homepage's selected papers).
+  const figurePanels = [...document.querySelectorAll(".pub-figure")];
   const figureToggle = document.getElementById("figure-toggle");
-  const panelToggle = aboutToggle || figureToggle;
-  if (compactPanels.length) {
-    const figurePositions = [...document.querySelectorAll(".pub-figure")].map(
-      (panel) => ({
-        panel,
-        row: panel.parentElement,
-        actions: panel.parentElement.querySelector(".pub-actions"),
-      })
-    );
-    const revealAboutSection = (hash) => {
-      const panel = document
-        .getElementById(hash.slice(1))
-        ?.querySelector(":scope > .about-panel");
-      if (panel) panel.open = true;
-    };
-    const hasClosedPanel = () => compactPanels.some((panel) => !panel.open);
-    const updatePanelToggle = () => {
-      panelToggle.textContent = hasClosedPanel()
-        ? panelToggle.dataset.expandLabel
-        : panelToggle.dataset.collapseLabel;
+  if (figurePanels.length) {
+    const figurePositions = figurePanels.map((panel) => ({
+      panel,
+      row: panel.parentElement,
+      actions: panel.parentElement.querySelector(".pub-actions, .paper-links"),
+    }));
+    const hasClosedPanel = () => figurePanels.some((panel) => !panel.open);
+    const updateFigureToggle = () => {
+      figureToggle.textContent = hasClosedPanel()
+        ? figureToggle.dataset.expandLabel
+        : figureToggle.dataset.collapseLabel;
     };
     const setPanelsOpen = (open) => {
-      compactPanels.forEach((panel) => (panel.open = open));
+      figurePanels.forEach((panel) => (panel.open = open));
     };
     const applyPanelLayout = () => {
       setPanelsOpen(!mobileLayout.matches);
       figurePositions.forEach(({ panel, row, actions }) => {
         (mobileLayout.matches ? actions : row).append(panel);
       });
-      if (aboutToggle) revealAboutSection(window.location.hash);
-      if (panelToggle) {
-        panelToggle.hidden = !mobileLayout.matches;
-        updatePanelToggle();
+      if (figureToggle) {
+        figureToggle.hidden = !mobileLayout.matches;
+        updateFigureToggle();
       }
     };
-    if (panelToggle) {
-      panelToggle.addEventListener("click", () => {
+    if (figureToggle) {
+      figureToggle.addEventListener("click", () => {
         setPanelsOpen(hasClosedPanel());
-        updatePanelToggle();
+        updateFigureToggle();
       });
-      compactPanels.forEach((panel) =>
-        panel.addEventListener("toggle", updatePanelToggle)
-      );
-    }
-    if (aboutToggle) {
-      document.querySelectorAll(".subnav a").forEach((link) =>
-        link.addEventListener("click", () => revealAboutSection(link.hash))
-      );
-      window.addEventListener("hashchange", () =>
-        revealAboutSection(window.location.hash)
+      figurePanels.forEach((panel) =>
+        panel.addEventListener("toggle", updateFigureToggle)
       );
     }
     applyPanelLayout();
     mobileLayout.addEventListener("change", applyPanelLayout);
   }
 
-  // A citation link from the homepage opens the addressed native disclosure.
-  const openLinkedCitation = () => {
+  // The homepage news box shows its latest items and scrolls to the rest.
+  // It ends partway into the next item, so that item peeks out as a cue.
+  // Phones skip the inner scroll: they list the latest items, then a link.
+  const newsScroll = document.querySelector(".news-scroll");
+  const newsItems = newsScroll?.querySelectorAll(".news-item") ?? [];
+  const newsShown = Number(newsScroll?.dataset.visible) || 4;
+  if (newsItems.length > newsShown) {
+    const fitNews = () => {
+      if (mobileLayout.matches) {
+        newsScroll.style.removeProperty("max-height");
+        newsScroll.removeAttribute("tabindex");
+        return;
+      }
+      newsScroll.tabIndex = 0;
+      const next = newsItems[newsShown];
+      const style = getComputedStyle(next);
+      const line =
+        parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.7;
+      const peek = parseFloat(style.paddingTop) + line * 0.75;
+      newsScroll.style.maxHeight = `${next.offsetTop + peek}px`;
+    };
+    fitNews();
+    new ResizeObserver(fitNews).observe(
+      newsScroll.querySelector(".news-list")
+    );
+    mobileLayout.addEventListener("change", fitNews);
+  }
+
+  // A link to a disclosure, or to something inside one, opens it so the
+  // linked content shows; a link to a research card opens its details.
+  const openLinkedTarget = () => {
     const target = document.getElementById(window.location.hash.slice(1));
-    if (target?.matches("details")) {
-      target.open = true;
-      target.closest(".pub-item")?.scrollIntoView();
-    }
+    const disclosure =
+      target?.closest("details") ||
+      target?.querySelector(":scope > .research-more");
+    if (!disclosure || disclosure.open) return;
+    disclosure.open = true;
+    (target.closest(".pub-item") || target).scrollIntoView();
   };
-  openLinkedCitation();
-  window.addEventListener("hashchange", openLinkedCitation);
+  openLinkedTarget();
+  window.addEventListener("hashchange", openLinkedTarget);
 
   // Preserve bookmarks to records that moved off the homepage.
   if (document.body.dataset.page === "home") {
     const destinations = {
-      education: "about/#education",
-      experience: "about/#experience",
-      awards: "about/#awards",
-      skills: "about/#skills",
       services: "service/",
       activities: "service/#activities",
     };
