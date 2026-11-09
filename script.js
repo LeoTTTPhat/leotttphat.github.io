@@ -1,7 +1,7 @@
 /* Shared interactions; all records and disclosures work without JavaScript. */
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
-  const mobileLayout = window.matchMedia("(max-width: 700px)");
+  const mobileLayout = window.matchMedia("(max-width: 767px)");
   const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
   const themeToggle = document.getElementById("theme-toggle");
   const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -52,11 +52,20 @@ document.addEventListener("DOMContentLoaded", () => {
       "aria-label",
       open ? "Close navigation" : "Open navigation"
     );
-    if (restoreFocus) menuToggle?.focus();
+    if (open) navigation?.querySelector("a")?.focus({ preventScroll: true });
+    else if (restoreFocus) menuToggle?.focus();
   };
   menuToggle?.addEventListener("click", () =>
     setMenu(menuToggle.getAttribute("aria-expanded") !== "true")
   );
+  document.addEventListener("click", (event) => {
+    if (
+      document.body.classList.contains("menu-open") &&
+      !event.target.closest(".nav-inner")
+    ) {
+      setMenu(false, true);
+    }
+  });
   navigation
     ?.querySelectorAll("a")
     .forEach((link) => link.addEventListener("click", () => setMenu(false)));
@@ -80,6 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileLayout.addEventListener("change", (event) => {
     if (!event.matches) setMenu(false);
   });
+
+  const biography = document.querySelector(".hero-bio-more");
+  if (biography) {
+    biography.open = !mobileLayout.matches;
+    mobileLayout.addEventListener("change", (event) => {
+      biography.open = !event.matches;
+    });
+  }
 
   // Publication figures sit beside each record on wide screens and fold
   // into its row of links as a collapsed disclosure on phones (on both the
