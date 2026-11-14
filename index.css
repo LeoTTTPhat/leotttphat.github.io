@@ -523,19 +523,6 @@ html[data-theme="dark"] .sun-icon {
   text-decoration: none;
   cursor: help;
 }
-.venue-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5.5em, 1fr));
-  gap: 4px 12px;
-  max-width: 28em;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.venue-list > li {
-  margin: 0;
-  white-space: nowrap;
-}
 .section-heading {
   display: flex;
   align-items: end;
