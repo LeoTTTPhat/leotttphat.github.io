@@ -688,9 +688,9 @@ html[data-theme="dark"] .paper-visual img {
   font-weight: 600;
 }
 /* Badges, read left to right: the venue is the one solid chip; plain facts
-   (track, volume, location) follow as quiet text; tinted chips link to their
-   source (rank, indexing, impact factor, acceptance rate); a dot marks
-   accepted work. Only two boxed treatments, so the venue stays dominant. */
+   (track, volume, location) follow as quiet text; tinted chips show metrics
+   (rank, indexing, impact factor, acceptance rate); links open their source.
+   A dot marks accepted work. The venue stays dominant. */
 .paper-badges {
   display: flex;
   flex-wrap: wrap;
@@ -1279,10 +1279,6 @@ html[data-theme="dark"] .paper-visual img {
   border-radius: 8px;
   background: var(--highlight-bg);
 }
-.pub-item--highlighted .pub-metric--acceptance {
-  color: var(--ink);
-  font-weight: 600;
-}
 .pub-item:target,
 .pub-item:has(details:target) {
   outline: 1px solid var(--blue);
@@ -1321,9 +1317,10 @@ html[data-theme="dark"] .paper-visual img {
   color: var(--ink);
   text-decoration: none;
 }
-/* Linked metrics (CORE rank, SCIE, impact factor, acceptance rate) share
-   one tint, so a tinted chip always means "this links to its source". */
-.paper-badges > a {
+/* Rank and acceptance-rate tags use the same tint as source-linked metrics. */
+.paper-badges > a,
+.paper-badges > .pub-metric--core,
+.paper-badges > .pub-metric--acceptance {
   margin-inline: 0;
   padding-inline: 8px;
   border-color: transparent;
